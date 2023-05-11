@@ -222,8 +222,10 @@ bool texture_model::upload() {
 }
 
 void texture_model::draw() {
+	glm::mat4 model = glm::mat4(1.0f);
+	
 	prg_->use();
-	prg_->setuniform("model", glm::scale(glm::mat4(1.0f), glm::vec3(0.5f, 0.5f, 0.5f)));
+	prg_->setuniform("model", model);
 	prg_->setuniform("material.specular", m->specular);
 	prg_->setuniform("material.shininess", m->shininess);
 
@@ -261,8 +263,8 @@ void texture::upload() {
 	glGenTextures(1, &vbo_texture);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, vbo_texture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);

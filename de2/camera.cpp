@@ -46,7 +46,7 @@ void euler_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset, doubl
 
 //euler_angle_orbit
 euler_angle_orbit::euler_angle_orbit() {
-	zoom_ = 14;
+	zoom_ = 5;
 }
 glm::mat4 euler_angle_orbit::getview() {
 	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_)))
@@ -55,6 +55,7 @@ glm::mat4 euler_angle_orbit::getview() {
 
 glm::vec3 euler_angle_orbit::getpos() {
 	return inverse(getview())[3];
+	//return glm::vec3(1, 0, 0);
 }
 
 void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -70,7 +71,7 @@ void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, in
 void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
 	if (ldown)
 	{
-		double sensivity = (0.00099 * get_altitude(zoom_));
+		double sensivity = (0.00015 * get_altitude(zoom_));
 		yaw -= (lastx - xpos) * sensivity;
 		pitch -= (lasty - ypos) * sensivity;
 
@@ -100,5 +101,5 @@ void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset,
 //}
 
 double euler_angle_orbit::get_altitude(int map_zoom) {
-	return 20000000 / std::pow(2, map_zoom - 1);
+	return 2000 / std::pow(2, map_zoom - 1);
 }

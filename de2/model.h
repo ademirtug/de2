@@ -3,9 +3,6 @@
 #include "framework.h"
 #include "shader.h"
 
-//std::vector<glm::vec3> arr2vec3(float* data, int size);
-void arr2ind(float* data, int size, std::vector<glm::vec3>& vertices, std::vector<int>& indices);
-
 
 struct color_vertex {
 	glm::vec3 position;
