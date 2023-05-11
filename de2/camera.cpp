@@ -54,8 +54,8 @@ glm::mat4 euler_angle_orbit::getview() {
 }
 
 glm::vec3 euler_angle_orbit::getpos() {
-	return inverse(getview())[3];
-	//return glm::vec3(1, 0, 0);
+	auto cam = inverse(getview())[3];
+	return cam;
 }
 
 void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -69,8 +69,7 @@ void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, in
 	}
 }
 void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
-	if (ldown)
-	{
+	if (ldown){
 		double sensivity = (0.00015 * get_altitude(zoom_));
 		yaw -= (lastx - xpos) * sensivity;
 		pitch -= (lasty - ypos) * sensivity;
@@ -83,6 +82,7 @@ void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset,
 	zoom_ = std::clamp(zoom_ + yoffset, 1.0, std::numeric_limits<double>::max());
 }
 
+//note: wiki arcball rotation idea
 //glm::vec3 euler_angle_orbit::get_arcball_vector(int x, int y) {
 //	//map -1 to 1
 //	double ax = 1.0 * x / 800 * 2 - 1.0;

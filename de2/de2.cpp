@@ -5,8 +5,7 @@
 #include "shader.h"
 
 de2::de2(){
-    on_resize = [&](int width, int height) { 
-        resize(width, height); };
+    on_resize = [&](int width, int height) { resize(width, height); };
     on_key = [&](int key, int scancode, int action, int mods) { if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS) glfwSetWindowShouldClose(window, GLFW_TRUE);};
     on_process_input = [&]() { };
     
@@ -62,9 +61,9 @@ void de2::init() {
         throw std::exception("failed to init glad");
 
     glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_CULL_FACE);
-    //glCullFace(GL_BACK);
-    //glFrontFace(GL_CW);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    glFrontFace(GL_CW);
     resize(w, h);
 }
 
@@ -120,7 +119,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
 
     glm::mat4 view = glm::mat4(1.0f);
     glm::mat4 projection = glm::mat4(1.0f);
-    view = cam_->getview();
+    view = glm::rotate(cam_->getview(), glm::pi<float>() / 2, glm::vec3(-1.0, 0, 0));
     projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().w / (float)de2::get_instance().h, 0.1f, 2000.0f);
 
     for (auto pp : de2::get_instance().programs) {
