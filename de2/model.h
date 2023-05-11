@@ -23,7 +23,7 @@ protected:
 	std::string path_;
 public:
 	texture(const std::string& filename);
-	texture(unsigned char* data);
+	texture(const std::shared_ptr<std::vector<unsigned char>> data);
 	~texture();
 	//TODO operator overload
 	GLuint vbo_texture{ 0 };

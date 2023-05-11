@@ -46,8 +46,9 @@ texture::texture(const std::string& filename) {
 	path_ = filename;
 	load();
 }
-texture::texture(unsigned char* data) {
-	data_ = data;
+texture::texture(const std::shared_ptr<std::vector<unsigned char>> data) {
+	int w, h, c;
+	data_ = stbi_load_from_memory(data->data(), data->size(), &width_, &height_, &comp_, STBI_rgb_alpha);
 }
 texture::~texture() {
 	free();
