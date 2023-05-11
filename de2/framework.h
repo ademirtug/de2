@@ -30,5 +30,8 @@
 #include "glm/gtx/euler_angles.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 
+#pragma comment(lib,"ws2_32.lib")
+#pragma comment(lib,"winhttp.lib")
+#pragma comment(lib,"wininet.lib")
 
 

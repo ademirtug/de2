@@ -46,6 +46,9 @@ texture::texture(const std::string& filename) {
 	path_ = filename;
 	load();
 }
+texture::texture(unsigned char* data) {
+	data_ = data;
+}
 texture::~texture() {
 	free();
 	glDeleteBuffers(1, &vbo_texture);
@@ -65,8 +68,6 @@ void texture::upload() {
 	glGenTextures(1, &vbo_texture);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, vbo_texture);
-
-	std::cout << "texture::upload -> fn:" << path_ << std::endl;
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
@@ -273,9 +274,6 @@ bool texture_model::upload() {
 }
 void texture_model::draw() {
 	glm::mat4 model = glm::mat4(1.0f);
-	
-	//std::cout << "drawing entity -> " << path_ << std::endl;
-
 	prg->use();
 	prg->setuniform("model", model);
 	prg->setuniform("material.specular", m->specular);

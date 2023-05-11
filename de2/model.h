@@ -23,13 +23,14 @@ protected:
 	std::string path_;
 public:
 	texture(const std::string& filename);
+	texture(unsigned char* data);
 	~texture();
 	//TODO operator overload
 	GLuint vbo_texture{ 0 };
 
 	void free();
-	void upload();
 	void load();
+	void upload();
 	void activate();
 	void operator=(GLuint val);
 	operator GLuint();

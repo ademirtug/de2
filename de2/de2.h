@@ -62,7 +62,6 @@ public:
     
     template<typename T, typename ...Ts>
     [[nodiscard]] std::shared_ptr<model> load_model(const std::string& key, Ts... args) {
-        std::cout << "load_model -> key :" << key << " requested..." << std::endl;
         if (model_cache_.exists(key))
             return std::static_pointer_cast<T>(model_cache_.get(key));
 
