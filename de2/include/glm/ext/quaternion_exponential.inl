@@ -31,9 +31,9 @@ namespace glm
 		}
 		else
 		{
-			T t = atan(Vec3Len, T(q.w)) / Vec3Len;
+			T tex = atan(Vec3Len, T(q.w)) / Vec3Len;
 			T QuatLen2 = Vec3Len * Vec3Len + q.w * q.w;
-			return qua<T, Q>(static_cast<T>(0.5) * log(QuatLen2), t * q.x, t * q.y, t * q.z);
+			return qua<T, Q>(static_cast<T>(0.5) * log(QuatLen2), tex * q.x, tex * q.y, tex * q.z);
 		}
 	}
 
@@ -69,7 +69,7 @@ namespace glm
 		}
 		else
 		{
-			//Scalar component is small, shouldn't cause loss of precision
+			//Scalar component is small, shouldn'tex cause loss of precision
 			Angle = acos(x.w / magnitude);
 		}
 

@@ -18,11 +18,10 @@ struct vertex {
 
 class texture {
 protected:
-	int width{ 0 }, height{ 0 }, comp{ 0 };
-	unsigned char* data{ nullptr };
-
+	int width_{ 0 }, height_{ 0 }, comp_{ 0 };
+	unsigned char* data_{ nullptr };
+	std::string path_;
 public:
-	texture();
 	texture(const std::string& filename);
 	~texture();
 	//TODO operator overload
@@ -30,7 +29,8 @@ public:
 
 	void free();
 	void upload();
-	void load(const std::string& filename);
+	void load();
+	void activate();
 	void operator=(GLuint val);
 	operator GLuint();
 };
@@ -44,10 +44,10 @@ public:
 	virtual bool upload();
 	virtual bool load_mesh(std::string& mesh_path, bool is_left_handed);
 
-	std::vector<vertex> vx;
+	std::vector<vertex> vertices;
 	std::vector<int> indices;
 	std::string name;
-	size_t indices_size{ 0 };
+	size_t size_of_indices{ 0 };
 	GLuint vbo_vertices{ 0 }, ebo_indices{ 0 };
 	float shininess{ 16.0 };
 	glm::vec3 specular{ 0.5, 0.5, 0.5 };
@@ -77,7 +77,8 @@ public:
 
 class model {
 protected:
-	size_t _indices{ 0 };
+	
+	size_t size_of_indices{ 0 };
 public:
 	
 	virtual ~model();
@@ -85,7 +86,7 @@ public:
 	virtual bool upload();
 	virtual void attach_program(std::shared_ptr<program> p);
 
-	std::shared_ptr<program> prg_;
+	std::shared_ptr<program> prg;
 	std::shared_ptr<mesh> m;
 	GLuint vao{ 0 };
 };
@@ -93,12 +94,13 @@ public:
 
 class texture_model : public model {
 public:
+	texture_model();
 	texture_model(std::string mesh_path, std::string texture_path, bool is_left_handed = true);
 	~texture_model() override;
 
 	void draw() override;
 	bool upload() override;
-	//void attach_program(std::shared_ptr<program> p) override;
 
-	std::shared_ptr<texture> t;
+	std::string path_;
+	std::shared_ptr<texture> tex;
 };

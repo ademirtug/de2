@@ -119,7 +119,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
 
     glm::mat4 view = glm::mat4(1.0f);
     glm::mat4 projection = glm::mat4(1.0f);
-    view = glm::rotate(cam_->getview(), glm::pi<float>() / 2, glm::vec3(-1.0, 0, 0));
+    view = glm::rotate(cam_->getview(), glm::pi<float>() / 2, glm::vec3(1.0, 0, 0));
     projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().w / (float)de2::get_instance().h, 0.1f, 2000.0f);
 
     for (auto pp : de2::get_instance().programs) {

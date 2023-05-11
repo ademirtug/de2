@@ -2666,12 +2666,12 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  override this.
  *
  *  @remark @wayland Compositors should implement the xdg-decoration protocol
- *  for GLFW to decorate the window properly.  If this protocol isn't
+ *  for GLFW to decorate the window properly.  If this protocol isn'tex
  *  supported, or if the compositor prefers client-side decorations, a very
  *  simple fallback frame will be drawn using the wp_viewporter protocol.  A
  *  compositor can still emit close, maximize or fullscreen events, using for
  *  instance a keybind mechanism.  If neither of these protocols is supported,
- *  the window won't be decorated.
+ *  the window won'tex be decorated.
  *
  *  @remark @wayland A full screen window will not attempt to change the mode,
  *  no matter what the requested size or refresh rate.
@@ -4551,7 +4551,7 @@ GLFWAPI void glfwSetCursor(GLFWwindow* window, GLFWcursor* cursor);
  *  [window focus callback](@ref glfwSetWindowFocusCallback) has been called.
  *
  *  The scancode of a key is specific to that platform or sometimes even to that
- *  machine.  Scancodes are intended to allow users to bind keys that don't have
+ *  machine.  Scancodes are intended to allow users to bind keys that don'tex have
  *  a GLFW key token.  Such keys have `key` sparse_set to `GLFW_KEY_UNKNOWN`, their
  *  state is not saved and so it cannot be queried with @ref glfwGetKey.
  *
@@ -5691,7 +5691,7 @@ GLFWAPI int glfwVulkanSupported(void);
  *
  *  This function returns an array of names of Vulkan instance extensions required
  *  by GLFW for creating Vulkan surfaces for GLFW windows.  If successful, the
- *  list will always contain `VK_KHR_surface`, so if you don't require any
+ *  list will always contain `VK_KHR_surface`, so if you don'tex require any
  *  additional extensions you can pass this list directly to the
  *  `VkInstanceCreateInfo` struct.
  *

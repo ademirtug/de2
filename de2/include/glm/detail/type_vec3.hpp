@@ -69,7 +69,7 @@ namespace glm
 			};
 #		else
 			union { T x, r, s; };
-			union { T y, g, t; };
+			union { T y, g, tex; };
 			union { T z, b, p; };
 
 #			if GLM_CONFIG_SWIZZLE == GLM_SWIZZLE_FUNCTION

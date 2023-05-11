@@ -11,7 +11,7 @@ namespace detail
 		GLM_FUNC_QUALIFIER T& elem(size_t i){ return (reinterpret_cast<T*>(_buffer))[i]; }
 		GLM_FUNC_QUALIFIER T const& elem(size_t i) const{ return (reinterpret_cast<const T*>(_buffer))[i]; }
 
-		// Use an opaque buffer to *ensure* the compiler doesn't call a constructor.
+		// Use an opaque buffer to *ensure* the compiler doesn'tex call a constructor.
 		// The size 1 buffer is assumed to aligned to the actual members so that the
 		// elem()
 		char    _buffer[1];
@@ -56,34 +56,34 @@ namespace detail
 	{
 		struct op_equal
 		{
-			GLM_FUNC_QUALIFIER void operator() (T& e, T& t) const{ e = t; }
+			GLM_FUNC_QUALIFIER void operator() (T& e, T& tex) const{ e = tex; }
 		};
 
 		struct op_minus
 		{
-			GLM_FUNC_QUALIFIER void operator() (T& e, T& t) const{ e -= t; }
+			GLM_FUNC_QUALIFIER void operator() (T& e, T& tex) const{ e -= tex; }
 		};
 
 		struct op_plus
 		{
-			GLM_FUNC_QUALIFIER void operator() (T& e, T& t) const{ e += t; }
+			GLM_FUNC_QUALIFIER void operator() (T& e, T& tex) const{ e += tex; }
 		};
 
 		struct op_mul
 		{
-			GLM_FUNC_QUALIFIER void operator() (T& e, T& t) const{ e *= t; }
+			GLM_FUNC_QUALIFIER void operator() (T& e, T& tex) const{ e *= tex; }
 		};
 
 		struct op_div
 		{
-			GLM_FUNC_QUALIFIER void operator() (T& e, T& t) const{ e /= t; }
+			GLM_FUNC_QUALIFIER void operator() (T& e, T& tex) const{ e /= tex; }
 		};
 
 	public:
-		GLM_FUNC_QUALIFIER _swizzle_base2& operator= (const T& t)
+		GLM_FUNC_QUALIFIER _swizzle_base2& operator= (const T& tex)
 		{
 			for (int i = 0; i < N; ++i)
-				(*this)[i] = t;
+				(*this)[i] = tex;
 			return *this;
 		}
 
@@ -131,11 +131,11 @@ namespace detail
 			// Make a copy of the data in this == &that.
 			// The copier should optimize out the copy in cases where the function is
 			// properly inlined and the copy is not necessary.
-			T t[N];
+			T tex[N];
 			for (int i = 0; i < N; ++i)
-				t[i] = that[i];
+				tex[i] = that[i];
 			for (int i = 0; i < N; ++i)
-				op( (*this)[i], t[i] );
+				op( (*this)[i], tex[i] );
 		}
 	};
 

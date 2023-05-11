@@ -38,6 +38,59 @@ std::vector<int> split_i(const std::string& s, char delim) {
 	return r;
 }
 
+//TEXTURE
+//texture::texture() {
+//}
+
+texture::texture(const std::string& filename) {
+	path_ = filename;
+	load();
+}
+texture::~texture() {
+	free();
+	glDeleteBuffers(1, &vbo_texture);
+}
+void texture::free() {
+	if (data_ != nullptr)
+		stbi_image_free(data_);
+	data_ = nullptr;
+}
+void texture::load() {
+	data_ = stbi_load(path_.c_str(), &width_, &height_, &comp_, 0);
+	if (data_ == nullptr)
+		throw std::runtime_error("failed to load image file: " + path_);
+}
+
+void texture::upload() {
+	glGenTextures(1, &vbo_texture);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, vbo_texture);
+
+	std::cout << "texture::upload -> fn:" << path_ << std::endl;
+
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, comp_ == 3 ? GL_RGB : GL_RGBA, width_, height_, 0, comp_ == 3 ? GL_RGB : GL_RGBA, GL_UNSIGNED_BYTE, data_);
+	glGenerateMipmap(GL_TEXTURE_2D);
+
+	free();
+}
+void texture::activate() {
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, vbo_texture);
+}
+void texture::operator=(GLuint val)
+{
+	vbo_texture = val;
+}
+texture::operator GLuint() {
+	return vbo_texture;
+}
+
+
+
 //MESH
 mesh::mesh() {
 }
@@ -114,14 +167,14 @@ bool mesh::load_mesh(std::string& mesh_path, bool is_left_handed) {
 		}
 		f.close();
 		for (auto it : mvx) {
-			vx.push_back(it.second);
+			vertices.push_back(it.second);
 		}
-		vx.reserve(mvx.size());
+		vertices.reserve(mvx.size());
 		for (std::string combo : icombos) {
 			size_t idx = std::distance(mvx.begin(), mvx.find(combo));
 			indices.push_back(idx);
 		}
-		indices_size = indices.size();
+		size_of_indices = indices.size();
 	}
 	catch (...) {
 		f.close();
@@ -131,7 +184,7 @@ bool mesh::load_mesh(std::string& mesh_path, bool is_left_handed) {
 	return true;
 }
 void mesh::free() {
-	vx.clear();
+	vertices.clear();
 	indices.clear();
 }
 bool mesh::upload() {
@@ -140,7 +193,7 @@ bool mesh::upload() {
 		glGenBuffers(1, &ebo_indices);
 
  		glBindBuffer(GL_ARRAY_BUFFER, vbo_vertices);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertex) * vx.size(), vx.data(), GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertex) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo_indices);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * indices.size(), indices.data(), GL_STATIC_DRAW);
 
@@ -153,6 +206,8 @@ bool mesh::upload() {
 		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(vertex), (void*)offsetof(vertex, uv));
 		glEnableVertexAttribArray(2);
 
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+
 		free();
 	}
 	catch (...) {
@@ -161,6 +216,7 @@ bool mesh::upload() {
 
 	return true;
 }
+
 //POINT LIGHT
 bool point_light::upload() {
 	return true;
@@ -185,97 +241,50 @@ bool directional_light::load_mesh(const std::string& mesh_path, const std::strin
 
 //MODEL
 model::~model() {
-
-}
+} 
 bool model::upload() {
-	return false;
+	throw std::exception("model::upload not implemented");
 }
 void model::draw() {
-	
+	throw std::exception("model::upload not implemented");
 }
 void model::attach_program(std::shared_ptr<program> p) {
-	prg_ = p;
+	prg = p;
 }
+
 //TEXTURE MODEL
+texture_model::texture_model() {
+
+}
 texture_model::texture_model(std::string mesh_path, std::string texture_path, bool is_left_handed) {
 	m = make_shared<mesh>(mesh_path, is_left_handed);
-	t = std::make_shared<texture>(texture_path);
+	tex = std::make_shared<texture>(texture_path);
 }
 texture_model::~texture_model() {
 	//glDeleteVertexArrays(1, &vao);
 }
 bool texture_model::upload() {
-	try {
-		glGenVertexArrays(1, &vao);
-		glBindVertexArray(vao);
-		
-		m->upload();
-		t->upload();
-
-		glBindBuffer(GL_ARRAY_BUFFER, 0);
-		glBindVertexArray(0);
-	}
-	catch (...) {
-		return false;
-	}
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+	m->upload();
+	tex->upload();
+	glBindVertexArray(0);
 	return true;
 }
-
 void texture_model::draw() {
 	glm::mat4 model = glm::mat4(1.0f);
 	
-	prg_->use();
-	prg_->setuniform("model", model);
-	prg_->setuniform("material.specular", m->specular);
-	prg_->setuniform("material.shininess", m->shininess);
+	//std::cout << "drawing entity -> " << path_ << std::endl;
+
+	prg->use();
+	prg->setuniform("model", model);
+	prg->setuniform("material.specular", m->specular);
+	prg->setuniform("material.shininess", m->shininess);
 
 	glBindVertexArray(vao);
-	glDrawElements(GL_TRIANGLES, m->indices_size, GL_UNSIGNED_INT, 0);
+	tex->activate();
+	glDrawElements(GL_TRIANGLES, m->size_of_indices, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 }
 
 
-//TEXTURE
-texture::texture() {
-}
-
-texture::texture(const std::string& filename) : texture() {
-	load(filename);
-}
-texture::~texture() {
-	free();
-	glDeleteBuffers(1, &vbo_texture);
-}
-void texture::free() {
-	if (data != nullptr)
-		stbi_image_free(data);
-	data = nullptr;
-}
-void texture::load(const std::string& filename) {
-	free();
-
-	data = stbi_load(filename.c_str(), &width, &height, &comp, 0);
-	if (data == nullptr)
-		throw std::runtime_error("failed to load image file: " + filename);
-}
-
-void texture::upload() {
-	glGenTextures(1, &vbo_texture);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, vbo_texture);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-	glGenerateMipmap(GL_TEXTURE_2D);
-
-	free();
-}
-void texture::operator=(GLuint val)
-{
-	vbo_texture = val;
-}
-texture::operator GLuint() {
-	return vbo_texture;
-}

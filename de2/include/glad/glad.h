@@ -3011,73 +3011,73 @@ GLAPI PFNGLTEXCOORD1SPROC glad_glTexCoord1s;
 typedef void (APIENTRYP PFNGLTEXCOORD1SVPROC)(const GLshort *v);
 GLAPI PFNGLTEXCOORD1SVPROC glad_glTexCoord1sv;
 #define glTexCoord1sv glad_glTexCoord1sv
-typedef void (APIENTRYP PFNGLTEXCOORD2DPROC)(GLdouble s, GLdouble t);
+typedef void (APIENTRYP PFNGLTEXCOORD2DPROC)(GLdouble s, GLdouble tex);
 GLAPI PFNGLTEXCOORD2DPROC glad_glTexCoord2d;
 #define glTexCoord2d glad_glTexCoord2d
 typedef void (APIENTRYP PFNGLTEXCOORD2DVPROC)(const GLdouble *v);
 GLAPI PFNGLTEXCOORD2DVPROC glad_glTexCoord2dv;
 #define glTexCoord2dv glad_glTexCoord2dv
-typedef void (APIENTRYP PFNGLTEXCOORD2FPROC)(GLfloat s, GLfloat t);
+typedef void (APIENTRYP PFNGLTEXCOORD2FPROC)(GLfloat s, GLfloat tex);
 GLAPI PFNGLTEXCOORD2FPROC glad_glTexCoord2f;
 #define glTexCoord2f glad_glTexCoord2f
 typedef void (APIENTRYP PFNGLTEXCOORD2FVPROC)(const GLfloat *v);
 GLAPI PFNGLTEXCOORD2FVPROC glad_glTexCoord2fv;
 #define glTexCoord2fv glad_glTexCoord2fv
-typedef void (APIENTRYP PFNGLTEXCOORD2IPROC)(GLint s, GLint t);
+typedef void (APIENTRYP PFNGLTEXCOORD2IPROC)(GLint s, GLint tex);
 GLAPI PFNGLTEXCOORD2IPROC glad_glTexCoord2i;
 #define glTexCoord2i glad_glTexCoord2i
 typedef void (APIENTRYP PFNGLTEXCOORD2IVPROC)(const GLint *v);
 GLAPI PFNGLTEXCOORD2IVPROC glad_glTexCoord2iv;
 #define glTexCoord2iv glad_glTexCoord2iv
-typedef void (APIENTRYP PFNGLTEXCOORD2SPROC)(GLshort s, GLshort t);
+typedef void (APIENTRYP PFNGLTEXCOORD2SPROC)(GLshort s, GLshort tex);
 GLAPI PFNGLTEXCOORD2SPROC glad_glTexCoord2s;
 #define glTexCoord2s glad_glTexCoord2s
 typedef void (APIENTRYP PFNGLTEXCOORD2SVPROC)(const GLshort *v);
 GLAPI PFNGLTEXCOORD2SVPROC glad_glTexCoord2sv;
 #define glTexCoord2sv glad_glTexCoord2sv
-typedef void (APIENTRYP PFNGLTEXCOORD3DPROC)(GLdouble s, GLdouble t, GLdouble r);
+typedef void (APIENTRYP PFNGLTEXCOORD3DPROC)(GLdouble s, GLdouble tex, GLdouble r);
 GLAPI PFNGLTEXCOORD3DPROC glad_glTexCoord3d;
 #define glTexCoord3d glad_glTexCoord3d
 typedef void (APIENTRYP PFNGLTEXCOORD3DVPROC)(const GLdouble *v);
 GLAPI PFNGLTEXCOORD3DVPROC glad_glTexCoord3dv;
 #define glTexCoord3dv glad_glTexCoord3dv
-typedef void (APIENTRYP PFNGLTEXCOORD3FPROC)(GLfloat s, GLfloat t, GLfloat r);
+typedef void (APIENTRYP PFNGLTEXCOORD3FPROC)(GLfloat s, GLfloat tex, GLfloat r);
 GLAPI PFNGLTEXCOORD3FPROC glad_glTexCoord3f;
 #define glTexCoord3f glad_glTexCoord3f
 typedef void (APIENTRYP PFNGLTEXCOORD3FVPROC)(const GLfloat *v);
 GLAPI PFNGLTEXCOORD3FVPROC glad_glTexCoord3fv;
 #define glTexCoord3fv glad_glTexCoord3fv
-typedef void (APIENTRYP PFNGLTEXCOORD3IPROC)(GLint s, GLint t, GLint r);
+typedef void (APIENTRYP PFNGLTEXCOORD3IPROC)(GLint s, GLint tex, GLint r);
 GLAPI PFNGLTEXCOORD3IPROC glad_glTexCoord3i;
 #define glTexCoord3i glad_glTexCoord3i
 typedef void (APIENTRYP PFNGLTEXCOORD3IVPROC)(const GLint *v);
 GLAPI PFNGLTEXCOORD3IVPROC glad_glTexCoord3iv;
 #define glTexCoord3iv glad_glTexCoord3iv
-typedef void (APIENTRYP PFNGLTEXCOORD3SPROC)(GLshort s, GLshort t, GLshort r);
+typedef void (APIENTRYP PFNGLTEXCOORD3SPROC)(GLshort s, GLshort tex, GLshort r);
 GLAPI PFNGLTEXCOORD3SPROC glad_glTexCoord3s;
 #define glTexCoord3s glad_glTexCoord3s
 typedef void (APIENTRYP PFNGLTEXCOORD3SVPROC)(const GLshort *v);
 GLAPI PFNGLTEXCOORD3SVPROC glad_glTexCoord3sv;
 #define glTexCoord3sv glad_glTexCoord3sv
-typedef void (APIENTRYP PFNGLTEXCOORD4DPROC)(GLdouble s, GLdouble t, GLdouble r, GLdouble q);
+typedef void (APIENTRYP PFNGLTEXCOORD4DPROC)(GLdouble s, GLdouble tex, GLdouble r, GLdouble q);
 GLAPI PFNGLTEXCOORD4DPROC glad_glTexCoord4d;
 #define glTexCoord4d glad_glTexCoord4d
 typedef void (APIENTRYP PFNGLTEXCOORD4DVPROC)(const GLdouble *v);
 GLAPI PFNGLTEXCOORD4DVPROC glad_glTexCoord4dv;
 #define glTexCoord4dv glad_glTexCoord4dv
-typedef void (APIENTRYP PFNGLTEXCOORD4FPROC)(GLfloat s, GLfloat t, GLfloat r, GLfloat q);
+typedef void (APIENTRYP PFNGLTEXCOORD4FPROC)(GLfloat s, GLfloat tex, GLfloat r, GLfloat q);
 GLAPI PFNGLTEXCOORD4FPROC glad_glTexCoord4f;
 #define glTexCoord4f glad_glTexCoord4f
 typedef void (APIENTRYP PFNGLTEXCOORD4FVPROC)(const GLfloat *v);
 GLAPI PFNGLTEXCOORD4FVPROC glad_glTexCoord4fv;
 #define glTexCoord4fv glad_glTexCoord4fv
-typedef void (APIENTRYP PFNGLTEXCOORD4IPROC)(GLint s, GLint t, GLint r, GLint q);
+typedef void (APIENTRYP PFNGLTEXCOORD4IPROC)(GLint s, GLint tex, GLint r, GLint q);
 GLAPI PFNGLTEXCOORD4IPROC glad_glTexCoord4i;
 #define glTexCoord4i glad_glTexCoord4i
 typedef void (APIENTRYP PFNGLTEXCOORD4IVPROC)(const GLint *v);
 GLAPI PFNGLTEXCOORD4IVPROC glad_glTexCoord4iv;
 #define glTexCoord4iv glad_glTexCoord4iv
-typedef void (APIENTRYP PFNGLTEXCOORD4SPROC)(GLshort s, GLshort t, GLshort r, GLshort q);
+typedef void (APIENTRYP PFNGLTEXCOORD4SPROC)(GLshort s, GLshort tex, GLshort r, GLshort q);
 GLAPI PFNGLTEXCOORD4SPROC glad_glTexCoord4s;
 #define glTexCoord4s glad_glTexCoord4s
 typedef void (APIENTRYP PFNGLTEXCOORD4SVPROC)(const GLshort *v);
@@ -3647,73 +3647,73 @@ GLAPI PFNGLMULTITEXCOORD1SPROC glad_glMultiTexCoord1s;
 typedef void (APIENTRYP PFNGLMULTITEXCOORD1SVPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD1SVPROC glad_glMultiTexCoord1sv;
 #define glMultiTexCoord1sv glad_glMultiTexCoord1sv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2DPROC)(GLenum target, GLdouble s, GLdouble t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2DPROC)(GLenum target, GLdouble s, GLdouble tex);
 GLAPI PFNGLMULTITEXCOORD2DPROC glad_glMultiTexCoord2d;
 #define glMultiTexCoord2d glad_glMultiTexCoord2d
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2DVPROC)(GLenum target, const GLdouble *v);
 GLAPI PFNGLMULTITEXCOORD2DVPROC glad_glMultiTexCoord2dv;
 #define glMultiTexCoord2dv glad_glMultiTexCoord2dv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2FPROC)(GLenum target, GLfloat s, GLfloat t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2FPROC)(GLenum target, GLfloat s, GLfloat tex);
 GLAPI PFNGLMULTITEXCOORD2FPROC glad_glMultiTexCoord2f;
 #define glMultiTexCoord2f glad_glMultiTexCoord2f
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2FVPROC)(GLenum target, const GLfloat *v);
 GLAPI PFNGLMULTITEXCOORD2FVPROC glad_glMultiTexCoord2fv;
 #define glMultiTexCoord2fv glad_glMultiTexCoord2fv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2IPROC)(GLenum target, GLint s, GLint t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2IPROC)(GLenum target, GLint s, GLint tex);
 GLAPI PFNGLMULTITEXCOORD2IPROC glad_glMultiTexCoord2i;
 #define glMultiTexCoord2i glad_glMultiTexCoord2i
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2IVPROC)(GLenum target, const GLint *v);
 GLAPI PFNGLMULTITEXCOORD2IVPROC glad_glMultiTexCoord2iv;
 #define glMultiTexCoord2iv glad_glMultiTexCoord2iv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2SPROC)(GLenum target, GLshort s, GLshort t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2SPROC)(GLenum target, GLshort s, GLshort tex);
 GLAPI PFNGLMULTITEXCOORD2SPROC glad_glMultiTexCoord2s;
 #define glMultiTexCoord2s glad_glMultiTexCoord2s
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2SVPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD2SVPROC glad_glMultiTexCoord2sv;
 #define glMultiTexCoord2sv glad_glMultiTexCoord2sv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3DPROC)(GLenum target, GLdouble s, GLdouble t, GLdouble r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3DPROC)(GLenum target, GLdouble s, GLdouble tex, GLdouble r);
 GLAPI PFNGLMULTITEXCOORD3DPROC glad_glMultiTexCoord3d;
 #define glMultiTexCoord3d glad_glMultiTexCoord3d
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3DVPROC)(GLenum target, const GLdouble *v);
 GLAPI PFNGLMULTITEXCOORD3DVPROC glad_glMultiTexCoord3dv;
 #define glMultiTexCoord3dv glad_glMultiTexCoord3dv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3FPROC)(GLenum target, GLfloat s, GLfloat t, GLfloat r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3FPROC)(GLenum target, GLfloat s, GLfloat tex, GLfloat r);
 GLAPI PFNGLMULTITEXCOORD3FPROC glad_glMultiTexCoord3f;
 #define glMultiTexCoord3f glad_glMultiTexCoord3f
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3FVPROC)(GLenum target, const GLfloat *v);
 GLAPI PFNGLMULTITEXCOORD3FVPROC glad_glMultiTexCoord3fv;
 #define glMultiTexCoord3fv glad_glMultiTexCoord3fv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3IPROC)(GLenum target, GLint s, GLint t, GLint r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3IPROC)(GLenum target, GLint s, GLint tex, GLint r);
 GLAPI PFNGLMULTITEXCOORD3IPROC glad_glMultiTexCoord3i;
 #define glMultiTexCoord3i glad_glMultiTexCoord3i
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3IVPROC)(GLenum target, const GLint *v);
 GLAPI PFNGLMULTITEXCOORD3IVPROC glad_glMultiTexCoord3iv;
 #define glMultiTexCoord3iv glad_glMultiTexCoord3iv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3SPROC)(GLenum target, GLshort s, GLshort t, GLshort r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3SPROC)(GLenum target, GLshort s, GLshort tex, GLshort r);
 GLAPI PFNGLMULTITEXCOORD3SPROC glad_glMultiTexCoord3s;
 #define glMultiTexCoord3s glad_glMultiTexCoord3s
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3SVPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD3SVPROC glad_glMultiTexCoord3sv;
 #define glMultiTexCoord3sv glad_glMultiTexCoord3sv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4DPROC)(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4DPROC)(GLenum target, GLdouble s, GLdouble tex, GLdouble r, GLdouble q);
 GLAPI PFNGLMULTITEXCOORD4DPROC glad_glMultiTexCoord4d;
 #define glMultiTexCoord4d glad_glMultiTexCoord4d
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4DVPROC)(GLenum target, const GLdouble *v);
 GLAPI PFNGLMULTITEXCOORD4DVPROC glad_glMultiTexCoord4dv;
 #define glMultiTexCoord4dv glad_glMultiTexCoord4dv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4FPROC)(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4FPROC)(GLenum target, GLfloat s, GLfloat tex, GLfloat r, GLfloat q);
 GLAPI PFNGLMULTITEXCOORD4FPROC glad_glMultiTexCoord4f;
 #define glMultiTexCoord4f glad_glMultiTexCoord4f
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4FVPROC)(GLenum target, const GLfloat *v);
 GLAPI PFNGLMULTITEXCOORD4FVPROC glad_glMultiTexCoord4fv;
 #define glMultiTexCoord4fv glad_glMultiTexCoord4fv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4IPROC)(GLenum target, GLint s, GLint t, GLint r, GLint q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4IPROC)(GLenum target, GLint s, GLint tex, GLint r, GLint q);
 GLAPI PFNGLMULTITEXCOORD4IPROC glad_glMultiTexCoord4i;
 #define glMultiTexCoord4i glad_glMultiTexCoord4i
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4IVPROC)(GLenum target, const GLint *v);
 GLAPI PFNGLMULTITEXCOORD4IVPROC glad_glMultiTexCoord4iv;
 #define glMultiTexCoord4iv glad_glMultiTexCoord4iv
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4SPROC)(GLenum target, GLshort s, GLshort t, GLshort r, GLshort q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4SPROC)(GLenum target, GLshort s, GLshort tex, GLshort r, GLshort q);
 GLAPI PFNGLMULTITEXCOORD4SPROC glad_glMultiTexCoord4s;
 #define glMultiTexCoord4s glad_glMultiTexCoord4s
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4SVPROC)(GLenum target, const GLshort *v);
@@ -10261,73 +10261,73 @@ GLAPI PFNGLMULTITEXCOORD1SARBPROC glad_glMultiTexCoord1sARB;
 typedef void (APIENTRYP PFNGLMULTITEXCOORD1SVARBPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD1SVARBPROC glad_glMultiTexCoord1svARB;
 #define glMultiTexCoord1svARB glad_glMultiTexCoord1svARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2DARBPROC)(GLenum target, GLdouble s, GLdouble t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2DARBPROC)(GLenum target, GLdouble s, GLdouble tex);
 GLAPI PFNGLMULTITEXCOORD2DARBPROC glad_glMultiTexCoord2dARB;
 #define glMultiTexCoord2dARB glad_glMultiTexCoord2dARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2DVARBPROC)(GLenum target, const GLdouble *v);
 GLAPI PFNGLMULTITEXCOORD2DVARBPROC glad_glMultiTexCoord2dvARB;
 #define glMultiTexCoord2dvARB glad_glMultiTexCoord2dvARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2FARBPROC)(GLenum target, GLfloat s, GLfloat t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2FARBPROC)(GLenum target, GLfloat s, GLfloat tex);
 GLAPI PFNGLMULTITEXCOORD2FARBPROC glad_glMultiTexCoord2fARB;
 #define glMultiTexCoord2fARB glad_glMultiTexCoord2fARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2FVARBPROC)(GLenum target, const GLfloat *v);
 GLAPI PFNGLMULTITEXCOORD2FVARBPROC glad_glMultiTexCoord2fvARB;
 #define glMultiTexCoord2fvARB glad_glMultiTexCoord2fvARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2IARBPROC)(GLenum target, GLint s, GLint t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2IARBPROC)(GLenum target, GLint s, GLint tex);
 GLAPI PFNGLMULTITEXCOORD2IARBPROC glad_glMultiTexCoord2iARB;
 #define glMultiTexCoord2iARB glad_glMultiTexCoord2iARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2IVARBPROC)(GLenum target, const GLint *v);
 GLAPI PFNGLMULTITEXCOORD2IVARBPROC glad_glMultiTexCoord2ivARB;
 #define glMultiTexCoord2ivARB glad_glMultiTexCoord2ivARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2SARBPROC)(GLenum target, GLshort s, GLshort t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2SARBPROC)(GLenum target, GLshort s, GLshort tex);
 GLAPI PFNGLMULTITEXCOORD2SARBPROC glad_glMultiTexCoord2sARB;
 #define glMultiTexCoord2sARB glad_glMultiTexCoord2sARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2SVARBPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD2SVARBPROC glad_glMultiTexCoord2svARB;
 #define glMultiTexCoord2svARB glad_glMultiTexCoord2svARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3DARBPROC)(GLenum target, GLdouble s, GLdouble t, GLdouble r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3DARBPROC)(GLenum target, GLdouble s, GLdouble tex, GLdouble r);
 GLAPI PFNGLMULTITEXCOORD3DARBPROC glad_glMultiTexCoord3dARB;
 #define glMultiTexCoord3dARB glad_glMultiTexCoord3dARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3DVARBPROC)(GLenum target, const GLdouble *v);
 GLAPI PFNGLMULTITEXCOORD3DVARBPROC glad_glMultiTexCoord3dvARB;
 #define glMultiTexCoord3dvARB glad_glMultiTexCoord3dvARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3FARBPROC)(GLenum target, GLfloat s, GLfloat t, GLfloat r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3FARBPROC)(GLenum target, GLfloat s, GLfloat tex, GLfloat r);
 GLAPI PFNGLMULTITEXCOORD3FARBPROC glad_glMultiTexCoord3fARB;
 #define glMultiTexCoord3fARB glad_glMultiTexCoord3fARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3FVARBPROC)(GLenum target, const GLfloat *v);
 GLAPI PFNGLMULTITEXCOORD3FVARBPROC glad_glMultiTexCoord3fvARB;
 #define glMultiTexCoord3fvARB glad_glMultiTexCoord3fvARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3IARBPROC)(GLenum target, GLint s, GLint t, GLint r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3IARBPROC)(GLenum target, GLint s, GLint tex, GLint r);
 GLAPI PFNGLMULTITEXCOORD3IARBPROC glad_glMultiTexCoord3iARB;
 #define glMultiTexCoord3iARB glad_glMultiTexCoord3iARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3IVARBPROC)(GLenum target, const GLint *v);
 GLAPI PFNGLMULTITEXCOORD3IVARBPROC glad_glMultiTexCoord3ivARB;
 #define glMultiTexCoord3ivARB glad_glMultiTexCoord3ivARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3SARBPROC)(GLenum target, GLshort s, GLshort t, GLshort r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3SARBPROC)(GLenum target, GLshort s, GLshort tex, GLshort r);
 GLAPI PFNGLMULTITEXCOORD3SARBPROC glad_glMultiTexCoord3sARB;
 #define glMultiTexCoord3sARB glad_glMultiTexCoord3sARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3SVARBPROC)(GLenum target, const GLshort *v);
 GLAPI PFNGLMULTITEXCOORD3SVARBPROC glad_glMultiTexCoord3svARB;
 #define glMultiTexCoord3svARB glad_glMultiTexCoord3svARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4DARBPROC)(GLenum target, GLdouble s, GLdouble t, GLdouble r, GLdouble q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4DARBPROC)(GLenum target, GLdouble s, GLdouble tex, GLdouble r, GLdouble q);
 GLAPI PFNGLMULTITEXCOORD4DARBPROC glad_glMultiTexCoord4dARB;
 #define glMultiTexCoord4dARB glad_glMultiTexCoord4dARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4DVARBPROC)(GLenum target, const GLdouble *v);
 GLAPI PFNGLMULTITEXCOORD4DVARBPROC glad_glMultiTexCoord4dvARB;
 #define glMultiTexCoord4dvARB glad_glMultiTexCoord4dvARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4FARBPROC)(GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4FARBPROC)(GLenum target, GLfloat s, GLfloat tex, GLfloat r, GLfloat q);
 GLAPI PFNGLMULTITEXCOORD4FARBPROC glad_glMultiTexCoord4fARB;
 #define glMultiTexCoord4fARB glad_glMultiTexCoord4fARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4FVARBPROC)(GLenum target, const GLfloat *v);
 GLAPI PFNGLMULTITEXCOORD4FVARBPROC glad_glMultiTexCoord4fvARB;
 #define glMultiTexCoord4fvARB glad_glMultiTexCoord4fvARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4IARBPROC)(GLenum target, GLint s, GLint t, GLint r, GLint q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4IARBPROC)(GLenum target, GLint s, GLint tex, GLint r, GLint q);
 GLAPI PFNGLMULTITEXCOORD4IARBPROC glad_glMultiTexCoord4iARB;
 #define glMultiTexCoord4iARB glad_glMultiTexCoord4iARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4IVARBPROC)(GLenum target, const GLint *v);
 GLAPI PFNGLMULTITEXCOORD4IVARBPROC glad_glMultiTexCoord4ivARB;
 #define glMultiTexCoord4ivARB glad_glMultiTexCoord4ivARB
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4SARBPROC)(GLenum target, GLshort s, GLshort t, GLshort r, GLshort q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4SARBPROC)(GLenum target, GLshort s, GLshort tex, GLshort r, GLshort q);
 GLAPI PFNGLMULTITEXCOORD4SARBPROC glad_glMultiTexCoord4sARB;
 #define glMultiTexCoord4sARB glad_glMultiTexCoord4sARB
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4SVARBPROC)(GLenum target, const GLshort *v);
@@ -14950,19 +14950,19 @@ GLAPI PFNGLTEXCOORD1HNVPROC glad_glTexCoord1hNV;
 typedef void (APIENTRYP PFNGLTEXCOORD1HVNVPROC)(const GLhalfNV *v);
 GLAPI PFNGLTEXCOORD1HVNVPROC glad_glTexCoord1hvNV;
 #define glTexCoord1hvNV glad_glTexCoord1hvNV
-typedef void (APIENTRYP PFNGLTEXCOORD2HNVPROC)(GLhalfNV s, GLhalfNV t);
+typedef void (APIENTRYP PFNGLTEXCOORD2HNVPROC)(GLhalfNV s, GLhalfNV tex);
 GLAPI PFNGLTEXCOORD2HNVPROC glad_glTexCoord2hNV;
 #define glTexCoord2hNV glad_glTexCoord2hNV
 typedef void (APIENTRYP PFNGLTEXCOORD2HVNVPROC)(const GLhalfNV *v);
 GLAPI PFNGLTEXCOORD2HVNVPROC glad_glTexCoord2hvNV;
 #define glTexCoord2hvNV glad_glTexCoord2hvNV
-typedef void (APIENTRYP PFNGLTEXCOORD3HNVPROC)(GLhalfNV s, GLhalfNV t, GLhalfNV r);
+typedef void (APIENTRYP PFNGLTEXCOORD3HNVPROC)(GLhalfNV s, GLhalfNV tex, GLhalfNV r);
 GLAPI PFNGLTEXCOORD3HNVPROC glad_glTexCoord3hNV;
 #define glTexCoord3hNV glad_glTexCoord3hNV
 typedef void (APIENTRYP PFNGLTEXCOORD3HVNVPROC)(const GLhalfNV *v);
 GLAPI PFNGLTEXCOORD3HVNVPROC glad_glTexCoord3hvNV;
 #define glTexCoord3hvNV glad_glTexCoord3hvNV
-typedef void (APIENTRYP PFNGLTEXCOORD4HNVPROC)(GLhalfNV s, GLhalfNV t, GLhalfNV r, GLhalfNV q);
+typedef void (APIENTRYP PFNGLTEXCOORD4HNVPROC)(GLhalfNV s, GLhalfNV tex, GLhalfNV r, GLhalfNV q);
 GLAPI PFNGLTEXCOORD4HNVPROC glad_glTexCoord4hNV;
 #define glTexCoord4hNV glad_glTexCoord4hNV
 typedef void (APIENTRYP PFNGLTEXCOORD4HVNVPROC)(const GLhalfNV *v);
@@ -14974,19 +14974,19 @@ GLAPI PFNGLMULTITEXCOORD1HNVPROC glad_glMultiTexCoord1hNV;
 typedef void (APIENTRYP PFNGLMULTITEXCOORD1HVNVPROC)(GLenum target, const GLhalfNV *v);
 GLAPI PFNGLMULTITEXCOORD1HVNVPROC glad_glMultiTexCoord1hvNV;
 #define glMultiTexCoord1hvNV glad_glMultiTexCoord1hvNV
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2HNVPROC)(GLenum target, GLhalfNV s, GLhalfNV t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2HNVPROC)(GLenum target, GLhalfNV s, GLhalfNV tex);
 GLAPI PFNGLMULTITEXCOORD2HNVPROC glad_glMultiTexCoord2hNV;
 #define glMultiTexCoord2hNV glad_glMultiTexCoord2hNV
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2HVNVPROC)(GLenum target, const GLhalfNV *v);
 GLAPI PFNGLMULTITEXCOORD2HVNVPROC glad_glMultiTexCoord2hvNV;
 #define glMultiTexCoord2hvNV glad_glMultiTexCoord2hvNV
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3HNVPROC)(GLenum target, GLhalfNV s, GLhalfNV t, GLhalfNV r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3HNVPROC)(GLenum target, GLhalfNV s, GLhalfNV tex, GLhalfNV r);
 GLAPI PFNGLMULTITEXCOORD3HNVPROC glad_glMultiTexCoord3hNV;
 #define glMultiTexCoord3hNV glad_glMultiTexCoord3hNV
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3HVNVPROC)(GLenum target, const GLhalfNV *v);
 GLAPI PFNGLMULTITEXCOORD3HVNVPROC glad_glMultiTexCoord3hvNV;
 #define glMultiTexCoord3hvNV glad_glMultiTexCoord3hvNV
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4HNVPROC)(GLenum target, GLhalfNV s, GLhalfNV t, GLhalfNV r, GLhalfNV q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4HNVPROC)(GLenum target, GLhalfNV s, GLhalfNV tex, GLhalfNV r, GLhalfNV q);
 GLAPI PFNGLMULTITEXCOORD4HNVPROC glad_glMultiTexCoord4hNV;
 #define glMultiTexCoord4hNV glad_glMultiTexCoord4hNV
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4HVNVPROC)(GLenum target, const GLhalfNV *v);
@@ -16233,19 +16233,19 @@ GLAPI PFNGLMULTITEXCOORD1BOESPROC glad_glMultiTexCoord1bOES;
 typedef void (APIENTRYP PFNGLMULTITEXCOORD1BVOESPROC)(GLenum texture, const GLbyte *coords);
 GLAPI PFNGLMULTITEXCOORD1BVOESPROC glad_glMultiTexCoord1bvOES;
 #define glMultiTexCoord1bvOES glad_glMultiTexCoord1bvOES
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2BOESPROC)(GLenum texture, GLbyte s, GLbyte t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2BOESPROC)(GLenum texture, GLbyte s, GLbyte tex);
 GLAPI PFNGLMULTITEXCOORD2BOESPROC glad_glMultiTexCoord2bOES;
 #define glMultiTexCoord2bOES glad_glMultiTexCoord2bOES
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2BVOESPROC)(GLenum texture, const GLbyte *coords);
 GLAPI PFNGLMULTITEXCOORD2BVOESPROC glad_glMultiTexCoord2bvOES;
 #define glMultiTexCoord2bvOES glad_glMultiTexCoord2bvOES
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3BOESPROC)(GLenum texture, GLbyte s, GLbyte t, GLbyte r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3BOESPROC)(GLenum texture, GLbyte s, GLbyte tex, GLbyte r);
 GLAPI PFNGLMULTITEXCOORD3BOESPROC glad_glMultiTexCoord3bOES;
 #define glMultiTexCoord3bOES glad_glMultiTexCoord3bOES
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3BVOESPROC)(GLenum texture, const GLbyte *coords);
 GLAPI PFNGLMULTITEXCOORD3BVOESPROC glad_glMultiTexCoord3bvOES;
 #define glMultiTexCoord3bvOES glad_glMultiTexCoord3bvOES
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4BOESPROC)(GLenum texture, GLbyte s, GLbyte t, GLbyte r, GLbyte q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4BOESPROC)(GLenum texture, GLbyte s, GLbyte tex, GLbyte r, GLbyte q);
 GLAPI PFNGLMULTITEXCOORD4BOESPROC glad_glMultiTexCoord4bOES;
 #define glMultiTexCoord4bOES glad_glMultiTexCoord4bOES
 typedef void (APIENTRYP PFNGLMULTITEXCOORD4BVOESPROC)(GLenum texture, const GLbyte *coords);
@@ -16257,19 +16257,19 @@ GLAPI PFNGLTEXCOORD1BOESPROC glad_glTexCoord1bOES;
 typedef void (APIENTRYP PFNGLTEXCOORD1BVOESPROC)(const GLbyte *coords);
 GLAPI PFNGLTEXCOORD1BVOESPROC glad_glTexCoord1bvOES;
 #define glTexCoord1bvOES glad_glTexCoord1bvOES
-typedef void (APIENTRYP PFNGLTEXCOORD2BOESPROC)(GLbyte s, GLbyte t);
+typedef void (APIENTRYP PFNGLTEXCOORD2BOESPROC)(GLbyte s, GLbyte tex);
 GLAPI PFNGLTEXCOORD2BOESPROC glad_glTexCoord2bOES;
 #define glTexCoord2bOES glad_glTexCoord2bOES
 typedef void (APIENTRYP PFNGLTEXCOORD2BVOESPROC)(const GLbyte *coords);
 GLAPI PFNGLTEXCOORD2BVOESPROC glad_glTexCoord2bvOES;
 #define glTexCoord2bvOES glad_glTexCoord2bvOES
-typedef void (APIENTRYP PFNGLTEXCOORD3BOESPROC)(GLbyte s, GLbyte t, GLbyte r);
+typedef void (APIENTRYP PFNGLTEXCOORD3BOESPROC)(GLbyte s, GLbyte tex, GLbyte r);
 GLAPI PFNGLTEXCOORD3BOESPROC glad_glTexCoord3bOES;
 #define glTexCoord3bOES glad_glTexCoord3bOES
 typedef void (APIENTRYP PFNGLTEXCOORD3BVOESPROC)(const GLbyte *coords);
 GLAPI PFNGLTEXCOORD3BVOESPROC glad_glTexCoord3bvOES;
 #define glTexCoord3bvOES glad_glTexCoord3bvOES
-typedef void (APIENTRYP PFNGLTEXCOORD4BOESPROC)(GLbyte s, GLbyte t, GLbyte r, GLbyte q);
+typedef void (APIENTRYP PFNGLTEXCOORD4BOESPROC)(GLbyte s, GLbyte tex, GLbyte r, GLbyte q);
 GLAPI PFNGLTEXCOORD4BOESPROC glad_glTexCoord4bOES;
 #define glTexCoord4bOES glad_glTexCoord4bOES
 typedef void (APIENTRYP PFNGLTEXCOORD4BVOESPROC)(const GLbyte *coords);
@@ -16325,7 +16325,7 @@ GLAPI PFNGLFOGXOESPROC glad_glFogxOES;
 typedef void (APIENTRYP PFNGLFOGXVOESPROC)(GLenum pname, const GLfixed *param);
 GLAPI PFNGLFOGXVOESPROC glad_glFogxvOES;
 #define glFogxvOES glad_glFogxvOES
-typedef void (APIENTRYP PFNGLFRUSTUMXOESPROC)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
+typedef void (APIENTRYP PFNGLFRUSTUMXOESPROC)(GLfixed l, GLfixed r, GLfixed b, GLfixed tex, GLfixed n, GLfixed f);
 GLAPI PFNGLFRUSTUMXOESPROC glad_glFrustumxOES;
 #define glFrustumxOES glad_glFrustumxOES
 typedef void (APIENTRYP PFNGLGETCLIPPLANEXOESPROC)(GLenum plane, GLfixed *equation);
@@ -16367,13 +16367,13 @@ GLAPI PFNGLMATERIALXVOESPROC glad_glMaterialxvOES;
 typedef void (APIENTRYP PFNGLMULTMATRIXXOESPROC)(const GLfixed *m);
 GLAPI PFNGLMULTMATRIXXOESPROC glad_glMultMatrixxOES;
 #define glMultMatrixxOES glad_glMultMatrixxOES
-typedef void (APIENTRYP PFNGLMULTITEXCOORD4XOESPROC)(GLenum texture, GLfixed s, GLfixed t, GLfixed r, GLfixed q);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD4XOESPROC)(GLenum texture, GLfixed s, GLfixed tex, GLfixed r, GLfixed q);
 GLAPI PFNGLMULTITEXCOORD4XOESPROC glad_glMultiTexCoord4xOES;
 #define glMultiTexCoord4xOES glad_glMultiTexCoord4xOES
 typedef void (APIENTRYP PFNGLNORMAL3XOESPROC)(GLfixed nx, GLfixed ny, GLfixed nz);
 GLAPI PFNGLNORMAL3XOESPROC glad_glNormal3xOES;
 #define glNormal3xOES glad_glNormal3xOES
-typedef void (APIENTRYP PFNGLORTHOXOESPROC)(GLfixed l, GLfixed r, GLfixed b, GLfixed t, GLfixed n, GLfixed f);
+typedef void (APIENTRYP PFNGLORTHOXOESPROC)(GLfixed l, GLfixed r, GLfixed b, GLfixed tex, GLfixed n, GLfixed f);
 GLAPI PFNGLORTHOXOESPROC glad_glOrthoxOES;
 #define glOrthoxOES glad_glOrthoxOES
 typedef void (APIENTRYP PFNGLPOINTPARAMETERXVOESPROC)(GLenum pname, const GLfixed *params);
@@ -16514,13 +16514,13 @@ GLAPI PFNGLMULTITEXCOORD1XOESPROC glad_glMultiTexCoord1xOES;
 typedef void (APIENTRYP PFNGLMULTITEXCOORD1XVOESPROC)(GLenum texture, const GLfixed *coords);
 GLAPI PFNGLMULTITEXCOORD1XVOESPROC glad_glMultiTexCoord1xvOES;
 #define glMultiTexCoord1xvOES glad_glMultiTexCoord1xvOES
-typedef void (APIENTRYP PFNGLMULTITEXCOORD2XOESPROC)(GLenum texture, GLfixed s, GLfixed t);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD2XOESPROC)(GLenum texture, GLfixed s, GLfixed tex);
 GLAPI PFNGLMULTITEXCOORD2XOESPROC glad_glMultiTexCoord2xOES;
 #define glMultiTexCoord2xOES glad_glMultiTexCoord2xOES
 typedef void (APIENTRYP PFNGLMULTITEXCOORD2XVOESPROC)(GLenum texture, const GLfixed *coords);
 GLAPI PFNGLMULTITEXCOORD2XVOESPROC glad_glMultiTexCoord2xvOES;
 #define glMultiTexCoord2xvOES glad_glMultiTexCoord2xvOES
-typedef void (APIENTRYP PFNGLMULTITEXCOORD3XOESPROC)(GLenum texture, GLfixed s, GLfixed t, GLfixed r);
+typedef void (APIENTRYP PFNGLMULTITEXCOORD3XOESPROC)(GLenum texture, GLfixed s, GLfixed tex, GLfixed r);
 GLAPI PFNGLMULTITEXCOORD3XOESPROC glad_glMultiTexCoord3xOES;
 #define glMultiTexCoord3xOES glad_glMultiTexCoord3xOES
 typedef void (APIENTRYP PFNGLMULTITEXCOORD3XVOESPROC)(GLenum texture, const GLfixed *coords);
@@ -16580,19 +16580,19 @@ GLAPI PFNGLTEXCOORD1XOESPROC glad_glTexCoord1xOES;
 typedef void (APIENTRYP PFNGLTEXCOORD1XVOESPROC)(const GLfixed *coords);
 GLAPI PFNGLTEXCOORD1XVOESPROC glad_glTexCoord1xvOES;
 #define glTexCoord1xvOES glad_glTexCoord1xvOES
-typedef void (APIENTRYP PFNGLTEXCOORD2XOESPROC)(GLfixed s, GLfixed t);
+typedef void (APIENTRYP PFNGLTEXCOORD2XOESPROC)(GLfixed s, GLfixed tex);
 GLAPI PFNGLTEXCOORD2XOESPROC glad_glTexCoord2xOES;
 #define glTexCoord2xOES glad_glTexCoord2xOES
 typedef void (APIENTRYP PFNGLTEXCOORD2XVOESPROC)(const GLfixed *coords);
 GLAPI PFNGLTEXCOORD2XVOESPROC glad_glTexCoord2xvOES;
 #define glTexCoord2xvOES glad_glTexCoord2xvOES
-typedef void (APIENTRYP PFNGLTEXCOORD3XOESPROC)(GLfixed s, GLfixed t, GLfixed r);
+typedef void (APIENTRYP PFNGLTEXCOORD3XOESPROC)(GLfixed s, GLfixed tex, GLfixed r);
 GLAPI PFNGLTEXCOORD3XOESPROC glad_glTexCoord3xOES;
 #define glTexCoord3xOES glad_glTexCoord3xOES
 typedef void (APIENTRYP PFNGLTEXCOORD3XVOESPROC)(const GLfixed *coords);
 GLAPI PFNGLTEXCOORD3XVOESPROC glad_glTexCoord3xvOES;
 #define glTexCoord3xvOES glad_glTexCoord3xvOES
-typedef void (APIENTRYP PFNGLTEXCOORD4XOESPROC)(GLfixed s, GLfixed t, GLfixed r, GLfixed q);
+typedef void (APIENTRYP PFNGLTEXCOORD4XOESPROC)(GLfixed s, GLfixed tex, GLfixed r, GLfixed q);
 GLAPI PFNGLTEXCOORD4XOESPROC glad_glTexCoord4xOES;
 #define glTexCoord4xOES glad_glTexCoord4xOES
 typedef void (APIENTRYP PFNGLTEXCOORD4XVOESPROC)(const GLfixed *coords);
@@ -16646,13 +16646,13 @@ GLAPI PFNGLCLIPPLANEFOESPROC glad_glClipPlanefOES;
 typedef void (APIENTRYP PFNGLDEPTHRANGEFOESPROC)(GLclampf n, GLclampf f);
 GLAPI PFNGLDEPTHRANGEFOESPROC glad_glDepthRangefOES;
 #define glDepthRangefOES glad_glDepthRangefOES
-typedef void (APIENTRYP PFNGLFRUSTUMFOESPROC)(GLfloat l, GLfloat r, GLfloat b, GLfloat t, GLfloat n, GLfloat f);
+typedef void (APIENTRYP PFNGLFRUSTUMFOESPROC)(GLfloat l, GLfloat r, GLfloat b, GLfloat tex, GLfloat n, GLfloat f);
 GLAPI PFNGLFRUSTUMFOESPROC glad_glFrustumfOES;
 #define glFrustumfOES glad_glFrustumfOES
 typedef void (APIENTRYP PFNGLGETCLIPPLANEFOESPROC)(GLenum plane, GLfloat *equation);
 GLAPI PFNGLGETCLIPPLANEFOESPROC glad_glGetClipPlanefOES;
 #define glGetClipPlanefOES glad_glGetClipPlanefOES
-typedef void (APIENTRYP PFNGLORTHOFOESPROC)(GLfloat l, GLfloat r, GLfloat b, GLfloat t, GLfloat n, GLfloat f);
+typedef void (APIENTRYP PFNGLORTHOFOESPROC)(GLfloat l, GLfloat r, GLfloat b, GLfloat tex, GLfloat n, GLfloat f);
 GLAPI PFNGLORTHOFOESPROC glad_glOrthofOES;
 #define glOrthofOES glad_glOrthofOES
 #endif
@@ -17264,43 +17264,43 @@ GLAPI PFNGLCOLOR4FNORMAL3FVERTEX3FSUNPROC glad_glColor4fNormal3fVertex3fSUN;
 typedef void (APIENTRYP PFNGLCOLOR4FNORMAL3FVERTEX3FVSUNPROC)(const GLfloat *c, const GLfloat *n, const GLfloat *v);
 GLAPI PFNGLCOLOR4FNORMAL3FVERTEX3FVSUNPROC glad_glColor4fNormal3fVertex3fvSUN;
 #define glColor4fNormal3fVertex3fvSUN glad_glColor4fNormal3fVertex3fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD2FVERTEX3FSUNPROC)(GLfloat s, GLfloat t, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLTEXCOORD2FVERTEX3FSUNPROC)(GLfloat s, GLfloat tex, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLTEXCOORD2FVERTEX3FSUNPROC glad_glTexCoord2fVertex3fSUN;
 #define glTexCoord2fVertex3fSUN glad_glTexCoord2fVertex3fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD2FVERTEX3FVSUNPROC)(const GLfloat *tc, const GLfloat *v);
 GLAPI PFNGLTEXCOORD2FVERTEX3FVSUNPROC glad_glTexCoord2fVertex3fvSUN;
 #define glTexCoord2fVertex3fvSUN glad_glTexCoord2fVertex3fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD4FVERTEX4FSUNPROC)(GLfloat s, GLfloat t, GLfloat p, GLfloat q, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+typedef void (APIENTRYP PFNGLTEXCOORD4FVERTEX4FSUNPROC)(GLfloat s, GLfloat tex, GLfloat p, GLfloat q, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
 GLAPI PFNGLTEXCOORD4FVERTEX4FSUNPROC glad_glTexCoord4fVertex4fSUN;
 #define glTexCoord4fVertex4fSUN glad_glTexCoord4fVertex4fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD4FVERTEX4FVSUNPROC)(const GLfloat *tc, const GLfloat *v);
 GLAPI PFNGLTEXCOORD4FVERTEX4FVSUNPROC glad_glTexCoord4fVertex4fvSUN;
 #define glTexCoord4fVertex4fvSUN glad_glTexCoord4fVertex4fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR4UBVERTEX3FSUNPROC)(GLfloat s, GLfloat t, GLubyte r, GLubyte g, GLubyte b, GLubyte a, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR4UBVERTEX3FSUNPROC)(GLfloat s, GLfloat tex, GLubyte r, GLubyte g, GLubyte b, GLubyte a, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLTEXCOORD2FCOLOR4UBVERTEX3FSUNPROC glad_glTexCoord2fColor4ubVertex3fSUN;
 #define glTexCoord2fColor4ubVertex3fSUN glad_glTexCoord2fColor4ubVertex3fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR4UBVERTEX3FVSUNPROC)(const GLfloat *tc, const GLubyte *c, const GLfloat *v);
 GLAPI PFNGLTEXCOORD2FCOLOR4UBVERTEX3FVSUNPROC glad_glTexCoord2fColor4ubVertex3fvSUN;
 #define glTexCoord2fColor4ubVertex3fvSUN glad_glTexCoord2fColor4ubVertex3fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR3FVERTEX3FSUNPROC)(GLfloat s, GLfloat t, GLfloat r, GLfloat g, GLfloat b, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR3FVERTEX3FSUNPROC)(GLfloat s, GLfloat tex, GLfloat r, GLfloat g, GLfloat b, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLTEXCOORD2FCOLOR3FVERTEX3FSUNPROC glad_glTexCoord2fColor3fVertex3fSUN;
 #define glTexCoord2fColor3fVertex3fSUN glad_glTexCoord2fColor3fVertex3fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR3FVERTEX3FVSUNPROC)(const GLfloat *tc, const GLfloat *c, const GLfloat *v);
 GLAPI PFNGLTEXCOORD2FCOLOR3FVERTEX3FVSUNPROC glad_glTexCoord2fColor3fVertex3fvSUN;
 #define glTexCoord2fColor3fVertex3fvSUN glad_glTexCoord2fColor3fVertex3fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD2FNORMAL3FVERTEX3FSUNPROC)(GLfloat s, GLfloat t, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLTEXCOORD2FNORMAL3FVERTEX3FSUNPROC)(GLfloat s, GLfloat tex, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLTEXCOORD2FNORMAL3FVERTEX3FSUNPROC glad_glTexCoord2fNormal3fVertex3fSUN;
 #define glTexCoord2fNormal3fVertex3fSUN glad_glTexCoord2fNormal3fVertex3fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD2FNORMAL3FVERTEX3FVSUNPROC)(const GLfloat *tc, const GLfloat *n, const GLfloat *v);
 GLAPI PFNGLTEXCOORD2FNORMAL3FVERTEX3FVSUNPROC glad_glTexCoord2fNormal3fVertex3fvSUN;
 #define glTexCoord2fNormal3fVertex3fvSUN glad_glTexCoord2fNormal3fVertex3fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC)(GLfloat s, GLfloat t, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC)(GLfloat s, GLfloat tex, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC glad_glTexCoord2fColor4fNormal3fVertex3fSUN;
 #define glTexCoord2fColor4fNormal3fVertex3fSUN glad_glTexCoord2fColor4fNormal3fVertex3fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC)(const GLfloat *tc, const GLfloat *c, const GLfloat *n, const GLfloat *v);
 GLAPI PFNGLTEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC glad_glTexCoord2fColor4fNormal3fVertex3fvSUN;
 #define glTexCoord2fColor4fNormal3fVertex3fvSUN glad_glTexCoord2fColor4fNormal3fVertex3fvSUN
-typedef void (APIENTRYP PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FSUNPROC)(GLfloat s, GLfloat t, GLfloat p, GLfloat q, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
+typedef void (APIENTRYP PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FSUNPROC)(GLfloat s, GLfloat tex, GLfloat p, GLfloat q, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z, GLfloat w);
 GLAPI PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FSUNPROC glad_glTexCoord4fColor4fNormal3fVertex4fSUN;
 #define glTexCoord4fColor4fNormal3fVertex4fSUN glad_glTexCoord4fColor4fNormal3fVertex4fSUN
 typedef void (APIENTRYP PFNGLTEXCOORD4FCOLOR4FNORMAL3FVERTEX4FVSUNPROC)(const GLfloat *tc, const GLfloat *c, const GLfloat *n, const GLfloat *v);
@@ -17336,19 +17336,19 @@ GLAPI PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FSUNPROC glad_glReplacementCod
 typedef void (APIENTRYP PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FVSUNPROC)(const GLuint *rc, const GLfloat *c, const GLfloat *n, const GLfloat *v);
 GLAPI PFNGLREPLACEMENTCODEUICOLOR4FNORMAL3FVERTEX3FVSUNPROC glad_glReplacementCodeuiColor4fNormal3fVertex3fvSUN;
 #define glReplacementCodeuiColor4fNormal3fVertex3fvSUN glad_glReplacementCodeuiColor4fNormal3fVertex3fvSUN
-typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FSUNPROC)(GLuint rc, GLfloat s, GLfloat t, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FSUNPROC)(GLuint rc, GLfloat s, GLfloat tex, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FSUNPROC glad_glReplacementCodeuiTexCoord2fVertex3fSUN;
 #define glReplacementCodeuiTexCoord2fVertex3fSUN glad_glReplacementCodeuiTexCoord2fVertex3fSUN
 typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FVSUNPROC)(const GLuint *rc, const GLfloat *tc, const GLfloat *v);
 GLAPI PFNGLREPLACEMENTCODEUITEXCOORD2FVERTEX3FVSUNPROC glad_glReplacementCodeuiTexCoord2fVertex3fvSUN;
 #define glReplacementCodeuiTexCoord2fVertex3fvSUN glad_glReplacementCodeuiTexCoord2fVertex3fvSUN
-typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FSUNPROC)(GLuint rc, GLfloat s, GLfloat t, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FSUNPROC)(GLuint rc, GLfloat s, GLfloat tex, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FSUNPROC glad_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN;
 #define glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN glad_glReplacementCodeuiTexCoord2fNormal3fVertex3fSUN
 typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FVSUNPROC)(const GLuint *rc, const GLfloat *tc, const GLfloat *n, const GLfloat *v);
 GLAPI PFNGLREPLACEMENTCODEUITEXCOORD2FNORMAL3FVERTEX3FVSUNPROC glad_glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN;
 #define glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN glad_glReplacementCodeuiTexCoord2fNormal3fVertex3fvSUN
-typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC)(GLuint rc, GLfloat s, GLfloat t, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
+typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC)(GLuint rc, GLfloat s, GLfloat tex, GLfloat r, GLfloat g, GLfloat b, GLfloat a, GLfloat nx, GLfloat ny, GLfloat nz, GLfloat x, GLfloat y, GLfloat z);
 GLAPI PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FSUNPROC glad_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN;
 #define glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN glad_glReplacementCodeuiTexCoord2fColor4fNormal3fVertex3fSUN
 typedef void (APIENTRYP PFNGLREPLACEMENTCODEUITEXCOORD2FCOLOR4FNORMAL3FVERTEX3FVSUNPROC)(const GLuint *rc, const GLfloat *tc, const GLfloat *c, const GLfloat *n, const GLfloat *v);

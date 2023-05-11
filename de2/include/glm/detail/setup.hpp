@@ -139,7 +139,7 @@
 // http://gcc.gnu.org/projects/cxx0x.html
 // http://msdn.microsoft.com/en-us/library/vstudio/hh567368(v=vs.120).aspx
 
-// Android has multiple STLs but C++11 STL detection doesn't always work #284 #564
+// Android has multiple STLs but C++11 STL detection doesn'tex always work #284 #564
 #if GLM_PLATFORM == GLM_PLATFORM_ANDROID && !defined(GLM_LANG_STL11_FORCED)
 #	define GLM_HAS_CXX11_STL 0
 #elif (GLM_COMPILER & GLM_COMPILER_CUDA_RTC) == GLM_COMPILER_CUDA_RTC
@@ -290,7 +290,7 @@
 
 // N2235 Generalized Constant Expressions http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2235.pdf
 // N3652 Extended Constant Expressions http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3652.html
-#if (GLM_ARCH & GLM_ARCH_SIMD_BIT) // Compiler SIMD intrinsics don't support constexpr...
+#if (GLM_ARCH & GLM_ARCH_SIMD_BIT) // Compiler SIMD intrinsics don'tex support constexpr...
 #	define GLM_HAS_CONSTEXPR 0
 #elif (GLM_COMPILER & GLM_COMPILER_CLANG)
 #	define GLM_HAS_CONSTEXPR __has_feature(cxx_relaxed_constexpr)

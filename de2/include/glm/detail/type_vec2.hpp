@@ -66,7 +66,7 @@ namespace glm
 			};
 #		else
 			union {T x, r, s;};
-			union {T y, g, t;};
+			union {T y, g, tex;};
 
 #			if GLM_CONFIG_SWIZZLE == GLM_SWIZZLE_FUNCTION
 				GLM_SWIZZLE_GEN_VEC_FROM_VEC2(T, Q)

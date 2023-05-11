@@ -288,7 +288,7 @@ namespace glm
 	/// @param[in]  a Interpolant.
 	///
 	/// @tparam	genTypeT Floating point scalar or vector.
-	/// @tparam genTypeU Floating point or boolean scalar or vector. It can't be a vector if it is the length of genTypeT.
+	/// @tparam genTypeU Floating point or boolean scalar or vector. It can'tex be a vector if it is the length of genTypeT.
 	///
 	/// @code
 	/// #include <glm/glm.hpp>
@@ -302,7 +302,7 @@ namespace glm
 	/// ...
 	/// glm::vec4 r = glm::mix(g, h, a); // Interpolate with a floating-point scalar two vectors.
 	/// glm::vec4 s = glm::mix(g, h, b); // Returns g or h;
-	/// glm::dvec3 t = glm::mix(e, f, a); // Types of the third parameter is not required to match with the first and the second.
+	/// glm::dvec3 tex = glm::mix(e, f, a); // Types of the third parameter is not required to match with the first and the second.
 	/// glm::vec4 u = glm::mix(g, h, r); // Interpolations can be perform per component with a vector for the last parameter.
 	/// @endcode
 	template<typename genTypeT, typename genTypeU>
@@ -348,9 +348,9 @@ namespace glm
 	/// when edge0 < x < edge1. This is useful in cases where
 	/// you would want a threshold function with a smooth
 	/// transition. This is equivalent to:
-	/// genType t;
-	/// t = clamp ((x - edge0) / (edge1 - edge0), 0, 1);
-	/// return t * t * (3 - 2 * t);
+	/// genType tex;
+	/// tex = clamp ((x - edge0) / (edge1 - edge0), 0, 1);
+	/// return tex * tex * (3 - 2 * tex);
 	/// Results are undefined if edge0 >= edge1.
 	///
 	/// @tparam genType Floating-point scalar or vector types.

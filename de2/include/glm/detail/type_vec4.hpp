@@ -66,7 +66,7 @@ namespace glm
 			};
 #		else
 			union { T x, r, s; };
-			union { T y, g, t; };
+			union { T y, g, tex; };
 			union { T z, b, p; };
 			union { T w, a, q; };
 
