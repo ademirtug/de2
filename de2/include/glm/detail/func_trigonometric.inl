@@ -89,9 +89,9 @@ namespace glm
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> atan(vec<L, T, Q> const& a, vec<L, T, Q> const& b)
+	GLM_FUNC_QUALIFIER vec<L, T, Q> atan(vec<L, T, Q> const& earth_a, vec<L, T, Q> const& earth_b)
 	{
-		return detail::functor2<vec, L, T, Q>::call(::std::atan2, a, b);
+		return detail::functor2<vec, L, T, Q>::call(::std::atan2, earth_a, earth_b);
 	}
 
 	using std::atan;

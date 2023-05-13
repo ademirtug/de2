@@ -17,9 +17,9 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotate(mat<4, 4, T, Q> const& m, T angle, vec<3, T, Q> const& v)
 	{
-		T const a = angle;
-		T const c = cos(a);
-		T const s = sin(a);
+		T const earth_a = angle;
+		T const c = cos(earth_a);
+		T const s = sin(earth_a);
 
 		vec<3, T, Q> axis(normalize(v));
 		vec<3, T, Q> temp((T(1) - c) * axis);
@@ -48,9 +48,9 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER mat<4, 4, T, Q> rotate_slow(mat<4, 4, T, Q> const& m, T angle, vec<3, T, Q> const& v)
 	{
-		T const a = angle;
-		T const c = cos(a);
-		T const s = sin(a);
+		T const earth_a = angle;
+		T const c = cos(earth_a);
+		T const s = sin(earth_a);
 		mat<4, 4, T, Q> Result;
 
 		vec<3, T, Q> axis = normalize(v);

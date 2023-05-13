@@ -16,9 +16,9 @@ namespace detail
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_dot<qua<T, Q>, T, Aligned>
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(qua<T, Q> const& a, qua<T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(qua<T, Q> const& earth_a, qua<T, Q> const& earth_b)
 		{
-			vec<4, T, Q> tmp(a.w * b.w, a.x * b.x, a.y * b.y, a.z * b.z);
+			vec<4, T, Q> tmp(earth_a.w * earth_b.w, earth_a.x * earth_b.x, earth_a.y * earth_b.y, earth_a.z * earth_b.z);
 			return (tmp.x + tmp.y) + (tmp.z + tmp.w);
 		}
 	};

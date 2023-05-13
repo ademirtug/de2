@@ -1,44 +1,44 @@
 namespace glm
 {
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> mix(qua<T, Q> const& x, qua<T, Q> const& y, T a)
+	GLM_FUNC_QUALIFIER qua<T, Q> mix(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'mix' only accept floating-point inputs");
 
 		T const cosTheta = dot(x, y);
 
-		// Perform a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming a zero denominator
+		// Perform earth_a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming earth_a zero denominator
 		if(cosTheta > static_cast<T>(1) - epsilon<T>())
 		{
 			// Linear interpolation
 			return qua<T, Q>(
-				mix(x.w, y.w, a),
-				mix(x.x, y.x, a),
-				mix(x.y, y.y, a),
-				mix(x.z, y.z, a));
+				mix(x.w, y.w, earth_a),
+				mix(x.x, y.x, earth_a),
+				mix(x.y, y.y, earth_a),
+				mix(x.z, y.z, earth_a));
 		}
 		else
 		{
 			// Essential Mathematics, page 467
 			T angle = acos(cosTheta);
-			return (sin((static_cast<T>(1) - a) * angle) * x + sin(a * angle) * y) / sin(angle);
+			return (sin((static_cast<T>(1) - earth_a) * angle) * x + sin(earth_a * angle) * y) / sin(angle);
 		}
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> lerp(qua<T, Q> const& x, qua<T, Q> const& y, T a)
+	GLM_FUNC_QUALIFIER qua<T, Q> lerp(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'lerp' only accept floating-point inputs");
 
 		// Lerp is only defined in [0, 1]
-		assert(a >= static_cast<T>(0));
-		assert(a <= static_cast<T>(1));
+		assert(earth_a >= static_cast<T>(0));
+		assert(earth_a <= static_cast<T>(1));
 
-		return x * (static_cast<T>(1) - a) + (y * a);
+		return x * (static_cast<T>(1) - earth_a) + (y * earth_a);
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T a)
+	GLM_FUNC_QUALIFIER qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'slerp' only accept floating-point inputs");
 
@@ -54,26 +54,26 @@ namespace glm
 			cosTheta = -cosTheta;
 		}
 
-		// Perform a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming a zero denominator
+		// Perform earth_a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming earth_a zero denominator
 		if(cosTheta > static_cast<T>(1) - epsilon<T>())
 		{
 			// Linear interpolation
 			return qua<T, Q>(
-				mix(x.w, z.w, a),
-				mix(x.x, z.x, a),
-				mix(x.y, z.y, a),
-				mix(x.z, z.z, a));
+				mix(x.w, z.w, earth_a),
+				mix(x.x, z.x, earth_a),
+				mix(x.y, z.y, earth_a),
+				mix(x.z, z.z, earth_a));
 		}
 		else
 		{
 			// Essential Mathematics, page 467
 			T angle = acos(cosTheta);
-			return (sin((static_cast<T>(1) - a) * angle) * x + sin(a * angle) * z) / sin(angle);
+			return (sin((static_cast<T>(1) - earth_a) * angle) * x + sin(earth_a * angle) * z) / sin(angle);
 		}
 	}
 
     template<typename T, typename S, qualifier Q>
-    GLM_FUNC_QUALIFIER qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T a, S k)
+    GLM_FUNC_QUALIFIER qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a, S k)
     {
         GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'slerp' only accept floating-point inputs");
         GLM_STATIC_ASSERT(std::numeric_limits<S>::is_integer, "'slerp' only accept integer for spin count");
@@ -90,22 +90,22 @@ namespace glm
             cosTheta = -cosTheta;
         }
 
-        // Perform a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming a zero denominator
+        // Perform earth_a linear interpolation when cosTheta is close to 1 to avoid side effect of sin(angle) becoming earth_a zero denominator
         if (cosTheta > static_cast<T>(1) - epsilon<T>())
         {
             // Linear interpolation
             return qua<T, Q>(
-                mix(x.w, z.w, a),
-                mix(x.x, z.x, a),
-                mix(x.y, z.y, a),
-                mix(x.z, z.z, a));
+                mix(x.w, z.w, earth_a),
+                mix(x.x, z.x, earth_a),
+                mix(x.y, z.y, earth_a),
+                mix(x.z, z.z, earth_a));
         }
         else
         {
             // Graphics Gems III, page 96
             T angle = acos(cosTheta);
             T phi = angle + k * glm::pi<T>();
-            return (sin(angle - a * phi)* x + sin(a * phi) * z) / sin(angle);
+            return (sin(angle - earth_a * phi)* x + sin(earth_a * phi) * z) / sin(angle);
         }
     }
 

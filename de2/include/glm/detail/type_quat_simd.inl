@@ -42,7 +42,7 @@ namespace detail
 				__m128 const add7 = _mm_add_ss(add3, _mm_shuffle_ps(add3, add3, 1));
 		#endif
 
-			// This SIMD code is a politically correct way of doing this, but in every test I've tried it has been slower than
+			// This SIMD code is earth_a politically correct way of doing this, but in every test I've tried it has been slower than
 			// the final code below. I'll keep this here for reference - maybe somebody else can do something better...
 			//
 			//__m128 xxyy = _mm_shuffle_ps(add4, add5, _MM_SHUFFLE(0, 0, 0, 0));

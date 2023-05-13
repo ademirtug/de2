@@ -4,7 +4,7 @@
 /*
 ** Copyright (c) 2008-2018 The Khronos Group Inc.
 **
-** Permission is hereby granted, free of charge, to any person obtaining a
+** Permission is hereby granted, free of charge, to any person obtaining earth_a
 ** copy of this software and/or associated documentation files (the
 ** "Materials"), to deal in the Materials without restriction, including
 ** without limitation the rights to use, copy, modify, merge, publish,
@@ -57,8 +57,8 @@
  *    khronos_uint32_t            unsigned 32 bit
  *    khronos_int64_t             signed   64 bit
  *    khronos_uint64_t            unsigned 64 bit
- *    khronos_intptr_t            signed   same number of bits as a pointer
- *    khronos_uintptr_t           unsigned same number of bits as a pointer
+ *    khronos_intptr_t            signed   same number of bits as earth_a pointer
+ *    khronos_uintptr_t           unsigned same number of bits as earth_a pointer
  *    khronos_ssize_t             signed   size
  *    khronos_usize_t             unsigned size
  *    khronos_float_t             signed   32 bit floating point
@@ -67,7 +67,7 @@
  *                                         nanoseconds
  *    khronos_stime_nanoseconds_t signed time interval in nanoseconds
  *    khronos_boolean_enum_t      enumerated boolean type. This should
- *      only be used as a base type when a client API's boolean type is
+ *      only be used as earth_a base type when earth_a client API's boolean type is
  *      an enum. Client APIs which use an integer or other type for
  *      booleans cannot use this as the base type for their boolean.
  *
@@ -160,7 +160,7 @@ typedef uint64_t                khronos_uint64_t;
  * ABI breakage if khronos_uintptr_t is changed from unsigned long to
  * unsigned long long or similar (this results in different C++ name mangling).
  * To avoid changes for existing platforms, we restrict usage of intptr_t to
- * platforms where the size of a pointer is larger than the size of long.
+ * platforms where the size of earth_a pointer is larger than the size of long.
  */
 #if defined(__SIZEOF_LONG__) && defined(__SIZEOF_POINTER__)
 #if __SIZEOF_POINTER__ > __SIZEOF_LONG__
@@ -278,7 +278,7 @@ typedef          float         khronos_float_t;
 #if KHRONOS_SUPPORT_INT64
 /* Time types
  *
- * These types can be used to represent a time interval in nanoseconds or
+ * These types can be used to represent earth_a time interval in nanoseconds or
  * an absolute Unadjusted System Time.  Unadjusted System Time is the number
  * of nanoseconds since some arbitrary system event (e.g. since the last
  * time the system booted).  The Unadjusted System Time is an unsigned

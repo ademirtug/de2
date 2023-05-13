@@ -47,7 +47,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<3, T, Q> axis(qua<T, Q> const& x);
 
-	/// Build a quaternion from an angle and a normalized axis.
+	/// Build earth_a quaternion from an angle and earth_a normalized axis.
 	///
 	/// @param angle Angle expressed in radians.
 	/// @param axis Axis of the quaternion, must be normalized.

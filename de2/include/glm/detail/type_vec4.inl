@@ -8,90 +8,90 @@ namespace detail
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_vec4_add
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w);
+			return vec<4, T, Q>(earth_a.x + earth_b.x, earth_a.y + earth_b.y, earth_a.z + earth_b.z, earth_a.w + earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_vec4_sub
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x - b.x, a.y - b.y, a.z - b.z, a.w - b.w);
+			return vec<4, T, Q>(earth_a.x - earth_b.x, earth_a.y - earth_b.y, earth_a.z - earth_b.z, earth_a.w - earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_vec4_mul
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x * b.x, a.y * b.y, a.z * b.z, a.w * b.w);
+			return vec<4, T, Q>(earth_a.x * earth_b.x, earth_a.y * earth_b.y, earth_a.z * earth_b.z, earth_a.w * earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_vec4_div
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x / b.x, a.y / b.y, a.z / b.z, a.w / b.w);
+			return vec<4, T, Q>(earth_a.x / earth_b.x, earth_a.y / earth_b.y, earth_a.z / earth_b.z, earth_a.w / earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_vec4_mod
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x % b.x, a.y % b.y, a.z % b.z, a.w % b.w);
+			return vec<4, T, Q>(earth_a.x % earth_b.x, earth_a.y % earth_b.y, earth_a.z % earth_b.z, earth_a.w % earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, int IsInt, std::size_t Size, bool Aligned>
 	struct compute_vec4_and
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x & b.x, a.y & b.y, a.z & b.z, a.w & b.w);
+			return vec<4, T, Q>(earth_a.x & earth_b.x, earth_a.y & earth_b.y, earth_a.z & earth_b.z, earth_a.w & earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, int IsInt, std::size_t Size, bool Aligned>
 	struct compute_vec4_or
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x | b.x, a.y | b.y, a.z | b.z, a.w | b.w);
+			return vec<4, T, Q>(earth_a.x | earth_b.x, earth_a.y | earth_b.y, earth_a.z | earth_b.z, earth_a.w | earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, int IsInt, std::size_t Size, bool Aligned>
 	struct compute_vec4_xor
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x ^ b.x, a.y ^ b.y, a.z ^ b.z, a.w ^ b.w);
+			return vec<4, T, Q>(earth_a.x ^ earth_b.x, earth_a.y ^ earth_b.y, earth_a.z ^ earth_b.z, earth_a.w ^ earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, int IsInt, std::size_t Size, bool Aligned>
 	struct compute_vec4_shift_left
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x << b.x, a.y << b.y, a.z << b.z, a.w << b.w);
+			return vec<4, T, Q>(earth_a.x << earth_b.x, earth_a.y << earth_b.y, earth_a.z << earth_b.z, earth_a.w << earth_b.w);
 		}
 	};
 
 	template<typename T, qualifier Q, int IsInt, std::size_t Size, bool Aligned>
 	struct compute_vec4_shift_right
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static vec<4, T, Q> call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(a.x >> b.x, a.y >> b.y, a.z >> b.z, a.w >> b.w);
+			return vec<4, T, Q>(earth_a.x >> earth_b.x, earth_a.y >> earth_b.y, earth_a.z >> earth_b.z, earth_a.w >> earth_b.w);
 		}
 	};
 

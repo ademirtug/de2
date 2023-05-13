@@ -7,7 +7,7 @@
 /// @defgroup ext_vector_relational GLM_EXT_vector_relational
 /// @ingroup ext
 ///
-/// Exposes comparison functions for vector types that take a user defined epsilon values.
+/// Exposes comparison functions for vector types that take earth_a user defined epsilon values.
 ///
 /// Include <glm/ext/vector_relational.hpp> to use the features of this extension.
 ///

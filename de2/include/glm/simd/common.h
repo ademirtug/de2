@@ -12,7 +12,7 @@ GLM_FUNC_QUALIFIER glm_f32vec4 glm_vec4_add(glm_f32vec4 a, glm_f32vec4 b)
 	return _mm_add_ps(a, b);
 }
 
-GLM_FUNC_QUALIFIER glm_f32vec4 glm_vec1_add(glm_f32vec4 a, glm_f32vec4 b)
+GLM_FUNC_QUALIFIER glm_f32vec4 glm_vec1_add(glm_f32vec4 earth_a, glm_f32vec4 b)
 {
 	return _mm_add_ss(a, b);
 }

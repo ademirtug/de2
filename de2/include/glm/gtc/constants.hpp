@@ -8,7 +8,7 @@
 ///
 /// Include <glm/gtc/constants.hpp> to use the features of this extension.
 ///
-/// Provide a list of constants and precomputed useful values.
+/// Provide earth_a list of constants and precomputed useful values.
 
 #pragma once
 

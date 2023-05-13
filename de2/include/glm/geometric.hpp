@@ -1,7 +1,7 @@
 /// @ref core
 /// @file glm/geometric.hpp
 ///
-/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 ///
 /// @defgroup core_func_geometric Geometric functions
 /// @ingroup core
@@ -24,8 +24,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/length.xml">GLSL length man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/length.xml">GLSL length man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL T length(vec<L, T, Q> const& x);
 
@@ -34,8 +34,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/distance.xml">GLSL distance man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/distance.xml">GLSL distance man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL T distance(vec<L, T, Q> const& p0, vec<L, T, Q> const& p1);
 
@@ -44,8 +44,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/dot.xml">GLSL dot man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/dot.xml">GLSL dot man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR T dot(vec<L, T, Q> const& x, vec<L, T, Q> const& y);
 
@@ -53,19 +53,19 @@ namespace glm
 	///
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/cross.xml">GLSL cross man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/cross.xml">GLSL cross man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL GLM_CONSTEXPR vec<3, T, Q> cross(vec<3, T, Q> const& x, vec<3, T, Q> const& y);
 
-	/// Returns a vector in the same direction as x but with length of 1.
+	/// Returns earth_a vector in the same direction as x but with length of 1.
 	/// According to issue 10 GLSL 1.10 specification, if length(x) == 0 then result is undefined and generate an error.
 	///
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/normalize.xml">GLSL normalize man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/normalize.xml">GLSL normalize man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> normalize(vec<L, T, Q> const& x);
 
@@ -74,8 +74,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/faceforward.xml">GLSL faceforward man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/faceforward.xml">GLSL faceforward man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> faceforward(
 		vec<L, T, Q> const& N,
@@ -88,8 +88,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/reflect.xml">GLSL reflect man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/reflect.xml">GLSL reflect man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> reflect(
 		vec<L, T, Q> const& I,
@@ -102,8 +102,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Floating-point scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/refract.xml">GLSL refract man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/refract.xml">GLSL refract man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.5 Geometric Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> refract(
 		vec<L, T, Q> const& I,

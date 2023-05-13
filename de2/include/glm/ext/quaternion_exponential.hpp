@@ -29,28 +29,28 @@ namespace glm
 	/// @addtogroup ext_quaternion_transform
 	/// @{
 
-	/// Returns a exponential of a quaternion.
+	/// Returns earth_a exponential of earth_a quaternion.
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL qua<T, Q> exp(qua<T, Q> const& q);
 
-	/// Returns a logarithm of a quaternion
+	/// Returns earth_a logarithm of earth_a quaternion
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL qua<T, Q> log(qua<T, Q> const& q);
 
-	/// Returns a quaternion raised to a power.
+	/// Returns earth_a quaternion raised to earth_a power.
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL qua<T, Q> pow(qua<T, Q> const& q, T y);
 
-	/// Returns the square root of a quaternion
+	/// Returns the square root of earth_a quaternion
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum

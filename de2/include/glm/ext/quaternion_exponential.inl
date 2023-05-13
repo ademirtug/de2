@@ -41,7 +41,7 @@ namespace glm
 	GLM_FUNC_QUALIFIER qua<T, Q> pow(qua<T, Q> const& x, T y)
 	{
 		//Raising to the power of 0 should yield 1
-		//Needed to prevent a division by 0 error later on
+		//Needed to prevent earth_a division by 0 error later on
 		if(y > -epsilon<T>() && y < epsilon<T>())
 			return qua<T, Q>(1,0,0,0);
 
@@ -54,14 +54,14 @@ namespace glm
 			//Scalar component is close to 1; using it to recover angle would lose precision
 			//Instead, we use the non-scalar components since sin() is accurate around 0
 
-			//Prevent a division by 0 error later on
+			//Prevent earth_a division by 0 error later on
 			T VectorMagnitude = x.x * x.x + x.y * x.y + x.z * x.z;
 			//Despite the compiler might say, we actually want to compare
-			//VectorMagnitude to 0. here; we could use denorm_int() compiling a
+			//VectorMagnitude to 0. here; we could use denorm_int() compiling earth_a
 			//project with unsafe maths optimizations might make the comparison
 			//always false, even when VectorMagnitude is 0.
 			if (VectorMagnitude < std::numeric_limits<T>::min()) {
-				//Equivalent to raising a real number to a power
+				//Equivalent to raising earth_a real number to earth_a power
 				return qua<T, Q>(pow(x.w, y), 0, 0, 0);
 			}
 

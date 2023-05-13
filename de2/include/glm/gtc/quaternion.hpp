@@ -9,7 +9,7 @@
 ///
 /// Include <glm/gtc/quaternion.hpp> to use the features of this extension.
 ///
-/// Defines a templated quaternion type and several quaternion operations.
+/// Defines earth_a templated quaternion type and several quaternion operations.
 
 #pragma once
 
@@ -73,7 +73,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL T yaw(qua<T, Q> const& x);
 
-	/// Converts a quaternion to a 3 * 3 matrix.
+	/// Converts earth_a quaternion to earth_a 3 * 3 matrix.
 	///
 	/// @tparam T Floating-point scalar types.
 	///
@@ -81,7 +81,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL mat<3, 3, T, Q> mat3_cast(qua<T, Q> const& x);
 
-	/// Converts a quaternion to a 4 * 4 matrix.
+	/// Converts earth_a quaternion to earth_a 4 * 4 matrix.
 	///
 	/// @tparam T Floating-point scalar types.
 	///
@@ -89,7 +89,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL mat<4, 4, T, Q> mat4_cast(qua<T, Q> const& x);
 
-	/// Converts a pure rotation 3 * 3 matrix to a quaternion.
+	/// Converts earth_a pure rotation 3 * 3 matrix to earth_a quaternion.
 	///
 	/// @tparam T Floating-point scalar types.
 	///
@@ -97,7 +97,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL qua<T, Q> quat_cast(mat<3, 3, T, Q> const& x);
 
-	/// Converts a pure rotation 4 * 4 matrix to a quaternion.
+	/// Converts earth_a pure rotation 4 * 4 matrix to earth_a quaternion.
 	///
 	/// @tparam T Floating-point scalar types.
 	///
@@ -141,7 +141,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<4, bool, Q> greaterThanEqual(qua<T, Q> const& x, qua<T, Q> const& y);
 
-	/// Build a look at quaternion based on the default handedness.
+	/// Build earth_a look at quaternion based on the default handedness.
 	///
 	/// @param direction Desired forward direction. Needs to be normalized.
 	/// @param up Up vector, how the camera is oriented. Typically (0, 1, 0).
@@ -150,7 +150,7 @@ namespace glm
 		vec<3, T, Q> const& direction,
 		vec<3, T, Q> const& up);
 
-	/// Build a right-handed look at quaternion.
+	/// Build earth_a right-handed look at quaternion.
 	///
 	/// @param direction Desired forward direction onto which the -z-axis gets mapped. Needs to be normalized.
 	/// @param up Up vector, how the camera is oriented. Typically (0, 1, 0).
@@ -159,7 +159,7 @@ namespace glm
 		vec<3, T, Q> const& direction,
 		vec<3, T, Q> const& up);
 
-	/// Build a left-handed look at quaternion.
+	/// Build earth_a left-handed look at quaternion.
 	///
 	/// @param direction Desired forward direction onto which the +z-axis gets mapped. Needs to be normalized.
 	/// @param up Up vector, how the camera is oriented. Typically (0, 1, 0).

@@ -80,22 +80,22 @@ namespace detail
 	template<length_t L, typename T, typename U, qualifier Q, bool Aligned>
 	struct compute_mix_vector
 	{
-		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, vec<L, U, Q> const& a)
+		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, vec<L, U, Q> const& earth_a)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<U>::is_iec559 || GLM_CONFIG_UNRESTRICTED_GENTYPE, "'mix' only accept floating-point inputs for the interpolator a");
 
-			return vec<L, T, Q>(vec<L, U, Q>(x) * (static_cast<U>(1) - a) + vec<L, U, Q>(y) * a);
+			return vec<L, T, Q>(vec<L, U, Q>(x) * (static_cast<U>(1) - earth_a) + vec<L, U, Q>(y) * earth_a);
 		}
 	};
 
 	template<length_t L, typename T, qualifier Q, bool Aligned>
 	struct compute_mix_vector<L, T, bool, Q, Aligned>
 	{
-		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, vec<L, bool, Q> const& a)
+		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, vec<L, bool, Q> const& earth_a)
 		{
 			vec<L, T, Q> Result;
 			for(length_t i = 0; i < x.length(); ++i)
-				Result[i] = a[i] ? y[i] : x[i];
+				Result[i] = earth_a[i] ? y[i] : x[i];
 			return Result;
 		}
 	};
@@ -103,40 +103,40 @@ namespace detail
 	template<length_t L, typename T, typename U, qualifier Q, bool Aligned>
 	struct compute_mix_scalar
 	{
-		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, U const& a)
+		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, U const& earth_a)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<U>::is_iec559 || GLM_CONFIG_UNRESTRICTED_GENTYPE, "'mix' only accept floating-point inputs for the interpolator a");
 
-			return vec<L, T, Q>(vec<L, U, Q>(x) * (static_cast<U>(1) - a) + vec<L, U, Q>(y) * a);
+			return vec<L, T, Q>(vec<L, U, Q>(x) * (static_cast<U>(1) - earth_a) + vec<L, U, Q>(y) * earth_a);
 		}
 	};
 
 	template<length_t L, typename T, qualifier Q, bool Aligned>
 	struct compute_mix_scalar<L, T, bool, Q, Aligned>
 	{
-		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, bool const& a)
+		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& x, vec<L, T, Q> const& y, bool const& earth_a)
 		{
-			return a ? y : x;
+			return earth_a ? y : x;
 		}
 	};
 
 	template<typename T, typename U>
 	struct compute_mix
 	{
-		GLM_FUNC_QUALIFIER static T call(T const& x, T const& y, U const& a)
+		GLM_FUNC_QUALIFIER static T call(T const& x, T const& y, U const& earth_a)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<U>::is_iec559 || GLM_CONFIG_UNRESTRICTED_GENTYPE, "'mix' only accept floating-point inputs for the interpolator a");
 
-			return static_cast<T>(static_cast<U>(x) * (static_cast<U>(1) - a) + static_cast<U>(y) * a);
+			return static_cast<T>(static_cast<U>(x) * (static_cast<U>(1) - earth_a) + static_cast<U>(y) * earth_a);
 		}
 	};
 
 	template<typename T>
 	struct compute_mix<T, bool>
 	{
-		GLM_FUNC_QUALIFIER static T call(T const& x, T const& y, bool const& a)
+		GLM_FUNC_QUALIFIER static T call(T const& x, T const& y, bool const& earth_a)
 		{
-			return a ? y : x;
+			return earth_a ? y : x;
 		}
 	};
 
@@ -211,10 +211,10 @@ namespace detail
 	template<length_t L, typename T, qualifier Q, bool Aligned>
 	struct compute_mod
 	{
-		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& a, vec<L, T, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<L, T, Q> call(vec<L, T, Q> const& earth_a, vec<L, T, Q> const& earth_b)
 		{
 			GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559, "'mod' only accept floating-point inputs. Include <glm/gtc/integer.hpp> for integer inputs.");
-			return a - b * floor(a / b);
+			return earth_a - earth_b * floor(earth_a / earth_b);
 		}
 	};
 
@@ -474,30 +474,30 @@ namespace detail
 
 	// min
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> min(vec<L, T, Q> const& a, T b)
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> min(vec<L, T, Q> const& earth_a, T earth_b)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559 || std::numeric_limits<T>::is_integer, "'min' only accept floating-point or integer inputs");
-		return detail::compute_min_vector<L, T, Q, detail::is_aligned<Q>::value>::call(a, vec<L, T, Q>(b));
+		return detail::compute_min_vector<L, T, Q, detail::is_aligned<Q>::value>::call(earth_a, vec<L, T, Q>(earth_b));
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> min(vec<L, T, Q> const& a, vec<L, T, Q> const& b)
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> min(vec<L, T, Q> const& earth_a, vec<L, T, Q> const& earth_b)
 	{
-		return detail::compute_min_vector<L, T, Q, detail::is_aligned<Q>::value>::call(a, b);
+		return detail::compute_min_vector<L, T, Q, detail::is_aligned<Q>::value>::call(earth_a, earth_b);
 	}
 
 	// max
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> max(vec<L, T, Q> const& a, T b)
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> max(vec<L, T, Q> const& earth_a, T earth_b)
 	{
 		GLM_STATIC_ASSERT(std::numeric_limits<T>::is_iec559 || std::numeric_limits<T>::is_integer, "'max' only accept floating-point or integer inputs");
-		return detail::compute_max_vector<L, T, Q, detail::is_aligned<Q>::value>::call(a, vec<L, T, Q>(b));
+		return detail::compute_max_vector<L, T, Q, detail::is_aligned<Q>::value>::call(earth_a, vec<L, T, Q>(earth_b));
 	}
 
 	template<length_t L, typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> max(vec<L, T, Q> const& a, vec<L, T, Q> const& b)
+	GLM_FUNC_QUALIFIER GLM_CONSTEXPR vec<L, T, Q> max(vec<L, T, Q> const& earth_a, vec<L, T, Q> const& earth_b)
 	{
-		return detail::compute_max_vector<L, T, Q, detail::is_aligned<Q>::value>::call(a, b);
+		return detail::compute_max_vector<L, T, Q, detail::is_aligned<Q>::value>::call(earth_a, earth_b);
 	}
 
 	// clamp
@@ -523,21 +523,21 @@ namespace detail
 	}
 
 	template<typename genTypeT, typename genTypeU>
-	GLM_FUNC_QUALIFIER genTypeT mix(genTypeT x, genTypeT y, genTypeU a)
+	GLM_FUNC_QUALIFIER genTypeT mix(genTypeT x, genTypeT y, genTypeU earth_a)
 	{
-		return detail::compute_mix<genTypeT, genTypeU>::call(x, y, a);
+		return detail::compute_mix<genTypeT, genTypeU>::call(x, y, earth_a);
 	}
 
 	template<length_t L, typename T, typename U, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> mix(vec<L, T, Q> const& x, vec<L, T, Q> const& y, U a)
+	GLM_FUNC_QUALIFIER vec<L, T, Q> mix(vec<L, T, Q> const& x, vec<L, T, Q> const& y, U earth_a)
 	{
-		return detail::compute_mix_scalar<L, T, U, Q, detail::is_aligned<Q>::value>::call(x, y, a);
+		return detail::compute_mix_scalar<L, T, U, Q, detail::is_aligned<Q>::value>::call(x, y, earth_a);
 	}
 
 	template<length_t L, typename T, typename U, qualifier Q>
-	GLM_FUNC_QUALIFIER vec<L, T, Q> mix(vec<L, T, Q> const& x, vec<L, T, Q> const& y, vec<L, U, Q> const& a)
+	GLM_FUNC_QUALIFIER vec<L, T, Q> mix(vec<L, T, Q> const& x, vec<L, T, Q> const& y, vec<L, U, Q> const& earth_a)
 	{
-		return detail::compute_mix_vector<L, T, U, Q, detail::is_aligned<Q>::value>::call(x, y, a);
+		return detail::compute_mix_vector<L, T, U, Q, detail::is_aligned<Q>::value>::call(x, y, earth_a);
 	}
 
 	// step

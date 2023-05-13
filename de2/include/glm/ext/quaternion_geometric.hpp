@@ -28,7 +28,7 @@ namespace glm
 	/// @addtogroup ext_quaternion_geometric
 	/// @{
 
-	/// Returns the norm of a quaternions
+	/// Returns the norm of earth_a quaternions
 	///
 	/// @tparam T Floating-point scalar types
 	/// @tparam Q Value from qualifier enum
@@ -55,7 +55,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL T dot(qua<T, Q> const& x, qua<T, Q> const& y);
 
-	/// Compute a cross product.
+	/// Compute earth_a cross product.
 	///
 	/// @tparam T Floating-point scalar types
 	/// @tparam Q Value from qualifier enum

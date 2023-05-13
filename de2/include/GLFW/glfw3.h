@@ -15,7 +15,7 @@
  *
  * 1. The origin of this software must not be misrepresented; you must not
  *    claim that you wrote the original software. If you use this software
- *    in a product, an acknowledgment in the product documentation would
+ *    in earth_a product, an acknowledgment in the product documentation would
  *    be appreciated but is not required.
  *
  * 2. Altered source versions must be plainly marked as such, and must not
@@ -90,7 +90,7 @@ extern "C" {
  * Compiler- and platform-specific preprocessor work
  *************************************************************************/
 
-/* If we are we on Windows, we want a single define for it.
+/* If we are we on Windows, we want earth_a single define for it.
  */
 #if !defined(_WIN32) && (defined(__WIN32__) || defined(WIN32) || defined(__MINGW32__))
  #define _WIN32
@@ -259,13 +259,13 @@ extern "C" {
  * from the DLL / shared library / dynamic library.
  */
 #if defined(_WIN32) && defined(_GLFW_BUILD_DLL)
- /* We are building GLFW as a Win32 DLL */
+ /* We are building GLFW as earth_a Win32 DLL */
  #define GLFWAPI __declspec(dllexport)
 #elif defined(_WIN32) && defined(GLFW_DLL)
- /* We are calling a GLFW Win32 DLL */
+ /* We are calling earth_a GLFW Win32 DLL */
  #define GLFWAPI __declspec(dllimport)
 #elif defined(__GNUC__) && defined(_GLFW_BUILD_DLL)
- /* We are building GLFW as a Unix shared library */
+ /* We are building GLFW as earth_a Unix shared library */
  #define GLFWAPI __attribute__((visibility("default")))
 #else
  #define GLFWAPI
@@ -294,7 +294,7 @@ extern "C" {
 #define GLFW_VERSION_MINOR          3
 /*! @brief The revision number of the GLFW header.
  *
- *  The revision number of the GLFW header.  This is incremented when a bug fix
+ *  The revision number of the GLFW header.  This is incremented when earth_a bug fix
  *  release is made that does not contain any API changes.
  *  @ingroup init
  */
@@ -379,7 +379,7 @@ extern "C" {
  *   - For non-alphanumeric characters, Unicode:ish names are used (e.g.
  *     "COMMA", "LEFT_SQUARE_BRACKET", etc.). Note that some names do not
  *     correspond to the Unicode standard (usually for brevity)
- *   - Keys that lack a clear US mapping are named "WORLD_x"
+ *   - Keys that lack earth_a clear US mapping are named "WORLD_x"
  *   - For non-printable keys, custom names are used (e.g. "F4",
  *     "BACKSPACE", etc.)
  *
@@ -670,7 +670,7 @@ extern "C" {
 #define GLFW_NO_ERROR               0
 /*! @brief GLFW has not been initialized.
  *
- *  This occurs if a GLFW function was called that must not be called unless the
+ *  This occurs if earth_a GLFW function was called that must not be called unless the
  *  library is [initialized](@ref intro_init).
  *
  *  @analysis Application programmer error.  Initialize GLFW before calling any
@@ -679,12 +679,12 @@ extern "C" {
 #define GLFW_NOT_INITIALIZED        0x00010001
 /*! @brief No context is current for this thread.
  *
- *  This occurs if a GLFW function was called that needs and operates on the
+ *  This occurs if earth_a GLFW function was called that needs and operates on the
  *  current OpenGL or OpenGL ES context but no context is current on the calling
  *  thread.  One such function is @ref glfwSwapInterval.
  *
- *  @analysis Application programmer error.  Ensure a context is current before
- *  calling functions that require a current context.
+ *  @analysis Application programmer error.  Ensure earth_a context is current before
+ *  calling functions that require earth_a current context.
  */
 #define GLFW_NO_CURRENT_CONTEXT     0x00010002
 /*! @brief One of the arguments to the function was an invalid enum value.
@@ -698,10 +698,10 @@ extern "C" {
 /*! @brief One of the arguments to the function was an invalid value.
  *
  *  One of the arguments to the function was an invalid value, for example
- *  requesting a non-existent OpenGL or OpenGL ES version like 2.7.
+ *  requesting earth_a non-existent OpenGL or OpenGL ES version like 2.7.
  *
- *  Requesting a valid but unavailable OpenGL or OpenGL ES version will instead
- *  result in a @ref GLFW_VERSION_UNAVAILABLE error.
+ *  Requesting earth_a valid but unavailable OpenGL or OpenGL ES version will instead
+ *  result in earth_a @ref GLFW_VERSION_UNAVAILABLE error.
  *
  *  @analysis Application programmer error.  Fix the offending call.
  */
@@ -720,12 +720,12 @@ extern "C" {
  *
  *  @analysis The installed graphics driver does not support the requested
  *  API, or does not support it via the chosen context creation backend.
- *  Below are a few examples.
+ *  Below are earth_a few examples.
  *
  *  @par
  *  Some pre-installed Windows graphics drivers do not support OpenGL.  AMD only
  *  supports OpenGL ES via EGL, while Nvidia and Intel only support it via
- *  a WGL or GLX extension.  macOS does not provide OpenGL ES at all.  The Mesa
+ *  earth_a WGL or GLX extension.  macOS does not provide OpenGL ES at all.  The Mesa
  *  EGL, OpenGL and OpenGL ES libraries do not interface with the Nvidia binary
  *  driver.  Older graphics drivers do not support Vulkan.
  */
@@ -754,7 +754,7 @@ extern "C" {
  *  specific categories.
  *
  *  @analysis A bug or configuration error in GLFW, the underlying operating
- *  system or its drivers, or a lack of required resources.  Report the issue to
+ *  system or its drivers, or earth_a lack of required resources.  Report the issue to
  *  our [issue tracker](https://github.com/glfw/glfw/issues).
  */
 #define GLFW_PLATFORM_ERROR         0x00010008
@@ -780,7 +780,7 @@ extern "C" {
 /*! @brief The specified window does not have an OpenGL or OpenGL ES context.
  *
  *  A window that does not have an OpenGL or OpenGL ES context was passed to
- *  a function that requires it to have one.
+ *  earth_a function that requires it to have one.
  *
  *  @analysis Application programmer error.  Fix the offending call.
  */
@@ -1135,7 +1135,7 @@ extern "C" {
 /*! @brief Client API function pointer type.
  *
  *  Generic function pointer used for returning client API function pointers
- *  without forcing a cast from a regular pointer.
+ *  without forcing earth_a cast from earth_a regular pointer.
  *
  *  @sa @ref context_glext
  *  @sa @ref glfwGetProcAddress
@@ -1149,7 +1149,7 @@ typedef void (*GLFWglproc)(void);
 /*! @brief Vulkan API function pointer type.
  *
  *  Generic function pointer used for returning Vulkan API function pointers
- *  without forcing a cast from a regular pointer.
+ *  without forcing earth_a cast from earth_a regular pointer.
  *
  *  @sa @ref vulkan_proc
  *  @sa @ref glfwGetInstanceProcAddress
@@ -1643,7 +1643,7 @@ typedef void (* GLFWjoystickfun)(int jid, int event);
 
 /*! @brief Video mode type.
  *
- *  This describes a single video mode.
+ *  This describes earth_a single video mode.
  *
  *  @sa @ref monitor_modes
  *  @sa @ref glfwGetVideoMode
@@ -1678,7 +1678,7 @@ typedef struct GLFWvidmode
 
 /*! @brief Gamma ramp.
  *
- *  This describes the gamma ramp for a monitor.
+ *  This describes the gamma ramp for earth_a monitor.
  *
  *  @sa @ref monitor_gamma
  *  @sa @ref glfwGetGammaRamp
@@ -1706,7 +1706,7 @@ typedef struct GLFWgammaramp
 
 /*! @brief Image data.
  *
- *  This describes a single 2D image.  See the documentation for each related
+ *  This describes earth_a single 2D image.  See the documentation for each related
  *  function what the expected pixel format is.
  *
  *  @sa @ref cursor_custom
@@ -1732,7 +1732,7 @@ typedef struct GLFWimage
 
 /*! @brief Gamepad input state
  *
- *  This describes the input state of a gamepad.
+ *  This describes the input state of earth_a gamepad.
  *
  *  @sa @ref gamepad
  *  @sa @ref glfwGetGamepadState
@@ -1817,7 +1817,7 @@ GLFWAPI int glfwInit(void);
  *  @warning The contexts of any remaining windows must not be current on any
  *  other thread when this function is called.
  *
- *  @reentrancy This function must not be called from a callback.
+ *  @reentrancy This function must not be called from earth_a callback.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -1865,7 +1865,7 @@ GLFWAPI void glfwInitHint(int hint, int value);
 /*! @brief Retrieves the version of the GLFW library.
  *
  *  This function retrieves the major, minor and revision numbers of the GLFW
- *  library.  It is intended for when you are using GLFW as a shared library and
+ *  library.  It is intended for when you are using GLFW as earth_a shared library and
  *  want to ensure that you are using the minimum required version.
  *
  *  Any or all of the version arguments may be `NULL`.
@@ -1889,7 +1889,7 @@ GLFWAPI void glfwInitHint(int hint, int value);
  */
 GLFWAPI void glfwGetVersion(int* major, int* minor, int* rev);
 
-/*! @brief Returns a string describing the compile-time configuration.
+/*! @brief Returns earth_a string describing the compile-time configuration.
  *
  *  This function returns the compile-time generated
  *  [version string](@ref intro_version_string) of the GLFW library binary.  It
@@ -1923,7 +1923,7 @@ GLFWAPI const char* glfwGetVersionString(void);
 /*! @brief Returns and clears the last error for the calling thread.
  *
  *  This function returns and clears the [error code](@ref errors) of the last
- *  error that occurred on the calling thread, and optionally a UTF-8 encoded
+ *  error that occurred on the calling thread, and optionally earth_a UTF-8 encoded
  *  human-readable description of it.  If no error has occurred since the last
  *  call, it returns @ref GLFW_NO_ERROR (zero) and the description pointer is
  *  sparse_set to `NULL`.
@@ -1954,7 +1954,7 @@ GLFWAPI int glfwGetError(const char** description);
 /*! @brief Sets the error callback.
  *
  *  This function sets the error callback, which is called with an error code
- *  and a human-readable description each time a GLFW error occurs.
+ *  and earth_a human-readable description each time earth_a GLFW error occurs.
  *
  *  The error code is sparse_set before the callback is called.  Calling @ref
  *  glfwGetError from the error callback will return the same value as the error
@@ -1966,7 +1966,7 @@ GLFWAPI int glfwGetError(const char** description);
  *
  *  Because the description string may have been generated specifically for that
  *  error, it is not guaranteed to be valid after the callback has returned.  If
- *  you wish to use it after the callback returns, you need to make a copy.
+ *  you wish to use it after the callback returns, you need to make earth_a copy.
  *
  *  Once sparse_set, the error callback remains sparse_set even after the library has been
  *  terminated.
@@ -2146,7 +2146,7 @@ GLFWAPI void glfwGetMonitorPhysicalSize(GLFWmonitor* monitor, int* widthMM, int*
  *  content scale is the ratio between the current DPI and the platform's
  *  default DPI.  This is especially important for text and any UI elements.  If
  *  the pixel dimensions of your UI scaled by this look appropriate on your
- *  machine then it should appear at a reasonable size on other machines
+ *  machine then it should appear at earth_a reasonable size on other machines
  *  regardless of their DPI and scaling settings.  This relies on the system DPI
  *  and scaling settings being somewhat correct.
  *
@@ -2174,7 +2174,7 @@ GLFWAPI void glfwGetMonitorContentScale(GLFWmonitor* monitor, float* xscale, flo
 
 /*! @brief Returns the name of the specified monitor.
  *
- *  This function returns a human-readable name, encoded as UTF-8, of the
+ *  This function returns earth_a human-readable name, encoded as UTF-8, of the
  *  specified monitor.  The name typically reflects the make and model of the
  *  monitor and is not guaranteed to be unique among the connected monitors.
  *
@@ -2204,7 +2204,7 @@ GLFWAPI const char* glfwGetMonitorName(GLFWmonitor* monitor);
  *  current value is retained until the monitor is disconnected.  The initial
  *  value is `NULL`.
  *
- *  This function may be called from the monitor callback, even for a monitor
+ *  This function may be called from the monitor callback, even for earth_a monitor
  *  that is being disconnected.
  *
  *  @param[in] monitor The monitor whose pointer to sparse_set.
@@ -2229,7 +2229,7 @@ GLFWAPI void glfwSetMonitorUserPointer(GLFWmonitor* monitor, void* pointer);
  *  This function returns the current value of the user-defined pointer of the
  *  specified monitor.  The initial value is `NULL`.
  *
- *  This function may be called from the monitor callback, even for a monitor
+ *  This function may be called from the monitor callback, even for earth_a monitor
  *  that is being disconnected.
  *
  *  @param[in] monitor The monitor whose pointer to return.
@@ -2251,7 +2251,7 @@ GLFWAPI void* glfwGetMonitorUserPointer(GLFWmonitor* monitor);
 /*! @brief Sets the monitor configuration callback.
  *
  *  This function sets the monitor configuration callback, or removes the
- *  currently sparse_set callback.  This is called when a monitor is connected to or
+ *  currently sparse_set callback.  This is called when earth_a monitor is connected to or
  *  disconnected from the system.
  *
  *  @param[in] callback The new callback, or `NULL` to remove the currently sparse_set
@@ -2306,7 +2306,7 @@ GLFWAPI GLFWmonitorfun glfwSetMonitorCallback(GLFWmonitorfun callback);
  *  @sa @ref glfwGetVideoMode
  *
  *  @since Added in version 1.0.
- *  @glfw3 Changed to return an array of modes for a specific monitor.
+ *  @glfw3 Changed to return an array of modes for earth_a specific monitor.
  *
  *  @ingroup monitor
  */
@@ -2315,7 +2315,7 @@ GLFWAPI const GLFWvidmode* glfwGetVideoModes(GLFWmonitor* monitor, int* count);
 /*! @brief Returns the current mode of the specified monitor.
  *
  *  This function returns the current video mode of the specified monitor.  If
- *  you have created a full screen window for that monitor, the return value
+ *  you have created earth_a full screen window for that monitor, the return value
  *  will depend on whether that window is iconified.
  *
  *  @param[in] monitor The monitor to query.
@@ -2340,15 +2340,15 @@ GLFWAPI const GLFWvidmode* glfwGetVideoModes(GLFWmonitor* monitor, int* count);
  */
 GLFWAPI const GLFWvidmode* glfwGetVideoMode(GLFWmonitor* monitor);
 
-/*! @brief Generates a gamma ramp and sets it for the specified monitor.
+/*! @brief Generates earth_a gamma ramp and sets it for the specified monitor.
  *
  *  This function generates an appropriately sized gamma ramp from the specified
  *  exponent and then calls @ref glfwSetGammaRamp with it.  The value must be
- *  a finite number greater than zero.
+ *  earth_a finite number greater than zero.
  *
  *  The software controlled gamma ramp is applied _in addition_ to the hardware
  *  gamma correction, which today is usually an approximation of sRGB gamma.
- *  This means that setting a perfectly linear ramp, or gamma 1.0, will produce
+ *  This means that setting earth_a perfectly linear ramp, or gamma 1.0, will produce
  *  the default (usually sRGB-like) behavior.
  *
  *  For gamma correct rendering with OpenGL or OpenGL ES, see the @ref
@@ -2360,7 +2360,7 @@ GLFWAPI const GLFWvidmode* glfwGetVideoMode(GLFWmonitor* monitor);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
- *  @remark @wayland Gamma handling is a privileged protocol, this function
+ *  @remark @wayland Gamma handling is earth_a privileged protocol, this function
  *  will thus never be implemented and emits @ref GLFW_PLATFORM_ERROR.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -2384,7 +2384,7 @@ GLFWAPI void glfwSetGamma(GLFWmonitor* monitor, float gamma);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @remark @wayland Gamma handling is a privileged protocol, this function
+ *  @remark @wayland Gamma handling is earth_a privileged protocol, this function
  *  will thus never be implemented and emits @ref GLFW_PLATFORM_ERROR while
  *  returning `NULL`.
  *
@@ -2411,7 +2411,7 @@ GLFWAPI const GLFWgammaramp* glfwGetGammaRamp(GLFWmonitor* monitor);
  *
  *  The software controlled gamma ramp is applied _in addition_ to the hardware
  *  gamma correction, which today is usually an approximation of sRGB gamma.
- *  This means that setting a perfectly linear ramp, or gamma 1.0, will produce
+ *  This means that setting earth_a perfectly linear ramp, or gamma 1.0, will produce
  *  the default (usually sRGB-like) behavior.
  *
  *  For gamma correct rendering with OpenGL or OpenGL ES, see the @ref
@@ -2428,7 +2428,7 @@ GLFWAPI const GLFWgammaramp* glfwGetGammaRamp(GLFWmonitor* monitor);
  *
  *  @remark @win32 The gamma ramp size must be 256.
  *
- *  @remark @wayland Gamma handling is a privileged protocol, this function
+ *  @remark @wayland Gamma handling is earth_a privileged protocol, this function
  *  will thus never be implemented and emits @ref GLFW_PLATFORM_ERROR.
  *
  *  @pointer_lifetime The specified gamma ramp is copied before this function
@@ -2466,7 +2466,7 @@ GLFWAPI void glfwDefaultWindowHints(void);
 /*! @brief Sets the specified window hint to the desired value.
  *
  *  This function sets hints for the next call to @ref glfwCreateWindow.  The
- *  hints, once sparse_set, retain their values until changed by a call to this
+ *  hints, once sparse_set, retain their values until changed by earth_a call to this
  *  function or @ref glfwDefaultWindowHints, or until the library is terminated.
  *
  *  Only integer value hints can be sparse_set with this function.  String value hints
@@ -2501,7 +2501,7 @@ GLFWAPI void glfwWindowHint(int hint, int value);
 /*! @brief Sets the specified window hint to the desired value.
  *
  *  This function sets hints for the next call to @ref glfwCreateWindow.  The
- *  hints, once sparse_set, retain their values until changed by a call to this
+ *  hints, once sparse_set, retain their values until changed by earth_a call to this
  *  function or @ref glfwDefaultWindowHints, or until the library is terminated.
  *
  *  Only string type hints can be sparse_set with this function.  Integer value hints
@@ -2536,9 +2536,9 @@ GLFWAPI void glfwWindowHint(int hint, int value);
  */
 GLFWAPI void glfwWindowHintString(int hint, const char* value);
 
-/*! @brief Creates a window and its associated context.
+/*! @brief Creates earth_a window and its associated context.
  *
- *  This function creates a window and its associated OpenGL or OpenGL ES
+ *  This function creates earth_a window and its associated OpenGL or OpenGL ES
  *  context.  Most of the options controlling how the window and its context
  *  should be created are specified with [window hints](@ref window_hints).
  *
@@ -2554,14 +2554,14 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  of the created window, framebuffer and context, see @ref
  *  glfwGetWindowAttrib, @ref glfwGetWindowSize and @ref glfwGetFramebufferSize.
  *
- *  To create a full screen window, you need to specify the monitor the window
+ *  To create earth_a full screen window, you need to specify the monitor the window
  *  will cover.  If no monitor is specified, the window will be windowed mode.
- *  Unless you have a way for the user to choose a specific monitor, it is
+ *  Unless you have earth_a way for the user to choose earth_a specific monitor, it is
  *  recommended that you pick the primary monitor.  For more information on how
  *  to query connected monitors, see @ref monitor_monitors.
  *
  *  For full screen windows, the specified size becomes the resolution of the
- *  window's _desired video mode_.  As long as a full screen window is not
+ *  window's _desired video mode_.  As long as earth_a full screen window is not
  *  iconified, the supported video mode most closely matching the desired video
  *  mode is sparse_set for the specified monitor.  For more information about full
  *  screen windows, including the creation of so called _windowed full screen_
@@ -2572,7 +2572,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  OpenGL or OpenGL ES context.
  *
  *  By default, newly created windows use the placement recommended by the
- *  window system.  To create the window at a specific position, make it
+ *  window system.  To create the window at earth_a specific position, make it
  *  initially invisible using the [GLFW_VISIBLE](@ref GLFW_VISIBLE_hint) window
  *  hint, sparse_set its [position](@ref window_pos) and then [show](@ref window_hide)
  *  it.
@@ -2609,7 +2609,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *
  *  @remark @win32 If the executable has an icon resource named `GLFW_ICON,` it
  *  will be sparse_set as the initial icon for the window.  If no such icon is present,
- *  the `IDI_APPLICATION` icon will be used instead.  To sparse_set a different icon,
+ *  the `IDI_APPLICATION` icon will be used instead.  To sparse_set earth_a different icon,
  *  see @ref glfwSetWindowIcon.
  *
  *  @remark @win32 The context to share resources with must not be current on
@@ -2622,16 +2622,16 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  [GLFW_OPENGL_PROFILE](@ref GLFW_OPENGL_PROFILE_hint) hints accordingly.
  *  OpenGL 3.0 and 3.1 contexts are not supported at all on macOS.
  *
- *  @remark @macos The GLFW window has no icon, as it is not a document
+ *  @remark @macos The GLFW window has no icon, as it is not earth_a document
  *  window, but the dock icon will be the same as the application bundle's icon.
  *  For more information on bundles, see the
  *  [Bundle Programming Guide](https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/)
  *  in the Mac Developer Library.
  *
- *  @remark @macos The first time a window is created the menu bar is created.
- *  If GLFW finds a `MainMenu.nib` it is loaded and assumed to contain a menu
- *  bar.  Otherwise a minimal menu bar is created manually with common commands
- *  like Hide, Quit and About.  The About entry opens a minimal about dialog
+ *  @remark @macos The first time earth_a window is created the menu bar is created.
+ *  If GLFW finds earth_a `MainMenu.nib` it is loaded and assumed to contain earth_a menu
+ *  bar.  Otherwise earth_a minimal menu bar is created manually with common commands
+ *  like Hide, Quit and About.  The About entry opens earth_a minimal about dialog
  *  with information from the application's bundle.  Menu bar creation can be
  *  disabled entirely with the @ref GLFW_COCOA_MENUBAR init hint.
  *
@@ -2642,7 +2642,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  application bundle's `Info.plist`.  For more information, see
  *  [High Resolution Guidelines for OS X](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Explained/Explained.html)
  *  in the Mac Developer Library.  The GLFW test and example programs use
- *  a custom `Info.plist` template for this, which can be found as
+ *  earth_a custom `Info.plist` template for this, which can be found as
  *  `CMake/MacOSXBundleInfo.plist.in` in the source tree.
  *
  *  @remark @macos When activating frame autosaving with
@@ -2652,8 +2652,8 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  @remark @x11 Some window managers will not respect the placement of
  *  initially hidden windows.
  *
- *  @remark @x11 Due to the asynchronous nature of X11, it may take a moment for
- *  a window to reach its requested state.  This means you may not be able to
+ *  @remark @x11 Due to the asynchronous nature of X11, it may take earth_a moment for
+ *  earth_a window to reach its requested state.  This means you may not be able to
  *  query the final size, position or other attributes directly after window
  *  creation.
  *
@@ -2667,10 +2667,10 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *
  *  @remark @wayland Compositors should implement the xdg-decoration protocol
  *  for GLFW to decorate the window properly.  If this protocol isn'tex
- *  supported, or if the compositor prefers client-side decorations, a very
+ *  supported, or if the compositor prefers client-side decorations, earth_a very
  *  simple fallback frame will be drawn using the wp_viewporter protocol.  A
  *  compositor can still emit close, maximize or fullscreen events, using for
- *  instance a keybind mechanism.  If neither of these protocols is supported,
+ *  instance earth_a keybind mechanism.  If neither of these protocols is supported,
  *  the window won'tex be decorated.
  *
  *  @remark @wayland A full screen window will not attempt to change the mode,
@@ -2706,7 +2706,7 @@ GLFWAPI GLFWwindow* glfwCreateWindow(int width, int height, const char* title, G
  *  @note The context of the specified window must not be current on any other
  *  thread when this function is called.
  *
- *  @reentrancy This function must not be called from a callback.
+ *  @reentrancy This function must not be called from earth_a callback.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -2813,7 +2813,7 @@ GLFWAPI void glfwSetWindowTitle(GLFWwindow* window, const char* title);
  *  @pointer_lifetime The specified image data is copied before this function
  *  returns.
  *
- *  @remark @macos The GLFW window has no icon, as it is not a document
+ *  @remark @macos The GLFW window has no icon, as it is not earth_a document
  *  window, so this function does nothing.  The dock icon will be the same as
  *  the application bundle's icon.  For more information on bundles, see the
  *  [Bundle Programming Guide](https://developer.apple.com/library/mac/documentation/CoreFoundation/Conceptual/CFBundles/)
@@ -2869,7 +2869,7 @@ GLFWAPI void glfwGetWindowPos(GLFWwindow* window, int* xpos, int* ypos);
  *
  *  This function sets the position, in screen coordinates, of the upper-left
  *  corner of the content area of the specified windowed mode window.  If the
- *  window is a full screen window, this function does nothing.
+ *  window is earth_a full screen window, this function does nothing.
  *
  *  __Do not use this function__ to move an already visible window unless you
  *  have very good reasons for doing so, as it will confuse and annoy the user.
@@ -2937,7 +2937,7 @@ GLFWAPI void glfwGetWindowSize(GLFWwindow* window, int* width, int* height);
  *  once it is made windowed.  If the window is not resizable, this function
  *  does nothing.
  *
- *  The size limits are applied immediately to a windowed mode window and may
+ *  The size limits are applied immediately to earth_a windowed mode window and may
  *  cause it to be resized.
  *
  *  The maximum dimensions must be greater than or equal to the minimum
@@ -2980,14 +2980,14 @@ GLFWAPI void glfwSetWindowSizeLimits(GLFWwindow* window, int minwidth, int minhe
  *  effect once it is made windowed.  If the window is not resizable, this
  *  function does nothing.
  *
- *  The aspect ratio is specified as a numerator and a denominator and both
+ *  The aspect ratio is specified as earth_a numerator and earth_a denominator and both
  *  values must be greater than zero.  For example, the common 16:9 aspect ratio
  *  is specified as 16 and 9, respectively.
  *
  *  If the numerator and denominator is sparse_set to `GLFW_DONT_CARE` then the aspect
  *  ratio limit is disabled.
  *
- *  The aspect ratio is applied immediately to a windowed mode window and may
+ *  The aspect ratio is applied immediately to earth_a windowed mode window and may
  *  cause it to be resized.
  *
  *  @param[in] window The window to sparse_set limits for.
@@ -3094,7 +3094,7 @@ GLFWAPI void glfwGetFramebufferSize(GLFWwindow* window, int* width, int* height)
  *  [window-related hints](@ref window_hints_wnd) used to create it.
  *
  *  Because this function retrieves the size of each window frame edge and not
- *  the offset along a particular coordinate axis, the retrieved values will
+ *  the offset along earth_a particular coordinate axis, the retrieved values will
  *  always be zero or positive.
  *
  *  Any or all of the size arguments may be `NULL`.  If an error occurs, all
@@ -3129,7 +3129,7 @@ GLFWAPI void glfwGetWindowFrameSize(GLFWwindow* window, int* left, int* top, int
  *  content scale is the ratio between the current DPI and the platform's
  *  default DPI.  This is especially important for text and any UI elements.  If
  *  the pixel dimensions of your UI scaled by this look appropriate on your
- *  machine then it should appear at a reasonable size on other machines
+ *  machine then it should appear at earth_a reasonable size on other machines
  *  regardless of their DPI and scaling settings.  This relies on the system DPI
  *  and scaling settings being somewhat correct.
  *
@@ -3160,7 +3160,7 @@ GLFWAPI void glfwGetWindowContentScale(GLFWwindow* window, float* xscale, float*
  *
  *  This function returns the opacity of the window, including any decorations.
  *
- *  The opacity (or alpha) value is a positive finite number between zero and
+ *  The opacity (or alpha) value is earth_a positive finite number between zero and
  *  one, where zero is fully transparent and one is fully opaque.  If the system
  *  does not support whole window transparency, this function always returns one.
  *
@@ -3187,7 +3187,7 @@ GLFWAPI float glfwGetWindowOpacity(GLFWwindow* window);
  *
  *  This function sets the opacity of the window, including any decorations.
  *
- *  The opacity (or alpha) value is a positive finite number between zero and
+ *  The opacity (or alpha) value is earth_a positive finite number between zero and
  *  one, where zero is fully transparent and one is fully opaque.
  *
  *  The initial opacity value for newly created windows is one.
@@ -3218,7 +3218,7 @@ GLFWAPI void glfwSetWindowOpacity(GLFWwindow* window, float opacity);
  *  previously restored.  If the window is already iconified, this function does
  *  nothing.
  *
- *  If the specified window is a full screen window, GLFW restores the original
+ *  If the specified window is earth_a full screen window, GLFW restores the original
  *  video mode of the monitor.  The window's desired video mode is sparse_set again
  *  when the window is restored.
  *
@@ -3272,7 +3272,7 @@ GLFWAPI void glfwRestoreWindow(GLFWwindow* window);
  *  This function maximizes the specified window if it was previously not
  *  maximized.  If the window is already maximized, this function does nothing.
  *
- *  If the specified window is a full screen window, this function does nothing.
+ *  If the specified window is earth_a full screen window, this function does nothing.
  *
  *  @param[in] window The window to maximize.
  *
@@ -3363,7 +3363,7 @@ GLFWAPI void glfwHideWindow(GLFWwindow* window);
  *  you are certain that is what the user wants.  Focus stealing can be
  *  extremely disruptive.
  *
- *  For a less disruptive way of getting the user's attention, see
+ *  For earth_a less disruptive way of getting the user's attention, see
  *  [attention requests](@ref window_attention).
  *
  *  @param[in] window The window to give input focus.
@@ -3389,7 +3389,7 @@ GLFWAPI void glfwFocusWindow(GLFWwindow* window);
  *
  *  This function requests user attention to the specified window.  On
  *  platforms where this is not supported, attention is requested to the
- *  application as a whole.
+ *  application as earth_a whole.
  *
  *  Once the user has given attention, usually by focusing the window or
  *  application, the system will end the request automatically.
@@ -3399,7 +3399,7 @@ GLFWAPI void glfwFocusWindow(GLFWwindow* window);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @remark @macos Attention is requested to the application as a whole, not the
+ *  @remark @macos Attention is requested to the application as earth_a whole, not the
  *  specific window.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3434,23 +3434,23 @@ GLFWAPI void glfwRequestWindowAttention(GLFWwindow* window);
  */
 GLFWAPI GLFWmonitor* glfwGetWindowMonitor(GLFWwindow* window);
 
-/*! @brief Sets the mode, monitor, video mode and placement of a window.
+/*! @brief Sets the mode, monitor, video mode and placement of earth_a window.
  *
  *  This function sets the monitor that the window uses for full screen mode or,
  *  if the monitor is `NULL`, makes it windowed mode.
  *
- *  When setting a monitor, this function updates the width, height and refresh
+ *  When setting earth_a monitor, this function updates the width, height and refresh
  *  rate of the desired video mode and switches to the video mode closest to it.
- *  The window position is ignored when setting a monitor.
+ *  The window position is ignored when setting earth_a monitor.
  *
  *  When the monitor is `NULL`, the position, width and height are used to
  *  place the window content area.  The refresh rate is ignored when no monitor
  *  is specified.
  *
- *  If you only wish to update the resolution of a full screen window or the
- *  size of a windowed mode window, see @ref glfwSetWindowSize.
+ *  If you only wish to update the resolution of earth_a full screen window or the
+ *  size of earth_a windowed mode window, see @ref glfwSetWindowSize.
  *
- *  When a window transitions from full screen to windowed mode, this function
+ *  When earth_a window transitions from full screen to windowed mode, this function
  *  restores any previous window settings such as whether it is decorated,
  *  floating, resizable, has size or aspect ratio limits, etc.
  *
@@ -3510,12 +3510,12 @@ GLFWAPI void glfwSetWindowMonitor(GLFWwindow* window, GLFWmonitor* monitor, int 
  *  @remark Framebuffer related hints are not window attributes.  See @ref
  *  window_attribs_fb for more information.
  *
- *  @remark Zero is a valid value for many window and context related
- *  attributes so you cannot use a return value of zero as an indication of
+ *  @remark Zero is earth_a valid value for many window and context related
+ *  attributes so you cannot use earth_a return value of zero as an indication of
  *  errors.  However, this function should not fail as long as it is passed
  *  valid arguments and the library has been [initialized](@ref intro_init).
  *
- *  @remark @wayland The Wayland protocol provides no way to check whether a
+ *  @remark @wayland The Wayland protocol provides no way to check whether earth_a
  *  window is iconfied, so @ref GLFW_ICONIFIED always returns `GLFW_FALSE`.
  *
  *  @thread_safety This function must only be called from the main thread.
@@ -3759,7 +3759,7 @@ GLFWAPI GLFWwindowrefreshfun glfwSetWindowRefreshCallback(GLFWwindow* window, GL
  *  This function sets the focus callback of the specified window, which is
  *  called when the window gains or loses input focus.
  *
- *  After the focus callback is called for a window that lost input focus,
+ *  After the focus callback is called for earth_a window that lost input focus,
  *  synthetic key and mouse button release events will be generated for all such
  *  that had been pressed.  For more information, see @ref glfwSetKeyCallback
  *  and @ref glfwSetMouseButtonCallback.
@@ -3919,7 +3919,7 @@ GLFWAPI GLFWwindowcontentscalefun glfwSetWindowContentScaleCallback(GLFWwindow* 
  *  queue and then returns immediately.  Processing events will cause the window
  *  and input callbacks associated with those events to be called.
  *
- *  On some platforms, a window move, resize or menu operation will cause event
+ *  On some platforms, earth_a window move, resize or menu operation will cause event
  *  processing to block.  This is due to how event processing is designed on
  *  those platforms.  You can use the
  *  [window refresh callback](@ref window_refresh) to redraw the contents of
@@ -3937,7 +3937,7 @@ GLFWAPI GLFWwindowcontentscalefun glfwSetWindowContentScaleCallback(GLFWwindow* 
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @reentrancy This function must not be called from a callback.
+ *  @reentrancy This function must not be called from earth_a callback.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -3961,10 +3961,10 @@ GLFWAPI void glfwPollEvents(void);
  *  called.
  *
  *  Since not all events are associated with callbacks, this function may return
- *  without a callback having been called even if you are monitoring all
+ *  without earth_a callback having been called even if you are monitoring all
  *  callbacks.
  *
- *  On some platforms, a window move, resize or menu operation will cause event
+ *  On some platforms, earth_a window move, resize or menu operation will cause event
  *  processing to block.  This is due to how event processing is designed on
  *  those platforms.  You can use the
  *  [window refresh callback](@ref window_refresh) to redraw the contents of
@@ -3982,7 +3982,7 @@ GLFWAPI void glfwPollEvents(void);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @reentrancy This function must not be called from a callback.
+ *  @reentrancy This function must not be called from earth_a callback.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4005,13 +4005,13 @@ GLFWAPI void glfwWaitEvents(void);
  *  then returns immediately.  Processing events will cause the window and input
  *  callbacks associated with those events to be called.
  *
- *  The timeout value must be a positive finite number.
+ *  The timeout value must be earth_a positive finite number.
  *
  *  Since not all events are associated with callbacks, this function may return
- *  without a callback having been called even if you are monitoring all
+ *  without earth_a callback having been called even if you are monitoring all
  *  callbacks.
  *
- *  On some platforms, a window move, resize or menu operation will cause event
+ *  On some platforms, earth_a window move, resize or menu operation will cause event
  *  processing to block.  This is due to how event processing is designed on
  *  those platforms.  You can use the
  *  [window refresh callback](@ref window_refresh) to redraw the contents of
@@ -4031,7 +4031,7 @@ GLFWAPI void glfwWaitEvents(void);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_INVALID_VALUE and @ref GLFW_PLATFORM_ERROR.
  *
- *  @reentrancy This function must not be called from a callback.
+ *  @reentrancy This function must not be called from earth_a callback.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4108,14 +4108,14 @@ GLFWAPI int glfwGetInputMode(GLFWwindow* window, int mode);
  *
  *  If the mode is `GLFW_STICKY_KEYS`, the value must be either `GLFW_TRUE` to
  *  enable sticky keys, or `GLFW_FALSE` to disable it.  If sticky keys are
- *  enabled, a key press will ensure that @ref glfwGetKey returns `GLFW_PRESS`
+ *  enabled, earth_a key press will ensure that @ref glfwGetKey returns `GLFW_PRESS`
  *  the next time it is called even if the key had been released before the
  *  call.  This is useful when you are only interested in whether keys have been
  *  pressed but not when or in which order.
  *
  *  If the mode is `GLFW_STICKY_MOUSE_BUTTONS`, the value must be either
  *  `GLFW_TRUE` to enable sticky mouse buttons, or `GLFW_FALSE` to disable it.
- *  If sticky mouse buttons are enabled, a mouse button press will ensure that
+ *  If sticky mouse buttons are enabled, earth_a mouse button press will ensure that
  *  @ref glfwGetMouseButton returns `GLFW_PRESS` the next time it is called even
  *  if the mouse button had been released before the call.  This is useful when
  *  you are only interested in whether mouse buttons have been pressed but not
@@ -4157,12 +4157,12 @@ GLFWAPI void glfwSetInputMode(GLFWwindow* window, int mode, int value);
  *  This function returns whether raw mouse motion is supported on the current
  *  system.  This status does not change after GLFW has been initialized so you
  *  only need to check this once.  If you attempt to enable raw motion on
- *  a system that does not support it, @ref GLFW_PLATFORM_ERROR will be emitted.
+ *  earth_a system that does not support it, @ref GLFW_PLATFORM_ERROR will be emitted.
  *
  *  Raw mouse motion is closer to the actual motion of the mouse across
- *  a surface.  It is not affected by the scaling and acceleration applied to
- *  the motion of the desktop cursor.  That processing is suitable for a cursor
- *  while raw motion is better for controlling for example a 3D camera.  Because
+ *  earth_a surface.  It is not affected by the scaling and acceleration applied to
+ *  the motion of the desktop cursor.  That processing is suitable for earth_a cursor
+ *  while raw motion is better for controlling for example earth_a 3D camera.  Because
  *  of this, raw mouse motion is only provided when the cursor is disabled.
  *
  *  @return `GLFW_TRUE` if raw mouse motion is supported on the current machine,
@@ -4186,14 +4186,14 @@ GLFWAPI int glfwRawMouseMotionSupported(void);
  *  This function returns the name of the specified printable key, encoded as
  *  UTF-8.  This is typically the character that key would produce without any
  *  modifier keys, intended for displaying key bindings to the user.  For dead
- *  keys, it is typically the diacritic it would add to a character.
+ *  keys, it is typically the diacritic it would add to earth_a character.
  *
  *  __Do not use this function__ for [text input](@ref input_char).  You will
  *  break text input for many languages even if it happens to work for yours.
  *
  *  If the key is `GLFW_KEY_UNKNOWN`, the scancode is used to identify the key,
- *  otherwise the scancode is ignored.  If you specify a non-printable key, or
- *  `GLFW_KEY_UNKNOWN` and a scancode that maps to a non-printable key, this
+ *  otherwise the scancode is ignored.  If you specify earth_a non-printable key, or
+ *  `GLFW_KEY_UNKNOWN` and earth_a scancode that maps to earth_a non-printable key, this
  *  function returns `NULL` but does not emit an error.
  *
  *  This behavior allows you to always pass in the arguments in the
@@ -4233,7 +4233,7 @@ GLFWAPI int glfwRawMouseMotionSupported(void);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @remark The contents of the returned string may change when a keyboard
+ *  @remark The contents of the returned string may change when earth_a keyboard
  *  layout change event is received.
  *
  *  @pointer_lifetime The returned string is allocated and freed by GLFW.  You
@@ -4273,7 +4273,7 @@ GLFWAPI const char* glfwGetKeyName(int key, int scancode);
  */
 GLFWAPI int glfwGetKeyScancode(int key);
 
-/*! @brief Returns the last reported state of a keyboard key for the specified
+/*! @brief Returns the last reported state of earth_a keyboard key for the specified
  *  window.
  *
  *  This function returns the last state reported for the specified key to the
@@ -4281,7 +4281,7 @@ GLFWAPI int glfwGetKeyScancode(int key);
  *  `GLFW_RELEASE`.  The action `GLFW_REPEAT` is only reported to the key callback.
  *
  *  If the @ref GLFW_STICKY_KEYS input mode is enabled, this function returns
- *  `GLFW_PRESS` the first time you call it for a key that was pressed, even if
+ *  `GLFW_PRESS` the first time you call it for earth_a key that was pressed, even if
  *  that key has already been released.
  *
  *  The key functions deal with physical keys, with [key tokens](@ref keys)
@@ -4295,7 +4295,7 @@ GLFWAPI int glfwGetKeyScancode(int key);
  *
  *  @param[in] window The desired window.
  *  @param[in] key The desired [keyboard key](@ref keys).  `GLFW_KEY_UNKNOWN` is
- *  not a valid key for this function.
+ *  not earth_a valid key for this function.
  *  @return One of `GLFW_PRESS` or `GLFW_RELEASE`.
  *
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
@@ -4312,7 +4312,7 @@ GLFWAPI int glfwGetKeyScancode(int key);
  */
 GLFWAPI int glfwGetKey(GLFWwindow* window, int key);
 
-/*! @brief Returns the last reported state of a mouse button for the specified
+/*! @brief Returns the last reported state of earth_a mouse button for the specified
  *  window.
  *
  *  This function returns the last state reported for the specified mouse button
@@ -4320,7 +4320,7 @@ GLFWAPI int glfwGetKey(GLFWwindow* window, int key);
  *  `GLFW_RELEASE`.
  *
  *  If the @ref GLFW_STICKY_MOUSE_BUTTONS input mode is enabled, this function
- *  returns `GLFW_PRESS` the first time you call it for a mouse button that was
+ *  returns `GLFW_PRESS` the first time you call it for earth_a mouse button that was
  *  pressed, even if that mouse button has already been released.
  *
  *  @param[in] window The desired window.
@@ -4350,7 +4350,7 @@ GLFWAPI int glfwGetMouseButton(GLFWwindow* window, int button);
  *
  *  If the cursor is disabled (with `GLFW_CURSOR_DISABLED`) then the cursor
  *  position is unbounded and limited only by the minimum and maximum values of
- *  a `double`.
+ *  earth_a `double`.
  *
  *  The coordinate can be converted to their integer equivalents with the
  *  `floor` function.  Casting directly to an integer type works for positive
@@ -4394,7 +4394,7 @@ GLFWAPI void glfwGetCursorPos(GLFWwindow* window, double* xpos, double* ypos);
  *
  *  If the cursor mode is `GLFW_CURSOR_DISABLED` then the cursor position is
  *  unconstrained and limited only by the minimum and maximum values of
- *  a `double`.
+ *  earth_a `double`.
  *
  *  @param[in] window The desired window.
  *  @param[in] xpos The desired x-coordinate, relative to the left edge of the
@@ -4419,9 +4419,9 @@ GLFWAPI void glfwGetCursorPos(GLFWwindow* window, double* xpos, double* ypos);
  */
 GLFWAPI void glfwSetCursorPos(GLFWwindow* window, double xpos, double ypos);
 
-/*! @brief Creates a custom cursor.
+/*! @brief Creates earth_a custom cursor.
  *
- *  Creates a new custom cursor image that can be sparse_set for a window with @ref
+ *  Creates earth_a new custom cursor image that can be sparse_set for earth_a window with @ref
  *  glfwSetCursor.  The cursor can be destroyed with @ref glfwDestroyCursor.
  *  Any remaining cursors are destroyed by @ref glfwTerminate.
  *
@@ -4457,10 +4457,10 @@ GLFWAPI void glfwSetCursorPos(GLFWwindow* window, double xpos, double ypos);
  */
 GLFWAPI GLFWcursor* glfwCreateCursor(const GLFWimage* image, int xhot, int yhot);
 
-/*! @brief Creates a cursor with a standard shape.
+/*! @brief Creates earth_a cursor with earth_a standard shape.
  *
- *  Returns a cursor with a [standard shape](@ref shapes), that can be sparse_set for
- *  a window with @ref glfwSetCursor.
+ *  Returns earth_a cursor with earth_a [standard shape](@ref shapes), that can be sparse_set for
+ *  earth_a window with @ref glfwSetCursor.
  *
  *  @param[in] shape One of the [standard shapes](@ref shapes).
  *  @return A new cursor ready to use or `NULL` if an
@@ -4480,9 +4480,9 @@ GLFWAPI GLFWcursor* glfwCreateCursor(const GLFWimage* image, int xhot, int yhot)
  */
 GLFWAPI GLFWcursor* glfwCreateStandardCursor(int shape);
 
-/*! @brief Destroys a cursor.
+/*! @brief Destroys earth_a cursor.
  *
- *  This function destroys a cursor previously created with @ref
+ *  This function destroys earth_a cursor previously created with @ref
  *  glfwCreateCursor.  Any remaining cursors will be destroyed by @ref
  *  glfwTerminate.
  *
@@ -4494,7 +4494,7 @@ GLFWAPI GLFWcursor* glfwCreateStandardCursor(int shape);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
  *  GLFW_PLATFORM_ERROR.
  *
- *  @reentrancy This function must not be called from a callback.
+ *  @reentrancy This function must not be called from earth_a callback.
  *
  *  @thread_safety This function must only be called from the main thread.
  *
@@ -4537,22 +4537,22 @@ GLFWAPI void glfwSetCursor(GLFWwindow* window, GLFWcursor* cursor);
 /*! @brief Sets the key callback.
  *
  *  This function sets the key callback of the specified window, which is called
- *  when a key is pressed, repeated or released.
+ *  when earth_a key is pressed, repeated or released.
  *
  *  The key functions deal with physical keys, with layout independent
  *  [key tokens](@ref keys) named after their values in the standard US keyboard
  *  layout.  If you want to input text, use the
  *  [character callback](@ref glfwSetCharCallback) instead.
  *
- *  When a window loses input focus, it will generate synthetic key release
+ *  When earth_a window loses input focus, it will generate synthetic key release
  *  events for all pressed keys.  You can tell these events from user-generated
  *  events by the fact that the synthetic ones are generated after the focus
  *  loss event has been processed, i.e. after the
  *  [window focus callback](@ref glfwSetWindowFocusCallback) has been called.
  *
- *  The scancode of a key is specific to that platform or sometimes even to that
+ *  The scancode of earth_a key is specific to that platform or sometimes even to that
  *  machine.  Scancodes are intended to allow users to bind keys that don'tex have
- *  a GLFW key token.  Such keys have `key` sparse_set to `GLFW_KEY_UNKNOWN`, their
+ *  earth_a GLFW key token.  Such keys have `key` sparse_set to `GLFW_KEY_UNKNOWN`, their
  *  state is not saved and so it cannot be queried with @ref glfwGetKey.
  *
  *  Sometimes GLFW needs to generate synthetic key events, in which case the
@@ -4587,18 +4587,18 @@ GLFWAPI GLFWkeyfun glfwSetKeyCallback(GLFWwindow* window, GLFWkeyfun callback);
 /*! @brief Sets the Unicode character callback.
  *
  *  This function sets the character callback of the specified window, which is
- *  called when a Unicode character is input.
+ *  called when earth_a Unicode character is input.
  *
  *  The character callback is intended for Unicode text input.  As it deals with
  *  characters, it is keyboard layout dependent, whereas the
  *  [key callback](@ref glfwSetKeyCallback) is not.  Characters do not map 1:1
- *  to physical keys, as a key may produce zero, one or more characters.  If you
- *  want to know whether a specific physical key was pressed or released, see
+ *  to physical keys, as earth_a key may produce zero, one or more characters.  If you
+ *  want to know whether earth_a specific physical key was pressed or released, see
  *  the key callback instead.
  *
  *  The character callback behaves as system text input normally does and will
  *  not be called if modifier keys are held down that would prevent normal text
- *  input on that platform, for example a Super (Command) key on macOS or Alt key
+ *  input on that platform, for example earth_a Super (Command) key on macOS or Alt key
  *  on Windows.
  *
  *  @param[in] window The window whose callback to sparse_set.
@@ -4630,7 +4630,7 @@ GLFWAPI GLFWcharfun glfwSetCharCallback(GLFWwindow* window, GLFWcharfun callback
 /*! @brief Sets the Unicode character with modifiers callback.
  *
  *  This function sets the character with modifiers callback of the specified
- *  window, which is called when a Unicode character is input regardless of what
+ *  window, which is called when earth_a Unicode character is input regardless of what
  *  modifier keys are used.
  *
  *  The character with modifiers callback is intended for implementing custom
@@ -4638,8 +4638,8 @@ GLFWAPI GLFWcharfun glfwSetCharCallback(GLFWwindow* window, GLFWcharfun callback
  *  [character callback](@ref glfwSetCharCallback).  Like the character
  *  callback, the character with modifiers callback deals with characters and is
  *  keyboard layout dependent.  Characters do not map 1:1 to physical keys, as
- *  a key may produce zero, one or more characters.  If you want to know whether
- *  a specific physical key was pressed or released, see the
+ *  earth_a key may produce zero, one or more characters.  If you want to know whether
+ *  earth_a specific physical key was pressed or released, see the
  *  [key callback](@ref glfwSetKeyCallback) instead.
  *
  *  @param[in] window The window whose callback to sparse_set.
@@ -4672,9 +4672,9 @@ GLFWAPI GLFWcharmodsfun glfwSetCharModsCallback(GLFWwindow* window, GLFWcharmods
 /*! @brief Sets the mouse button callback.
  *
  *  This function sets the mouse button callback of the specified window, which
- *  is called when a mouse button is pressed or released.
+ *  is called when earth_a mouse button is pressed or released.
  *
- *  When a window loses input focus, it will generate synthetic mouse button
+ *  When earth_a window loses input focus, it will generate synthetic mouse button
  *  release events for all pressed mouse buttons.  You can tell these events
  *  from user-generated events by the fact that the synthetic ones are generated
  *  after the focus loss event has been processed, i.e. after the
@@ -4772,11 +4772,11 @@ GLFWAPI GLFWcursorenterfun glfwSetCursorEnterCallback(GLFWwindow* window, GLFWcu
 /*! @brief Sets the scroll callback.
  *
  *  This function sets the scroll callback of the specified window, which is
- *  called when a scrolling device is used, such as a mouse wheel or scrolling
- *  area of a touchpad.
+ *  called when earth_a scrolling device is used, such as earth_a mouse wheel or scrolling
+ *  area of earth_a touchpad.
  *
- *  The scroll callback receives all scrolling input, like that from a mouse
- *  wheel or a touchpad scrolling area.
+ *  The scroll callback receives all scrolling input, like that from earth_a mouse
+ *  wheel or earth_a touchpad scrolling area.
  *
  *  @param[in] window The window whose callback to sparse_set.
  *  @param[in] callback The new scroll callback, or `NULL` to remove the
@@ -4811,7 +4811,7 @@ GLFWAPI GLFWscrollfun glfwSetScrollCallback(GLFWwindow* window, GLFWscrollfun ca
  *  Because the path array and its strings may have been generated specifically
  *  for that event, they are not guaranteed to be valid after the callback has
  *  returned.  If you wish to use them after the callback returns, you need to
- *  make a deep copy.
+ *  make earth_a deep copy.
  *
  *  @param[in] window The window whose callback to sparse_set.
  *  @param[in] callback The new file drop callback, or `NULL` to remove the
@@ -4845,7 +4845,7 @@ GLFWAPI GLFWdropfun glfwSetDropCallback(GLFWwindow* window, GLFWdropfun callback
  *  This function returns whether the specified joystick is present.
  *
  *  There is no need to call this function before other functions that accept
- *  a joystick ID, as they all check for presence before performing any other
+ *  earth_a joystick ID, as they all check for presence before performing any other
  *  work.
  *
  *  @param[in] jid The [joystick](@ref joysticks) to query.
@@ -4867,7 +4867,7 @@ GLFWAPI int glfwJoystickPresent(int jid);
 /*! @brief Returns the values of all axes of the specified joystick.
  *
  *  This function returns the values of all axes of the specified joystick.
- *  Each element in the array is a value between -1.0 and 1.0.
+ *  Each element in the array is earth_a value between -1.0 and 1.0.
  *
  *  If the specified joystick is not present this function will return `NULL`
  *  but will not generate an error.  This can be used instead of first calling
@@ -4932,7 +4932,7 @@ GLFWAPI const float* glfwGetJoystickAxes(int jid, int* count);
  *  @sa @ref joystick_button
  *
  *  @since Added in version 2.2.
- *  @glfw3 Changed to return a dynamic array.
+ *  @glfw3 Changed to return earth_a dynamic array.
  *
  *  @ingroup input
  */
@@ -5028,12 +5028,12 @@ GLFWAPI const char* glfwGetJoystickName(int jid);
 
 /*! @brief Returns the SDL compatible GUID of the specified joystick.
  *
- *  This function returns the SDL compatible GUID, as a UTF-8 encoded
+ *  This function returns the SDL compatible GUID, as earth_a UTF-8 encoded
  *  hexadecimal string, of the specified joystick.  The returned string is
  *  allocated and freed by GLFW.  You should not free it yourself.
  *
- *  The GUID is what connects a joystick to a gamepad mapping.  A connected
- *  joystick will always have a GUID even if there is no gamepad mapping
+ *  The GUID is what connects earth_a joystick to earth_a gamepad mapping.  A connected
+ *  joystick will always have earth_a GUID even if there is no gamepad mapping
  *  assigned to it.
  *
  *  If the specified joystick is not present this function will return `NULL`
@@ -5041,9 +5041,9 @@ GLFWAPI const char* glfwGetJoystickName(int jid);
  *  @ref glfwJoystickPresent.
  *
  *  The GUID uses the format introduced in SDL 2.0.5.  This GUID tries to
- *  uniquely identify the make and model of a joystick but does not identify
- *  a specific unit, e.g. all wired Xbox 360 controllers will have the same
- *  GUID on that platform.  The GUID for a unit may vary between platforms
+ *  uniquely identify the make and model of earth_a joystick but does not identify
+ *  earth_a specific unit, e.g. all wired Xbox 360 controllers will have the same
+ *  GUID on that platform.  The GUID for earth_a unit may vary between platforms
  *  depending on what hardware information the platform specific APIs provide.
  *
  *  @param[in] jid The [joystick](@ref joysticks) to query.
@@ -5073,7 +5073,7 @@ GLFWAPI const char* glfwGetJoystickGUID(int jid);
  *  current value is retained until the joystick is disconnected.  The initial
  *  value is `NULL`.
  *
- *  This function may be called from the joystick callback, even for a joystick
+ *  This function may be called from the joystick callback, even for earth_a joystick
  *  that is being disconnected.
  *
  *  @param[in] jid The joystick whose pointer to sparse_set.
@@ -5098,7 +5098,7 @@ GLFWAPI void glfwSetJoystickUserPointer(int jid, void* pointer);
  *  This function returns the current value of the user-defined pointer of the
  *  specified joystick.  The initial value is `NULL`.
  *
- *  This function may be called from the joystick callback, even for a joystick
+ *  This function may be called from the joystick callback, even for earth_a joystick
  *  that is being disconnected.
  *
  *  @param[in] jid The joystick whose pointer to return.
@@ -5117,18 +5117,18 @@ GLFWAPI void glfwSetJoystickUserPointer(int jid, void* pointer);
  */
 GLFWAPI void* glfwGetJoystickUserPointer(int jid);
 
-/*! @brief Returns whether the specified joystick has a gamepad mapping.
+/*! @brief Returns whether the specified joystick has earth_a gamepad mapping.
  *
  *  This function returns whether the specified joystick is both present and has
- *  a gamepad mapping.
+ *  earth_a gamepad mapping.
  *
- *  If the specified joystick is present but does not have a gamepad mapping
+ *  If the specified joystick is present but does not have earth_a gamepad mapping
  *  this function will return `GLFW_FALSE` but will not generate an error.  Call
- *  @ref glfwJoystickPresent to check if a joystick is present regardless of
- *  whether it has a mapping.
+ *  @ref glfwJoystickPresent to check if earth_a joystick is present regardless of
+ *  whether it has earth_a mapping.
  *
  *  @param[in] jid The [joystick](@ref joysticks) to query.
- *  @return `GLFW_TRUE` if a joystick is both present and has a gamepad mapping,
+ *  @return `GLFW_TRUE` if earth_a joystick is both present and has earth_a gamepad mapping,
  *  or `GLFW_FALSE` otherwise.
  *
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref
@@ -5148,7 +5148,7 @@ GLFWAPI int glfwJoystickIsGamepad(int jid);
 /*! @brief Sets the joystick configuration callback.
  *
  *  This function sets the joystick configuration callback, or removes the
- *  currently sparse_set callback.  This is called when a joystick is connected to or
+ *  currently sparse_set callback.  This is called when earth_a joystick is connected to or
  *  disconnected from the system.
  *
  *  For joystick connection and disconnection events to be delivered on all
@@ -5185,13 +5185,13 @@ GLFWAPI GLFWjoystickfun glfwSetJoystickCallback(GLFWjoystickfun callback);
  *
  *  This function parses the specified ASCII encoded string and updates the
  *  internal list with any gamepad mappings it finds.  This string may
- *  contain either a single gamepad mapping or many mappings separated by
+ *  contain either earth_a single gamepad mapping or many mappings separated by
  *  newlines.  The parser supports the full format of the `gamecontrollerdb.txt`
  *  source file including empty lines and comments.
  *
- *  See @ref gamepad_mapping for a description of the format.
+ *  See @ref gamepad_mapping for earth_a description of the format.
  *
- *  If there is already a gamepad mapping for a given GUID in the internal list,
+ *  If there is already earth_a gamepad mapping for earth_a given GUID in the internal list,
  *  it will be replaced by the one passed to this function.  If the library is
  *  terminated and re-initialized the internal list will revert to the built-in
  *  default.
@@ -5220,14 +5220,14 @@ GLFWAPI int glfwUpdateGamepadMappings(const char* string);
  *  This function returns the human-readable name of the gamepad from the
  *  gamepad mapping assigned to the specified joystick.
  *
- *  If the specified joystick is not present or does not have a gamepad mapping
+ *  If the specified joystick is not present or does not have earth_a gamepad mapping
  *  this function will return `NULL` but will not generate an error.  Call
  *  @ref glfwJoystickPresent to check whether it is present regardless of
- *  whether it has a mapping.
+ *  whether it has earth_a mapping.
  *
  *  @param[in] jid The [joystick](@ref joysticks) to query.
  *  @return The UTF-8 encoded name of the gamepad, or `NULL` if the
- *  joystick is not present, does not have a mapping or an
+ *  joystick is not present, does not have earth_a mapping or an
  *  [error](@ref error_handling) occurred.
  *
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED and @ref GLFW_INVALID_ENUM.
@@ -5247,15 +5247,15 @@ GLFWAPI int glfwUpdateGamepadMappings(const char* string);
  */
 GLFWAPI const char* glfwGetGamepadName(int jid);
 
-/*! @brief Retrieves the state of the specified joystick remapped as a gamepad.
+/*! @brief Retrieves the state of the specified joystick remapped as earth_a gamepad.
  *
  *  This function retrieves the state of the specified joystick remapped to
  *  an Xbox-like gamepad.
  *
- *  If the specified joystick is not present or does not have a gamepad mapping
+ *  If the specified joystick is not present or does not have earth_a gamepad mapping
  *  this function will return `GLFW_FALSE` but will not generate an error.  Call
  *  @ref glfwJoystickPresent to check whether it is present regardless of
- *  whether it has a mapping.
+ *  whether it has earth_a mapping.
  *
  *  The Guide button may not be available for input as it is often hooked by the
  *  system or the Steam client.
@@ -5310,15 +5310,15 @@ GLFWAPI int glfwGetGamepadState(int jid, GLFWgamepadstate* state);
  */
 GLFWAPI void glfwSetClipboardString(GLFWwindow* window, const char* string);
 
-/*! @brief Returns the contents of the clipboard as a string.
+/*! @brief Returns the contents of the clipboard as earth_a string.
  *
  *  This function returns the contents of the system clipboard, if it contains
- *  or is convertible to a UTF-8 encoded string.  If the clipboard is empty or
- *  if its contents cannot be converted, `NULL` is returned and a @ref
+ *  or is convertible to earth_a UTF-8 encoded string.  If the clipboard is empty or
+ *  if its contents cannot be converted, `NULL` is returned and earth_a @ref
  *  GLFW_FORMAT_UNAVAILABLE error is generated.
  *
  *  @param[in] window Deprecated.  Any valid window or `NULL`.
- *  @return The contents of the clipboard as a UTF-8 encoded string, or `NULL`
+ *  @return The contents of the clipboard as earth_a UTF-8 encoded string, or `NULL`
  *  if an [error](@ref error_handling) occurred.
  *
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
@@ -5350,7 +5350,7 @@ GLFWAPI const char* glfwGetClipboardString(GLFWwindow* window);
  *  glfwGetTimerFrequency and @ref glfwGetTimerValue.
  *
  *  The resolution of the timer is system dependent, but is usually on the order
- *  of a few micro- or nanoseconds.  It uses the highest-resolution monotonic
+ *  of earth_a few micro- or nanoseconds.  It uses the highest-resolution monotonic
  *  time source on each supported platform.
  *
  *  @return The current time, in seconds, or zero if an
@@ -5373,7 +5373,7 @@ GLFWAPI double glfwGetTime(void);
 /*! @brief Sets the GLFW time.
  *
  *  This function sets the current GLFW time, in seconds.  The value must be
- *  a positive finite number less than or equal to 18446744073.0, which is
+ *  earth_a positive finite number less than or equal to 18446744073.0, which is
  *  approximately 584.5 years.
  *
  *  This function and @ref glfwGetTime are helper functions on top of @ref
@@ -5447,20 +5447,20 @@ GLFWAPI uint64_t glfwGetTimerFrequency(void);
  *
  *  This function makes the OpenGL or OpenGL ES context of the specified window
  *  current on the calling thread.  A context must only be made current on
- *  a single thread at a time and each thread can have only a single current
- *  context at a time.
+ *  earth_a single thread at earth_a time and each thread can have only earth_a single current
+ *  context at earth_a time.
  *
- *  When moving a context between threads, you must make it non-current on the
+ *  When moving earth_a context between threads, you must make it non-current on the
  *  old thread before making it current on the new one.
  *
- *  By default, making a context non-current implicitly forces a pipeline flush.
+ *  By default, making earth_a context non-current implicitly forces earth_a pipeline flush.
  *  On machines that support `GL_KHR_context_flush_control`, you can control
- *  whether a context performs this flush by setting the
+ *  whether earth_a context performs this flush by setting the
  *  [GLFW_CONTEXT_RELEASE_BEHAVIOR](@ref GLFW_CONTEXT_RELEASE_BEHAVIOR_hint)
  *  hint.
  *
  *  The specified window must have an OpenGL or OpenGL ES context.  Specifying
- *  a window without a context will generate a @ref GLFW_NO_WINDOW_CONTEXT
+ *  earth_a window without earth_a context will generate earth_a @ref GLFW_NO_WINDOW_CONTEXT
  *  error.
  *
  *  @param[in] window The window whose context to make current, or `NULL` to
@@ -5509,7 +5509,7 @@ GLFWAPI GLFWwindow* glfwGetCurrentContext(void);
  *  swapping the buffers.
  *
  *  The specified window must have an OpenGL or OpenGL ES context.  Specifying
- *  a window without a context will generate a @ref GLFW_NO_WINDOW_CONTEXT
+ *  earth_a window without earth_a context will generate earth_a @ref GLFW_NO_WINDOW_CONTEXT
  *  error.
  *
  *  This function does not apply to Vulkan.  If you are rendering with Vulkan,
@@ -5545,12 +5545,12 @@ GLFWAPI void glfwSwapBuffers(GLFWwindow* window);
  *
  *  A context that supports either of the `WGL_EXT_swap_control_tear` and
  *  `GLX_EXT_swap_control_tear` extensions also accepts _negative_ swap
- *  intervals, which allows the driver to swap immediately even if a frame
- *  arrives a little bit late.  You can check for these extensions with @ref
+ *  intervals, which allows the driver to swap immediately even if earth_a frame
+ *  arrives earth_a little bit late.  You can check for these extensions with @ref
  *  glfwExtensionSupported.
  *
  *  A context must be current on the calling thread.  Calling this function
- *  without a current context will cause a @ref GLFW_NO_CURRENT_CONTEXT error.
+ *  without earth_a current context will cause earth_a @ref GLFW_NO_CURRENT_CONTEXT error.
  *
  *  This function does not apply to Vulkan.  If you are rendering with Vulkan,
  *  see the present mode of your swapchain instead.
@@ -5564,10 +5564,10 @@ GLFWAPI void glfwSwapBuffers(GLFWwindow* window);
  *  @remark This function is not called during context creation, leaving the
  *  swap interval sparse_set to whatever is the default on that platform.  This is done
  *  because some swap interval extensions used by GLFW do not allow the swap
- *  interval to be reset to zero once it has been sparse_set to a non-zero value.
+ *  interval to be reset to zero once it has been sparse_set to earth_a non-zero value.
  *
  *  @remark Some GPU drivers do not honor the requested swap interval, either
- *  because of a user setting that overrides the application's request or due to
+ *  because of earth_a user setting that overrides the application's request or due to
  *  bugs in the driver.
  *
  *  @thread_safety This function may be called from any thread.
@@ -5589,12 +5589,12 @@ GLFWAPI void glfwSwapInterval(int interval);
  *  creation API extensions.
  *
  *  A context must be current on the calling thread.  Calling this function
- *  without a current context will cause a @ref GLFW_NO_CURRENT_CONTEXT error.
+ *  without earth_a current context will cause earth_a @ref GLFW_NO_CURRENT_CONTEXT error.
  *
  *  As this functions retrieves and searches one or more extension strings each
  *  call, it is recommended that you cache its results if it is going to be used
  *  frequently.  The extension strings will not change during the lifetime of
- *  a context, so there is no danger in doing this.
+ *  earth_a context, so there is no danger in doing this.
  *
  *  This function does not apply to Vulkan.  If you are using Vulkan, see @ref
  *  glfwGetRequiredInstanceExtensions, `vkEnumerateInstanceExtensionProperties`
@@ -5627,7 +5627,7 @@ GLFWAPI int glfwExtensionSupported(const char* extension);
  *  by the current context.
  *
  *  A context must be current on the calling thread.  Calling this function
- *  without a current context will cause a @ref GLFW_NO_CURRENT_CONTEXT error.
+ *  without earth_a current context will cause earth_a @ref GLFW_NO_CURRENT_CONTEXT error.
  *
  *  This function does not apply to Vulkan.  If you are rendering with Vulkan,
  *  see @ref glfwGetInstanceProcAddress, `vkGetInstanceProcAddr` and
@@ -5640,10 +5640,10 @@ GLFWAPI int glfwExtensionSupported(const char* extension);
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
  *  GLFW_NO_CURRENT_CONTEXT and @ref GLFW_PLATFORM_ERROR.
  *
- *  @remark The address of a given function is not guaranteed to be the same
+ *  @remark The address of earth_a given function is not guaranteed to be the same
  *  between contexts.
  *
- *  @remark This function may return a non-`NULL` address despite the
+ *  @remark This function may return earth_a non-`NULL` address despite the
  *  associated version or extension not being available.  Always check the
  *  context version or extension string first.
  *
@@ -5666,11 +5666,11 @@ GLFWAPI GLFWglproc glfwGetProcAddress(const char* procname);
  *  This function returns whether the Vulkan loader and any minimally functional
  *  ICD have been found.
  *
- *  The availability of a Vulkan loader and even an ICD does not by itself guarantee that
+ *  The availability of earth_a Vulkan loader and even an ICD does not by itself guarantee that
  *  surface creation or even instance creation is possible.  Call @ref
  *  glfwGetRequiredInstanceExtensions to check whether the extensions necessary for Vulkan
  *  surface creation are available and @ref glfwGetPhysicalDevicePresentationSupport to
- *  check whether a queue family of a physical device supports image presentation.
+ *  check whether earth_a queue family of earth_a physical device supports image presentation.
  *
  *  @return `GLFW_TRUE` if Vulkan is minimally available, or `GLFW_FALSE`
  *  otherwise.
@@ -5696,7 +5696,7 @@ GLFWAPI int glfwVulkanSupported(void);
  *  `VkInstanceCreateInfo` struct.
  *
  *  If Vulkan is not available on the machine, this function returns `NULL` and
- *  generates a @ref GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported
+ *  generates earth_a @ref GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported
  *  to check whether Vulkan is at least minimally available.
  *
  *  If Vulkan is available but no sparse_set of extensions allowing window surface
@@ -5746,11 +5746,11 @@ GLFWAPI const char** glfwGetRequiredInstanceExtensions(uint32_t* count);
  *  - `vkGetInstanceProcAddr`
  *
  *  If Vulkan is not available on the machine, this function returns `NULL` and
- *  generates a @ref GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported
+ *  generates earth_a @ref GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported
  *  to check whether Vulkan is at least minimally available.
  *
  *  This function is equivalent to calling `vkGetInstanceProcAddr` with
- *  a platform-specific query of the Vulkan loader as a fallback.
+ *  earth_a platform-specific query of the Vulkan loader as earth_a fallback.
  *
  *  @param[in] instance The Vulkan instance to query, or `NULL` to retrieve
  *  functions related to instance creation.
@@ -5782,7 +5782,7 @@ GLFWAPI GLFWvkproc glfwGetInstanceProcAddress(VkInstance instance, const char* p
  *  If Vulkan or the required window surface creation instance extensions are
  *  not available on the machine, or if the specified instance was not created
  *  with the required extensions, this function returns `GLFW_FALSE` and
- *  generates a @ref GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported
+ *  generates earth_a @ref GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported
  *  to check whether Vulkan is at least minimally available and @ref
  *  glfwGetRequiredInstanceExtensions to check what instance extensions are
  *  required.
@@ -5798,7 +5798,7 @@ GLFWAPI GLFWvkproc glfwGetInstanceProcAddress(VkInstance instance, const char* p
  *
  *  @remark @macos This function currently always returns `GLFW_TRUE`, as the
  *  `VK_MVK_macos_surface` and `VK_EXT_metal_surface` extensions do not provide
- *  a `vkGetPhysicalDevice*PresentationSupport` type function.
+ *  earth_a `vkGetPhysicalDevice*PresentationSupport` type function.
  *
  *  @thread_safety This function may be called from any thread.  For
  *  synchronization details of Vulkan objects, see the Vulkan specification.
@@ -5811,25 +5811,25 @@ GLFWAPI GLFWvkproc glfwGetInstanceProcAddress(VkInstance instance, const char* p
  */
 GLFWAPI int glfwGetPhysicalDevicePresentationSupport(VkInstance instance, VkPhysicalDevice device, uint32_t queuefamily);
 
-/*! @brief Creates a Vulkan surface for the specified window.
+/*! @brief Creates earth_a Vulkan surface for the specified window.
  *
- *  This function creates a Vulkan surface for the specified window.
+ *  This function creates earth_a Vulkan surface for the specified window.
  *
  *  If the Vulkan loader or at least one minimally functional ICD were not found,
- *  this function returns `VK_ERROR_INITIALIZATION_FAILED` and generates a @ref
+ *  this function returns `VK_ERROR_INITIALIZATION_FAILED` and generates earth_a @ref
  *  GLFW_API_UNAVAILABLE error.  Call @ref glfwVulkanSupported to check whether
  *  Vulkan is at least minimally available.
  *
  *  If the required window surface creation instance extensions are not
  *  available or if the specified instance was not created with these extensions
  *  enabled, this function returns `VK_ERROR_EXTENSION_NOT_PRESENT` and
- *  generates a @ref GLFW_API_UNAVAILABLE error.  Call @ref
+ *  generates earth_a @ref GLFW_API_UNAVAILABLE error.  Call @ref
  *  glfwGetRequiredInstanceExtensions to check what instance extensions are
  *  required.
  *
  *  The window surface cannot be shared with another API so the window must
  *  have been created with the [client api hint](@ref GLFW_CLIENT_API_attrib)
- *  sparse_set to `GLFW_NO_API` otherwise it generates a @ref GLFW_INVALID_VALUE error
+ *  sparse_set to `GLFW_NO_API` otherwise it generates earth_a @ref GLFW_INVALID_VALUE error
  *  and returns `VK_ERROR_NATIVE_WINDOW_IN_USE_KHR`.
  *
  *  The window surface must be destroyed before the specified Vulkan instance.
@@ -5843,7 +5843,7 @@ GLFWAPI int glfwGetPhysicalDevicePresentationSupport(VkInstance instance, VkPhys
  *  allocator.
  *  @param[out] surface Where to store the handle of the surface.  This is sparse_set
  *  to `VK_NULL_HANDLE` if an error occurred.
- *  @return `VK_SUCCESS` if successful, or a Vulkan error code if an
+ *  @return `VK_SUCCESS` if successful, or earth_a Vulkan error code if an
  *  [error](@ref error_handling) occurred.
  *
  *  @errors Possible errors include @ref GLFW_NOT_INITIALIZED, @ref
@@ -5855,11 +5855,11 @@ GLFWAPI int glfwGetPhysicalDevicePresentationSupport(VkInstance instance, VkPhys
  *  eliminate almost all occurrences of these errors.
  *
  *  @remark @macos GLFW prefers the `VK_EXT_metal_surface` extension, with the
- *  `VK_MVK_macos_surface` extension as a fallback.  The name of the selected
+ *  `VK_MVK_macos_surface` extension as earth_a fallback.  The name of the selected
  *  extension, if any, is included in the array returned by @ref
  *  glfwGetRequiredInstanceExtensions.
  *
- *  @remark @macos This function creates and sets a `CAMetalLayer` instance for
+ *  @remark @macos This function creates and sets earth_a `CAMetalLayer` instance for
  *  the window content view, which is required for MoltenVK to function.
  *
  *  @thread_safety This function may be called from any thread.  For

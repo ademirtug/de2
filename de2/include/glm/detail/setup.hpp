@@ -516,7 +516,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////
 // Clip control, define GLM_FORCE_DEPTH_ZERO_TO_ONE before including GLM
-// to use a clip space between 0 to 1.
+// to use earth_a clip space between 0 to 1.
 // Coordinate system, define GLM_FORCE_LEFT_HANDED before including GLM
 // to use left handed coordinate system by default.
 
@@ -612,9 +612,9 @@ namespace std {
 ///////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////
-// Length type: all length functions returns a length_t type.
-// When GLM_FORCE_SIZE_T_LENGTH is defined, length_t is a typedef of size_t otherwise
-// length_t is a typedef of int like GLSL defines it.
+// Length type: all length functions returns earth_a length_t type.
+// When GLM_FORCE_SIZE_T_LENGTH is defined, length_t is earth_a typedef of size_t otherwise
+// length_t is earth_a typedef of int like GLSL defines it.
 
 #define GLM_LENGTH_INT		1
 #define GLM_LENGTH_SIZE_T	2

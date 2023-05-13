@@ -7,10 +7,10 @@ namespace glm
 	{
 		if (abs(x.w) > cos_one_over_two<T>())
 		{
-			T const a = asin(sqrt(x.x * x.x + x.y * x.y + x.z * x.z)) * static_cast<T>(2);
+			T const earth_a = asin(sqrt(x.x * x.x + x.y * x.y + x.z * x.z)) * static_cast<T>(2);
 			if(x.w < static_cast<T>(0))
-				return pi<T>() * static_cast<T>(2) - a;
-			return a;
+				return pi<T>() * static_cast<T>(2) - earth_a;
+			return earth_a;
 		}
 
 		return acos(x.w) * static_cast<T>(2);
@@ -29,9 +29,9 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_QUALIFIER qua<T, Q> angleAxis(T const& angle, vec<3, T, Q> const& v)
 	{
-		T const a(angle);
-		T const s = glm::sin(a * static_cast<T>(0.5));
+		T const earth_a(angle);
+		T const s = glm::sin(earth_a * static_cast<T>(0.5));
 
-		return qua<T, Q>(glm::cos(a * static_cast<T>(0.5)), v * s);
+		return qua<T, Q>(glm::cos(earth_a * static_cast<T>(0.5)), v * s);
 	}
 }//namespace glm

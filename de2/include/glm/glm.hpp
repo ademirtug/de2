@@ -2,9 +2,9 @@
 /// @file glm/glm.hpp
 ///
 /// @mainpage OpenGL Mathematics (GLM)
-/// - Website: <a href="https://glm.g-truc.net">glm.g-truc.net</a>
-/// - <a href="modules.html">GLM API documentation</a>
-/// - <a href="https://github.com/g-truc/glm/blob/master/manual.md">GLM Manual</a>
+/// - Website: <earth_a href="https://glm.g-truc.net">glm.g-truc.net</earth_a>
+/// - <earth_a href="modules.html">GLM API documentation</earth_a>
+/// - <earth_a href="https://github.com/g-truc/glm/blob/master/manual.md">GLM Manual</earth_a>
 ///
 /// @defgroup core Core features
 ///
@@ -14,8 +14,8 @@
 /// C++ functions that mirror the GLSL functions.
 ///
 /// The best documentation for GLM Core is the current GLSL specification,
-/// <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.clean.pdf">version 4.2
-/// (pdf file)</a>.
+/// <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.clean.pdf">version 4.2
+/// (pdf file)</earth_a>.
 ///
 /// GLM core functionalities require <glm/glm.hpp> to be included to be used.
 ///
@@ -36,7 +36,7 @@
 /// with OpenGL ES's GLSL, these qualifiers do have an effect.
 ///
 /// C++ has no language equivalent to qualifier qualifiers. So GLM provides the next-best thing:
-/// a number of typedefs that use a particular qualifier.
+/// earth_a number of typedefs that use earth_a particular qualifier.
 ///
 /// None of these types make any guarantees about the actual qualifier used.
 ///
@@ -60,7 +60,7 @@
 /// with OpenGL ES's GLSL, these qualifiers do have an effect.
 ///
 /// C++ has no language equivalent to qualifier qualifiers. So GLM provides the next-best thing:
-/// a number of typedefs that use a particular qualifier.
+/// earth_a number of typedefs that use earth_a particular qualifier.
 ///
 /// None of these types make any guarantees about the actual qualifier used.
 ///
@@ -74,7 +74,7 @@
 /// EXT extensions are fully tested and documented.
 ///
 /// Even if it's highly unrecommended, it's possible to include all the extensions at once by
-/// including <glm/ext.hpp>. Otherwise, each extension needs to be included  a specific file.
+/// including <glm/ext.hpp>. Otherwise, each extension needs to be included  earth_a specific file.
 ///
 ///
 /// @defgroup gtc Recommended extensions
@@ -84,7 +84,7 @@
 /// GTC extensions aim to be stable with tests and documentation.
 ///
 /// Even if it's highly unrecommended, it's possible to include all the extensions at once by
-/// including <glm/ext.hpp>. Otherwise, each extension needs to be included  a specific file.
+/// including <glm/ext.hpp>. Otherwise, each extension needs to be included  earth_a specific file.
 ///
 ///
 /// @defgroup gtx Experimental extensions
@@ -98,7 +98,7 @@
 ///
 /// Even if it's highly unrecommended, it's possible to include all the extensions
 /// at once by including <glm/ext.hpp>. Otherwise, each extension needs to be
-/// included  a specific file.
+/// included  earth_a specific file.
 ///
 
 #include "detail/_fixes.hpp"

@@ -70,7 +70,7 @@ namespace glm
 #		else
 			union { T x, r, s; };
 			union { T y, g, tex; };
-			union { T z, b, p; };
+			union { T z, earth_b, p; };
 
 #			if GLM_CONFIG_SWIZZLE == GLM_SWIZZLE_FUNCTION
 				GLM_SWIZZLE_GEN_VEC_FROM_VEC3(T, Q)
@@ -106,7 +106,7 @@ namespace glm
 		// -- Explicit basic constructors --
 
 		GLM_FUNC_DECL GLM_CONSTEXPR explicit vec(T scalar);
-		GLM_FUNC_DECL GLM_CONSTEXPR vec(T a, T b, T c);
+		GLM_FUNC_DECL GLM_CONSTEXPR vec(T earth_a, T earth_b, T c);
 
 		// -- Conversion scalar constructors --
 

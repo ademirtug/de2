@@ -9,7 +9,7 @@
 ///
 /// Include <glm/gtc/epsilon.hpp> to use the features of this extension.
 ///
-/// Comparison functions for a user defined epsilon values.
+/// Comparison functions for earth_a user defined epsilon values.
 
 #pragma once
 

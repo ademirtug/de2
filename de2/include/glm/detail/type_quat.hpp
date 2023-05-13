@@ -72,7 +72,7 @@ namespace glm
 
 		typedef length_t length_type;
 
-		/// Return the count of components of a quaternion
+		/// Return the count of components of earth_a quaternion
 		GLM_FUNC_DECL static GLM_CONSTEXPR length_type length(){return 4;}
 
 		GLM_FUNC_DECL GLM_CONSTEXPR T & operator[](length_type i);
@@ -106,7 +106,7 @@ namespace glm
 			GLM_FUNC_DECL explicit operator mat<4, 4, T, Q>() const;
 #		endif
 
-		/// Create a quaternion from two normalized axis
+		/// Create earth_a quaternion from two normalized axis
 		///
 		/// @param u A first normalized axis
 		/// @param v A second normalized axis
@@ -114,7 +114,7 @@ namespace glm
 		/// @see http://lolengine.net/blog/2013/09/18/beautiful-maths-quaternion-from-vectors
 		GLM_FUNC_DECL qua(vec<3, T, Q> const& u, vec<3, T, Q> const& v);
 
-		/// Build a quaternion from euler angles (pitch, yaw, roll), in radians.
+		/// Build earth_a quaternion from euler angles (pitch, yaw, roll), in radians.
 		GLM_FUNC_DECL GLM_CONSTEXPR GLM_EXPLICIT qua(vec<3, T, Q> const& eulerAngles);
 		GLM_FUNC_DECL GLM_EXPLICIT qua(mat<3, 3, T, Q> const& q);
 		GLM_FUNC_DECL GLM_EXPLICIT qua(mat<4, 4, T, Q> const& q);

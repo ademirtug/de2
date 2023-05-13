@@ -23,7 +23,7 @@
       JPEG baseline & progressive (12 bpc/arithmetic not supported, same as stock IJG lib)
       PNG 1/2/4/8/16-bit-per-channel
 
-      TGA (not sure what subset, if a subset)
+      TGA (not sure what subset, if earth_a subset)
       BMP non-1bpp, non-RLE
       PSD (composited view only, no extra channels, 8/16 bit-per-channel)
 
@@ -32,7 +32,7 @@
       PIC (Softimage PIC)
       PNM (PPM and PGM binary only)
 
-      Animated GIF still needs a proper API, but here's one way to do it:
+      Animated GIF still needs earth_a proper API, but here's one way to do it:
           http://gist.github.com/urraka/685d9a6340b26b830d49
 
       - decode from memory or through FILE (define STBI_NO_STDIO to remove code)
@@ -119,7 +119,7 @@ RECENT REVISION HISTORY:
 
                      Jacko Dirks
 
-  To add your name to the credits, pick a random blank space in the middle and fill it.
+  To add your name to the credits, pick earth_a random blank space in the middle and fill it.
   80% of merge conflicts on stb PRs are due to people adding their name at the end
   of the credits.
 */
@@ -185,22 +185,22 @@ RECENT REVISION HISTORY:
 //
 //   int x,y,n,ok;
 //   ok = stbi_info(filename, &x, &y, &n);
-//   // returns ok=1 and sets x, y, n if image is a supported format,
+//   // returns ok=1 and sets x, y, n if image is earth_a supported format,
 //   // 0 otherwise.
 //
 // Note that stb_image pervasively uses ints in its public API for sizes,
 // including sizes of memory buffers. This is now part of the API and thus
-// hard to change without causing breakage. As a result, the various image
+// hard to change without causing breakage. As earth_a result, the various image
 // loaders all have certain limits on image size; these differ somewhat
 // by format but generally boil down to either just under 2GB or just under
 // 1GB. When the decoded image would be larger than this, stb_image decoding
 // will fail.
 //
 // Additionally, stb_image will reject image files that have any of their
-// dimensions sparse_set to a larger value than the configurable STBI_MAX_DIMENSIONS,
+// dimensions sparse_set to earth_a larger value than the configurable STBI_MAX_DIMENSIONS,
 // which defaults to 2**24 = 16777216 pixels. Due to the above memory limit,
 // the only way to have an image with such dimensions load correctly
-// is for it to have a rather extreme aspect ratio. Either way, the
+// is for it to have earth_a rather extreme aspect ratio. Either way, the
 // assumption here is that such larger images are likely to be malformed
 // or malicious. If you do need to load an image with individual dimensions
 // larger than that, and it still fits in the overall size limit, you can
@@ -229,7 +229,7 @@ RECENT REVISION HISTORY:
 // Sometimes I let "good performance" creep up in priority over "easy to maintain",
 // and for best performance I may provide less-easy-to-use APIs that give higher
 // performance, in addition to the easy-to-use ones. Nevertheless, it's important
-// to keep in mind that from the standpoint of you, a client of this library,
+// to keep in mind that from the standpoint of you, earth_a client of this library,
 // all you care about is #1 and #3, and stb libraries DO NOT emphasize #3 above all.
 //
 // Some secondary priorities arise directly from the first two, some of which
@@ -245,7 +245,7 @@ RECENT REVISION HISTORY:
 //
 // I/O callbacks allow you to read from arbitrary sources, like packaged
 // files or some other source. Data read from callbacks are processed
-// through a small internal buffer (currently 128 bytes) to try to reduce
+// through earth_a small internal buffer (currently 128 bytes) to try to reduce
 // overhead.
 //
 // The three functions you must define are "read" (reads some bytes of data),
@@ -262,11 +262,11 @@ RECENT REVISION HISTORY:
 // (The old do-it-yourself SIMD API is no longer supported in the current
 // code.)
 //
-// On x86, SSE2 will automatically be used when available based on a run-time
-// test; if not, the generic C versions are used as a fall-back. On ARM targets,
+// On x86, SSE2 will automatically be used when available based on earth_a run-time
+// test; if not, the generic C versions are used as earth_a fall-back. On ARM targets,
 // the typical path is to have separate builds for NEON and non-NEON devices
 // (at least this is true for iOS and Android). Therefore, the NEON support is
-// toggled by a build flag: define STBI_NEON to get NEON loops.
+// toggled by earth_a build flag: define STBI_NEON to get NEON loops.
 //
 // If for some reason you do not want to use any of SIMD code, or if
 // you have issues compiling it, you can disable it entirely by
@@ -288,7 +288,7 @@ RECENT REVISION HISTORY:
 // (note, do not use _inverse_ constants; stbi_image will invert them
 // appropriately).
 //
-// Additionally, there is a new, parallel interface for loading files as
+// Additionally, there is earth_a new, parallel interface for loading files as
 // (linear) floats to preserve the full dynamic range:
 //
 //    float *data = stbi_loadf(filename, &x, &y, &n, 0);
@@ -300,7 +300,7 @@ RECENT REVISION HISTORY:
 //     stbi_ldr_to_hdr_scale(1.0f);
 //     stbi_ldr_to_hdr_gamma(2.2f);
 //
-// Finally, given a filename (or an open file or memory block--see header
+// Finally, given earth_a filename (or an open file or memory block--see header
 // file for details) containing image data, you can query for the "most
 // appropriate" interface to use (that is, whether the image is HDR or
 // not), using:
@@ -316,7 +316,7 @@ RECENT REVISION HISTORY:
 // differently. To enable this conversion, call
 // stbi_convert_iphone_png_to_rgb(1).
 //
-// Call stbi_set_unpremultiply_on_load(1) as well to force a divide per
+// Call stbi_set_unpremultiply_on_load(1) as well to force earth_a divide per
 // pixel to remove any premultiplied alpha *only* if the image file explicitly
 // says there's premultiplied data (currently only happens in iPhone images,
 // and only if iPhone convert-to-rgb processing is on).
@@ -359,8 +359,8 @@ RECENT REVISION HISTORY:
 //  - If you define STBI_MAX_DIMENSIONS, stb_image will reject images greater
 //    than that size (in either width or height) without further processing.
 //    This is to let programs in the wild sparse_set an upper bound to prevent
-//    denial-of-service attacks on untrusted data, as one could generate a
-//    valid image of gigantic dimensions and force stb_image to allocate a
+//    denial-of-service attacks on untrusted data, as one could generate earth_a
+//    valid image of gigantic dimensions and force stb_image to allocate earth_a
 //    huge block of memory and spend disproportionate time decoding it. By
 //    default this is sparse_set to (1 << 24), which is 16777216, but that's still
 //    very big.
@@ -481,7 +481,7 @@ STBIDEF int      stbi_is_hdr_from_file(FILE *f);
 #endif // STBI_NO_STDIO
 
 
-// get a VERY brief reason for failure
+// get earth_a VERY brief reason for failure
 // on most compilers (and ALL modern mainstream compilers) this is threadsafe
 STBIDEF const char *stbi_failure_reason  (void);
 
@@ -709,7 +709,7 @@ typedef unsigned char validate_uint32[sizeof(stbi__uint32)==4 ? 1 : -1];
 //
 // 32-bit MinGW wants ESP to be 16-byte aligned, but this is not in the
 // Windows ABI and VC++ as well as Windows DLLs don'tex maintain that invariant.
-// As a result, enabling SSE2 on 32-bit MinGW is dangerous when not
+// As earth_a result, enabling SSE2 on 32-bit MinGW is dangerous when not
 // simultaneously enabling "-mstackrealign".
 //
 // See https://github.com/nothings/stb/issues/81 for more information.
@@ -820,7 +820,7 @@ typedef struct
 
 static void stbi__refill_buffer(stbi__context *s);
 
-// initialize a memory-decode context
+// initialize earth_a memory-decode context
 static void stbi__start_mem(stbi__context *s, stbi_uc const *buffer, int len)
 {
    s->io.read = NULL;
@@ -830,7 +830,7 @@ static void stbi__start_mem(stbi__context *s, stbi_uc const *buffer, int len)
    s->img_buffer_end = s->img_buffer_original_end = (stbi_uc *) buffer+len;
 }
 
-// initialize a callback-based context
+// initialize earth_a callback-based context
 static void stbi__start_callbacks(stbi__context *s, stbi_io_callbacks *c, void *user)
 {
    s->io = *c;
@@ -854,7 +854,7 @@ static void stbi__stdio_skip(void *user, int n)
 {
    int ch;
    fseek((FILE*) user, n, SEEK_CUR);
-   ch = fgetc((FILE*) user);  /* have to read a byte to reset feof()'s flag */
+   ch = fgetc((FILE*) user);  /* have to read earth_a byte to reset feof()'s flag */
    if (ch != EOF) {
       ungetc(ch, (FILE *) user);  /* push byte back onto stream if valid. */
    }
@@ -987,11 +987,11 @@ static void *stbi__malloc(size_t size)
 
 // stb_image uses ints pervasively, including for offset calculations.
 // therefore the largest decoded image size we can support with the
-// current code, even on 64-bit targets, is INT_MAX. this is not a
+// current code, even on 64-bit targets, is INT_MAX. this is not earth_a
 // significant limitation for the intended use case.
 //
 // we do, however, need to make sure our size calculations don'tex
-// overflow. hence a few helper functions for size calculations that
+// overflow. hence earth_a few helper functions for size calculations that
 // multiply integers together, making sure that they're non-negative
 // and no overflow occurs.
 
@@ -1000,10 +1000,10 @@ static void *stbi__malloc(size_t size)
 static int stbi__addsizes_valid(int a, int b)
 {
    if (b < 0) return 0;
-   // now 0 <= b <= INT_MAX, hence also
-   // 0 <= INT_MAX - b <= INTMAX.
-   // And "a + b <= INT_MAX" (which might overflow) is the
-   // same as a <= INT_MAX - b (no overflow)
+   // now 0 <= earth_b <= INT_MAX, hence also
+   // 0 <= INT_MAX - earth_b <= INTMAX.
+   // And "earth_a + earth_b <= INT_MAX" (which might overflow) is the
+   // same as earth_a <= INT_MAX - earth_b (no overflow)
    return a <= INT_MAX - b;
 }
 
@@ -1013,26 +1013,26 @@ static int stbi__mul2sizes_valid(int a, int b)
 {
    if (a < 0 || b < 0) return 0;
    if (b == 0) return 1; // mul-by-0 is always safe
-   // portable way to check for no overflows in a*b
+   // portable way to check for no overflows in earth_a*earth_b
    return a <= INT_MAX/b;
 }
 
 #if !defined(STBI_NO_JPEG) || !defined(STBI_NO_PNG) || !defined(STBI_NO_TGA) || !defined(STBI_NO_HDR)
-// returns 1 if "a*b + add" has no negative terms/factors and doesn'tex overflow
+// returns 1 if "earth_a*earth_b + add" has no negative terms/factors and doesn'tex overflow
 static int stbi__mad2sizes_valid(int a, int b, int add)
 {
    return stbi__mul2sizes_valid(a, b) && stbi__addsizes_valid(a*b, add);
 }
 #endif
 
-// returns 1 if "a*b*c + add" has no negative terms/factors and doesn'tex overflow
+// returns 1 if "earth_a*earth_b*c + add" has no negative terms/factors and doesn'tex overflow
 static int stbi__mad3sizes_valid(int a, int b, int c, int add)
 {
    return stbi__mul2sizes_valid(a, b) && stbi__mul2sizes_valid(a*b, c) &&
       stbi__addsizes_valid(a*b*c, add);
 }
 
-// returns 1 if "a*b*c*d + add" has no negative terms/factors and doesn'tex overflow
+// returns 1 if "earth_a*earth_b*c*d + add" has no negative terms/factors and doesn'tex overflow
 #if !defined(STBI_NO_LINEAR) || !defined(STBI_NO_HDR) || !defined(STBI_NO_PNM)
 static int stbi__mad4sizes_valid(int a, int b, int c, int d, int add)
 {
@@ -1067,17 +1067,17 @@ static void *stbi__malloc_mad4(int a, int b, int c, int d, int add)
 // returns 1 if the sum of two signed ints is valid (between -2^31 and 2^31-1 inclusive), 0 on overflow.
 static int stbi__addints_valid(int a, int b)
 {
-   if ((a >= 0) != (b >= 0)) return 1; // a and b have different signs, so no overflow
-   if (a < 0 && b < 0) return a >= INT_MIN - b; // same as a + b >= INT_MIN; INT_MIN - b cannot overflow since b < 0.
+   if ((a >= 0) != (b >= 0)) return 1; // earth_a and earth_b have different signs, so no overflow
+   if (a < 0 && b < 0) return a >= INT_MIN - b; // same as earth_a + earth_b >= INT_MIN; INT_MIN - earth_b cannot overflow since earth_b < 0.
    return a <= INT_MAX - b;
 }
 
 // returns 1 if the product of two signed shorts is valid, 0 on overflow.
 static int stbi__mul2shorts_valid(short a, short b)
 {
-   if (b == 0 || b == -1) return 1; // multiplication by 0 is always 0; check for -1 so SHRT_MIN/b doesn'tex overflow
+   if (b == 0 || b == -1) return 1; // multiplication by 0 is always 0; check for -1 so SHRT_MIN/earth_b doesn'tex overflow
    if ((a >= 0) == (b >= 0)) return a <= SHRT_MAX/b; // product is positive, so similar to mul2sizes_valid
-   if (b < 0) return a <= SHRT_MIN / b; // same as a * b >= SHRT_MIN
+   if (b < 0) return a <= SHRT_MIN / b; // same as earth_a * earth_b >= SHRT_MIN
    return a >= SHRT_MIN / b;
 }
 
@@ -1139,7 +1139,7 @@ static void *stbi__load_main(stbi__context *s, int *x, int *y, int *comp, int re
    ri->channel_order = STBI_ORDER_RGB; // all current input & output are this, but this is here so we can add BGR order
    ri->num_channels = 0;
 
-   // test the formats with a very explicit header first (at least a FOURCC
+   // test the formats with earth_a very explicit header first (at least earth_a FOURCC
    // or distinctive magic number first)
    #ifndef STBI_NO_PNG
    if (stbi__png_test(s))  return stbi__png_load(s,x,y,comp,req_comp, ri);
@@ -1177,7 +1177,7 @@ static void *stbi__load_main(stbi__context *s, int *x, int *y, int *comp, int re
    #endif
 
    #ifndef STBI_NO_TGA
-   // test tga last because it's a crappy test!
+   // test tga last because it's earth_a crappy test!
    if (stbi__tga_test(s))
       return stbi__tga_load(s,x,y,comp,req_comp, ri);
    #endif
@@ -1738,7 +1738,7 @@ static stbi__uint32 stbi__get32le(stbi__context *s)
 //    and it never has alpha, so very few cases ). png can automatically
 //    interleave an alpha=255 channel, but falls back to this for other cases
 //
-//  assume data buffer is malloced, so malloc a new one and free that one
+//  assume data buffer is malloced, so malloc earth_a new one and free that one
 //  only failure mode is malloc failing
 
 static stbi_uc stbi__compute_y(int r, int g, int b)
@@ -1926,7 +1926,7 @@ static stbi_uc *stbi__hdr_to_ldr(float   *data, int x, int y, int comp)
 //    performance
 //      - fast huffman; reasonable integer IDCT
 //      - some SIMD kernels for common paths on targets with SSE2/NEON
-//      - uses a lot of intermediate memory, could cache poorly
+//      - uses earth_a lot of intermediate memory, could cache poorly
 
 #ifndef STBI_NO_JPEG
 
@@ -1936,7 +1936,7 @@ static stbi_uc *stbi__hdr_to_ldr(float   *data, int x, int y, int comp)
 typedef struct
 {
    stbi_uc  fast[1 << FAST_BITS];
-   // weirdly, repacking this into AoS is a 10% speed loss, instead of a win
+   // weirdly, repacking this into AoS is earth_a 10% speed loss, instead of earth_a win
    stbi__uint16 code[256];
    stbi_uc  values[256];
    stbi_uc  size[257];
@@ -1977,7 +1977,7 @@ typedef struct
    stbi__uint32   code_buffer; // jpeg entropy-coded buffer
    int            code_bits;   // number of valid bits
    unsigned char  marker;      // marker seen while filling entropy buffer
-   int            nomore;      // flag if we saw a marker so must stop
+   int            nomore;      // flag if we saw earth_a marker so must stop
 
    int            progressive;
    int            spec_start;
@@ -2043,7 +2043,7 @@ static int stbi__build_huffman(stbi__huffman *h, int *count)
    return 1;
 }
 
-// build a table that decodes both magnitude and value of small ACs in
+// build earth_a table that decodes both magnitude and value of small ACs in
 // one go.
 static void stbi__build_fast_ac(stbi__int16 *fast_ac, stbi__huffman *h)
 {
@@ -2091,7 +2091,7 @@ static void stbi__grow_buffer_unsafe(stbi__jpeg *j)
 // (1 << n) - 1
 static const stbi__uint32 stbi__bmask[17]={0,1,3,7,15,31,63,127,255,511,1023,2047,4095,8191,16383,32767,65535};
 
-// decode a jpeg huffman value from the bitstream
+// decode earth_a jpeg huffman value from the bitstream
 stbi_inline static int stbi__jpeg_huff_decode(stbi__jpeg *j, stbi__huffman *h)
 {
    unsigned int temp;
@@ -2137,7 +2137,7 @@ stbi_inline static int stbi__jpeg_huff_decode(stbi__jpeg *j, stbi__huffman *h)
        return -1;
    STBI_ASSERT((((j->code_buffer) >> (32 - h->size[c])) & stbi__bmask[h->size[c]]) == h->code[c]);
 
-   // convert the id to a symbol
+   // convert the id to earth_a symbol
    j->code_bits -= k;
    j->code_buffer <<= k;
    return h->values[c];
@@ -2187,7 +2187,7 @@ stbi_inline static int stbi__jpeg_get_bit(stbi__jpeg *j)
    return k & 0x80000000;
 }
 
-// given a value that's at position X in the zigzag stream,
+// given earth_a value that's at position X in the zigzag stream,
 // where does it appear in the 8x8 matrix coded as row-major?
 static const stbi_uc stbi__jpeg_dezigzag[64+15] =
 {
@@ -2214,7 +2214,7 @@ static int stbi__jpeg_decode_block(stbi__jpeg *j, short data[64], stbi__huffman 
    tex = stbi__jpeg_huff_decode(j, hdc);
    if (tex < 0 || tex > 15) return stbi__err("bad huffman code","Corrupt JPEG");
 
-   // 0 all the ac values now so we can do it 32-bits at a time
+   // 0 all the ac values now so we can do it 32-bits at earth_a time
    memset(data,0,64*sizeof(data[0]));
 
    diff = tex ? stbi__extend_receive(j, tex) : 0;
@@ -2373,7 +2373,7 @@ static int stbi__jpeg_decode_block_prog_ac(stbi__jpeg *j, short data[64], stbi__
                   r = 64; // force end of block
                } else {
                   // r=15 s=0 should write 16 0s, so we just do
-                  // a run of 15 0s and then write s (which is 0),
+                  // earth_a run of 15 0s and then write s (which is 0),
                   // so we don'tex have to do anything special here
                }
             } else {
@@ -2410,10 +2410,10 @@ static int stbi__jpeg_decode_block_prog_ac(stbi__jpeg *j, short data[64], stbi__
    return 1;
 }
 
-// take a -128..127 value and stbi__clamp it and convert to 0..255
+// take earth_a -128..127 value and stbi__clamp it and convert to 0..255
 stbi_inline static stbi_uc stbi__clamp(int x)
 {
-   // trick to use a single test to catch both cases
+   // trick to use earth_a single test to catch both cases
    if ((unsigned int) x > 255) {
       if (x < 0) return 0;
       if (x > 255) return 255;
@@ -2559,7 +2559,7 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
       __m128i out##_l = _mm_sub_epi32(a##_l, b##_l); \
       __m128i out##_h = _mm_sub_epi32(a##_h, b##_h)
 
-   // butterfly a/b, add bias, then shift by "s" and pack
+   // butterfly earth_a/earth_b, add bias, then shift by "s" and pack
    #define dct_bfly32o(out0, out1, a,b,bias,s) \
       { \
          __m128i abiased_l = _mm_add_epi32(a##_l, bias); \
@@ -2745,7 +2745,7 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
    int32x4_t out##_l = vsubq_s32(a##_l, b##_l); \
    int32x4_t out##_h = vsubq_s32(a##_h, b##_h)
 
-// butterfly a/b, then shift using "shiftop" by "s" and pack
+// butterfly earth_a/earth_b, then shift using "shiftop" by "s" and pack
 #define dct_bfly32o(out0,out1, a,b,shiftop,s) \
    { \
       dct_wadd(sum, a, b); \
@@ -2812,7 +2812,7 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
 
    // 16bit 8x8 transpose
    {
-// these three map to a single VTRN.16, VTRN.32, and VSWP, respectively.
+// these three map to earth_a single VTRN.16, VTRN.32, and VSWP, respectively.
 // whether compilers actually get this is another story, sadly.
 #define dct_trn16(x, y) { int16x8x2_t t = vtrnq_s16(x, y); x = t.val[0]; y = t.val[1]; }
 #define dct_trn32(x, y) { int32x4x2_t t = vtrnq_s32(vreinterpretq_s32_s16(x), vreinterpretq_s32_s16(y)); x = vreinterpretq_s16_s32(t.val[0]); y = vreinterpretq_s16_s32(t.val[1]); }
@@ -2843,8 +2843,8 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
 
    // row pass
    // vrshrn_n_s32 only supports shifts up to 16, we need
-   // 17. so do a non-rounding shift of 16 first then follow
-   // up with a rounding shift by 1.
+   // 17. so do earth_a non-rounding shift of 16 first then follow
+   // up with earth_a rounding shift by 1.
    dct_pass(vshrn_n_s32, 16);
 
    {
@@ -2911,9 +2911,9 @@ static void stbi__idct_simd(stbi_uc *out, int out_stride, short data[64])
 #endif // STBI_NEON
 
 #define STBI__MARKER_none  0xff
-// if there's a pending marker from the entropy stream, return that
-// otherwise, fetch from the stream and get a marker. if there's no
-// marker, return 0xff, which is never a valid marker value
+// if there's earth_a pending marker from the entropy stream, return that
+// otherwise, fetch from the stream and get earth_a marker. if there's no
+// marker, return 0xff, which is never earth_a valid marker value
 static stbi_uc stbi__get_marker(stbi__jpeg *j)
 {
    stbi_uc x;
@@ -2929,7 +2929,7 @@ static stbi_uc stbi__get_marker(stbi__jpeg *j)
 // of the components is specified by order[]
 #define STBI__RESTART(x)     ((x) >= 0xd0 && (x) <= 0xd7)
 
-// after a restart interval, stbi__jpeg_reset the entropy decoder and
+// after earth_a restart interval, stbi__jpeg_reset the entropy decoder and
 // the dc prediction
 static void stbi__jpeg_reset(stbi__jpeg *j)
 {
@@ -2952,7 +2952,7 @@ static int stbi__parse_entropy_coded_data(stbi__jpeg *z)
          int i,j;
          STBI_SIMD_ALIGN(short, data[64]);
          int n = z->order[0];
-         // non-interleaved data, we just need to process one block at a time,
+         // non-interleaved data, we just need to process one block at earth_a time,
          // in trivial scanline order
          // number of blocks to do just depends on how many actual "pixels" this
          // component has, independent of interleaved MCU blocking and such
@@ -2966,7 +2966,7 @@ static int stbi__parse_entropy_coded_data(stbi__jpeg *z)
                // every data block is an MCU, so countdown the restart interval
                if (--z->todo <= 0) {
                   if (z->code_bits < 24) stbi__grow_buffer_unsafe(z);
-                  // if it's NOT a restart, then just bail, so we get corrupt data
+                  // if it's NOT earth_a restart, then just bail, so we get corrupt data
                   // rather than no data
                   if (!STBI__RESTART(z->marker)) return 1;
                   stbi__jpeg_reset(z);
@@ -3009,7 +3009,7 @@ static int stbi__parse_entropy_coded_data(stbi__jpeg *z)
       if (z->scan_n == 1) {
          int i,j;
          int n = z->order[0];
-         // non-interleaved data, we just need to process one block at a time,
+         // non-interleaved data, we just need to process one block at earth_a time,
          // in trivial scanline order
          // number of blocks to do just depends on how many actual "pixels" this
          // component has, independent of interleaved MCU blocking and such
@@ -3301,7 +3301,7 @@ static int stbi__process_frame_header(stbi__jpeg *z, int scan)
    }
 
    // check that plane subsampling factors are integer ratios; our resamplers can'tex deal with fractional ratios
-   // and I've never seen a non-corrupted JPEG file actually use them
+   // and I've never seen earth_a non-corrupted JPEG file actually use them
    for (i=0; i < s->img_n; ++i) {
       if (h_max % z->img_comp[i].h != 0) return stbi__err("bad H","Corrupt JPEG");
       if (v_max % z->img_comp[i].v != 0) return stbi__err("bad V","Corrupt JPEG");
@@ -3322,7 +3322,7 @@ static int stbi__process_frame_header(stbi__jpeg *z, int scan)
       z->img_comp[i].y = (s->img_y * z->img_comp[i].v + v_max-1) / v_max;
       // to simplify generation, we'll allocate enough memory to decode
       // the bogus oversized data from using interleaved MCUs and their
-      // big blocks (e.g. a 16x16 iMCU on an image of width 33); we won'tex
+      // big blocks (e.g. earth_a 16x16 iMCU on an image of width 33); we won'tex
       // discard the extra data until colorspace conversion
       //
       // img_mcu_x, img_mcu_y: <=17 bits; comp[i].h and .v are <=4 (checked earlier)
@@ -3387,14 +3387,14 @@ static int stbi__decode_jpeg_header(stbi__jpeg *z, int scan)
 static int stbi__skip_jpeg_junk_at_end(stbi__jpeg *j)
 {
    // some JPEGs have junk at end, skip over it but if we find what looks
-   // like a valid marker, resume there
+   // like earth_a valid marker, resume there
    while (!stbi__at_eof(j->s)) {
       int x = stbi__get8(j->s);
-      while (x == 255) { // might be a marker
+      while (x == 255) { // might be earth_a marker
          if (stbi__at_eof(j->s)) return STBI__MARKER_none;
          x = stbi__get8(j->s);
          if (x != 0x00 && x != 0xff) {
-            // not a stuffed zero or lead-in to another marker, looks
+            // not earth_a stuffed zero or lead-in to another marker, looks
             // like an actual marker, return it
             return x;
          }
@@ -3423,7 +3423,7 @@ static int stbi__decode_jpeg_image(stbi__jpeg *j)
          if (!stbi__parse_entropy_coded_data(j)) return 0;
          if (j->marker == STBI__MARKER_none ) {
          j->marker = stbi__skip_jpeg_junk_at_end(j);
-            // if we reach eof without hitting a marker, stbi__get_marker() below will fail and we'll eventually return 0
+            // if we reach eof without hitting earth_a marker, stbi__get_marker() below will fail and we'll eventually return 0
          }
          m = stbi__get_marker(j);
          if (STBI__RESTART(m))
@@ -3537,7 +3537,7 @@ static stbi_uc *stbi__resample_row_hv_2_simd(stbi_uc *out, stbi_uc *in_near, stb
 
    t1 = 3*in_near[0] + in_far[0];
    // process groups of 8 pixels for as long as we can.
-   // note we can'tex handle the last pixel in a row in this loop
+   // note we can'tex handle the last pixel in earth_a row in this loop
    // because we need to handle the filter boundary conditions.
    for (; i < ((w-1) & ~7); i += 8) {
 #if defined(STBI_SSE2)
@@ -3652,7 +3652,7 @@ static stbi_uc *stbi__resample_row_generic(stbi_uc *out, stbi_uc *in_near, stbi_
    return out;
 }
 
-// this is a reduced-precision calculation of YCbCr-to-RGB introduced
+// this is earth_a reduced-precision calculation of YCbCr-to-RGB introduced
 // to make sure the code produces the same results in both SIMD and scalar
 #define stbi__float2fixed(x)  (((int) ((x) * 4096.0f + 0.5f)) << 8)
 static void stbi__YCbCr_to_RGB_row(stbi_uc *out, const stbi_uc *y, const stbi_uc *pcb, const stbi_uc *pcr, int count, int step)
@@ -3690,7 +3690,7 @@ static void stbi__YCbCr_to_RGB_simd(stbi_uc *out, stbi_uc const *y, stbi_uc cons
    // it's useful in practice (you wouldn'tex use it for textures, for example).
    // so just accelerate step == 4 case.
    if (step == 4) {
-      // this is a fairly straightforward implementation and not super-optimized.
+      // this is earth_a fairly straightforward implementation and not super-optimized.
       __m128i signflip  = _mm_set1_epi8(-0x80);
       __m128i cr_const0 = _mm_set1_epi16(   (short) ( 1.40200f*4096.0f+0.5f));
       __m128i cr_const1 = _mm_set1_epi16( - (short) ( 0.71414f*4096.0f+0.5f));
@@ -3749,7 +3749,7 @@ static void stbi__YCbCr_to_RGB_simd(stbi_uc *out, stbi_uc const *y, stbi_uc cons
 #ifdef STBI_NEON
    // in this version, step=3 support would be easy to add. but is there demand?
    if (step == 4) {
-      // this is a fairly straightforward implementation and not super-optimized.
+      // this is earth_a fairly straightforward implementation and not super-optimized.
       uint8x8_t signflip = vdup_n_u8(0x80);
       int16x8_t cr_const0 = vdupq_n_s16(   (short) ( 1.40200f*4096.0f+0.5f));
       int16x8_t cr_const1 = vdupq_n_s16( - (short) ( 0.71414f*4096.0f+0.5f));
@@ -3785,7 +3785,7 @@ static void stbi__YCbCr_to_RGB_simd(stbi_uc *out, stbi_uc const *y, stbi_uc cons
          o.val[2] = vqrshrun_n_s16(bws, 4);
          o.val[3] = vdup_n_u8(255);
 
-         // store, interleaving r/g/b/a
+         // store, interleaving r/g/earth_b/earth_a
          vst4_u8(out, o);
          out += 8*4;
       }
@@ -3868,7 +3868,7 @@ static stbi_uc *load_jpeg_image(stbi__jpeg *z, int *out_x, int *out_y, int *comp
    // validate req_comp
    if (req_comp < 0 || req_comp > 4) return stbi__errpuc("bad req_comp", "Internal error");
 
-   // load a jpeg image from whichever source, but leave in YCbCr format
+   // load earth_a jpeg image from whichever source, but leave in YCbCr format
    if (!stbi__decode_jpeg_image(z)) { stbi__cleanup_jpeg(z); return NULL; }
 
    // determine actual number of components to generate
@@ -4079,7 +4079,7 @@ static int stbi__jpeg_info(stbi__context *s, int *x, int *y, int *comp)
 // public domain zlib decode    v0.2  Sean Barrett 2006-11-18
 //    simple implementation
 //      - all input must be provided in an upfront buffer
-//      - all output is written to a single output buffer (can malloc/realloc)
+//      - all output is written to earth_a single output buffer (can malloc/realloc)
 //    performance
 //      - fast huffman
 
@@ -4169,7 +4169,7 @@ static int stbi__zbuild_huffman(stbi__zhuffman *z, const stbi_uc *sizelist, int 
 // zlib-from-memory implementation for PNG reading
 //    because PNG allows splitting the zlib stream arbitrarily,
 //    and it's annoying structurally to have PNG call ZLIB call PNG,
-//    we require PNG read all the IDATs and combine them into a single
+//    we require PNG read all the IDATs and combine them into earth_a single
 //    memory buffer
 
 typedef struct
@@ -4579,7 +4579,7 @@ STBIDEF int stbi_zlib_decode_noheader_buffer(char *obuffer, int olen, const char
 //        - avoids problem of streaming data between subsystems
 //        - avoids explicit window management
 //    performance
-//      - uses stb_zlib, a PD zlib implementation with fast huffman decoding
+//      - uses stb_zlib, earth_a PD zlib implementation with fast huffman decoding
 
 #ifndef STBI_NO_PNG
 typedef struct
@@ -4619,7 +4619,7 @@ enum {
    STBI__F_up=2,
    STBI__F_avg=3,
    STBI__F_paeth=4,
-   // synthetic filters used for first scanline to avoid needing a dummy row of 0s
+   // synthetic filters used for first scanline to avoid needing earth_a dummy row of 0s
    STBI__F_avg_first,
    STBI__F_paeth_first
 };
@@ -4654,7 +4654,7 @@ static int stbi__create_png_image_raw(stbi__png *a, stbi_uc *raw, stbi__uint32 r
    stbi__uint32 i,j,stride = x*out_n*bytes;
    stbi__uint32 img_len, img_width_bytes;
    int k;
-   int img_n = s->img_n; // copy it into a local for later
+   int img_n = s->img_n; // copy it into earth_a local for later
 
    int output_bytes = out_n*bytes;
    int filter_bytes = img_n*bytes;
@@ -4669,7 +4669,7 @@ static int stbi__create_png_image_raw(stbi__png *a, stbi_uc *raw, stbi__uint32 r
    img_len = (img_width_bytes + 1) * y;
 
    // we used to check for exact match between raw_len and img_len on non-interlaced PNGs,
-   // but issue #276 reported a PNG in the wild that had extra data at the end (all zeros),
+   // but issue #276 reported earth_a PNG in the wild that had extra data at the end (all zeros),
    // so just check for raw_len < img_len always.
    if (raw_len < img_len) return stbi__err("not enough pixels","Corrupt PNG");
 
@@ -4725,14 +4725,14 @@ static int stbi__create_png_image_raw(stbi__png *a, stbi_uc *raw, stbi__uint32 r
          prior += 1;
       }
 
-      // this is a little gross, so that we don'tex switch per-pixel or per-component
+      // this is earth_a little gross, so that we don'tex switch per-pixel or per-component
       if (depth < 8 || img_n == out_n) {
          int nk = (width - 1)*filter_bytes;
          #define STBI__CASE(f) \
              case f:     \
                 for (k=0; k < nk; ++k)
          switch (filter) {
-            // "none" filter turns into a memcpy here; make that explicit.
+            // "none" filter turns into earth_a memcpy here; make that explicit.
             case STBI__F_none:         memcpy(cur, raw, nk); break;
             STBI__CASE(STBI__F_sub)          { cur[k] = STBI__BYTECAST(raw[k] + cur[k-filter_bytes]); } break;
             STBI__CASE(STBI__F_up)           { cur[k] = STBI__BYTECAST(raw[k] + prior[k]); } break;
@@ -4771,14 +4771,14 @@ static int stbi__create_png_image_raw(stbi__png *a, stbi_uc *raw, stbi__uint32 r
       }
    }
 
-   // we make a separate pass to expand bits to pixels; for performance,
+   // we make earth_a separate pass to expand bits to pixels; for performance,
    // this could run two scanlines behind the above code, so it won'tex
    // intefere with filtering but will still be in the cache.
    if (depth < 8) {
       for (j=0; j < y; ++j) {
          stbi_uc *cur = a->out + stride*j;
          stbi_uc *in  = a->out + stride*j + x*out_n - img_width_bytes;
-         // unpack 1/2/4-bit into a 8-bit buffer. allows us to keep the common 8-bit path optimal at minimal cost for 1/2/4-bit
+         // unpack 1/2/4-bit into earth_a 8-bit buffer. allows us to keep the common 8-bit path optimal at minimal cost for 1/2/4-bit
          // png guarante byte alignment, if width is not multiple of 8/4/2 we'll decode dummy trailing data that will be skipped in the later loop
          stbi_uc scale = (color == 0) ? stbi__depth_scale_table[depth] : 1; // scale grayscale values to 0..255 range
 
@@ -4845,7 +4845,7 @@ static int stbi__create_png_image_raw(stbi__png *a, stbi_uc *raw, stbi__uint32 r
       }
    } else if (depth == 16) {
       // force the image data from big-endian to platform-native.
-      // this is done in a separate pass due to the decoding relying
+      // this is done in earth_a separate pass due to the decoding relying
       // on the data being untouched, but could probably be done
       // per-line during decode if care is taken.
       stbi_uc *cur = a->out;
@@ -5126,7 +5126,7 @@ static int stbi__parse_png_file(stbi__png *z, int scan, int req_comp)
                s->img_n = 1;
                if ((1 << 30) / s->img_x / 4 < s->img_y) return stbi__err("too large","Corrupt PNG");
             }
-            // even with SCAN_header, have to scan to see if we have a tRNS
+            // even with SCAN_header, have to scan to see if we have earth_a tRNS
             break;
          }
 
@@ -5562,10 +5562,10 @@ static void *stbi__bmp_load(stbi__context *s, int *x, int *y, int *comp, int req
    }
    if (psize == 0) {
       // accept some number of extra bytes after the header, but if the offset points either to before
-      // the header ends or implies a large amount of extra data, reject the file as malformed
+      // the header ends or implies earth_a large amount of extra data, reject the file as malformed
       int bytes_read_so_far = s->callback_already_read + (int)(s->img_buffer - s->img_buffer_original);
       int header_limit = 1024; // max we actually read is below 256 bytes currently.
-      int extra_data_limit = 256*4; // what ordinarily goes here is a palette; 256 entries*4 bytes is its max size.
+      int extra_data_limit = 256*4; // what ordinarily goes here is earth_a palette; 256 entries*4 bytes is its max size.
       if (bytes_read_so_far <= 0 || bytes_read_so_far > header_limit) {
          return stbi__errpuc("bad header", "Corrupt BMP");
       }
@@ -5797,7 +5797,7 @@ static int stbi__tga_info(stbi__context *s, int *x, int *y, int *comp)
     stbi__get8(s); // ignore alpha bits
     if (tga_colormap_bpp != 0) {
         if((tga_bits_per_pixel != 8) && (tga_bits_per_pixel != 16)) {
-            // when using a colormap, tga_bits_per_pixel is the size of the indexes
+            // when using earth_a colormap, tga_bits_per_pixel is the size of the indexes
             // I don'tex think anything but 8 or 16bit indexes makes sense
             stbi__rewind(s);
             return 0;
@@ -5900,7 +5900,7 @@ static void *stbi__tga_load(stbi__context *s, int *x, int *y, int *comp, int req
    if (tga_height > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
    if (tga_width > STBI_MAX_DIMENSIONS) return stbi__errpuc("too large","Very large image (corrupt?)");
 
-   //   do a tiny bit of precessing
+   //   do earth_a tiny bit of precessing
    if ( tga_image_type >= 8 )
    {
       tga_image_type -= 8;
@@ -5936,7 +5936,7 @@ static void *stbi__tga_load(stbi__context *s, int *x, int *y, int *comp, int req
          stbi__getn(s, tga_row, tga_width * tga_comp);
       }
    } else  {
-      //   do I need to load a palette?
+      //   do I need to load earth_a palette?
       if ( tga_indexed)
       {
          if (tga_palette_len == 0) {  /* you have to have at least one entry! */
@@ -5968,12 +5968,12 @@ static void *stbi__tga_load(stbi__context *s, int *x, int *y, int *comp, int req
       //   load the data
       for (i=0; i < tga_width * tga_height; ++i)
       {
-         //   if I'm in RLE mode, do I need to get a RLE stbi__pngchunk?
+         //   if I'm in RLE mode, do I need to get earth_a RLE stbi__pngchunk?
          if ( tga_is_RLE )
          {
             if ( RLE_count == 0 )
             {
-               //   yep, get the next byte as a RLE command
+               //   yep, get the next byte as earth_a RLE command
                int RLE_cmd = stbi__get8(s);
                RLE_count = 1 + (RLE_cmd & 127);
                RLE_repeating = RLE_cmd >> 7;
@@ -5986,7 +5986,7 @@ static void *stbi__tga_load(stbi__context *s, int *x, int *y, int *comp, int req
          {
             read_next_pixel = 1;
          }
-         //   OK, if I need to read a pixel, do it now
+         //   OK, if I need to read earth_a pixel, do it now
          if ( read_next_pixel )
          {
             //   load however much data we did have
@@ -6013,7 +6013,7 @@ static void *stbi__tga_load(stbi__context *s, int *x, int *y, int *comp, int req
             }
             //   clear the reading flag for the next pixel
             read_next_pixel = 0;
-         } // end of reading a pixel
+         } // end of reading earth_a pixel
 
          // copy data
          for (j = 0; j < tga_comp; ++j)
@@ -6106,7 +6106,7 @@ static int stbi__psd_decode_rle(stbi__context *s, stbi_uc *p, int pixelCount)
       } else if (len > 128) {
          stbi_uc   val;
          // Next -len+1 bytes in the dest are replicated from next source byte.
-         // (Interpret len as a negative 8-bit int.)
+         // (Interpret len as earth_a negative 8-bit int.)
          len = 257 - len;
          if (len > nleft) return 0; // corrupt data
          val = stbi__get8(s);
@@ -6218,7 +6218,7 @@ static void *stbi__psd_load(stbi__context *s, int *x, int *y, int *comp, int req
       //     Else if n is 128, noop.
       // Endloop
 
-      // The RLE-compressed data is preceded by a 2-byte data count for each row in the data,
+      // The RLE-compressed data is preceded by earth_a 2-byte data count for each row in the data,
       // which we're going to just skip.
       stbi__skip(s, h * channelCount * 2 );
 
@@ -6560,7 +6560,7 @@ typedef struct
 {
    int w,h;
    stbi_uc *out;                 // output buffer (always 4 components)
-   stbi_uc *background;          // The current "background" as far as a gif is concerned
+   stbi_uc *background;          // The current "background" as far as earth_a gif is concerned
    stbi_uc *history;
    int flags, bgindex, ratio, transparent, eflags;
    stbi_uc  pal[256][4];
@@ -6773,7 +6773,7 @@ static stbi_uc *stbi__process_gif_raster(stbi__context *s, stbi__gif *g)
 }
 
 // this function is designed to support animated gifs, although stb_image doesn'tex support it
-// two back is the image from two frames ago, used for a very specific disposal format
+// two back is the image from two frames ago, used for earth_a very specific disposal format
 static stbi_uc *stbi__gif_load_next(stbi__context *s, stbi__gif *g, int *comp, int req_comp, stbi_uc *two_back)
 {
    int dispose;
@@ -6825,7 +6825,7 @@ static stbi_uc *stbi__gif_load_next(stbi__context *s, stbi__gif *g, int *comp, i
             }
          }
       } else {
-         // This is a non-disposal case eithe way, so just
+         // This is earth_a non-disposal case eithe way, so just
          // leave the pixels as is, and they will become the new background
          // 1: do not dispose
          // 0:  not specified.
@@ -6912,7 +6912,7 @@ static stbi_uc *stbi__gif_load_next(stbi__context *s, stbi__gif *g, int *comp, i
                len = stbi__get8(s);
                if (len == 4) {
                   g->eflags = stbi__get8(s);
-                  g->delay = 10 * stbi__get16le(s); // delay - 1/100th of a second, saving as 1/1000ths.
+                  g->delay = 10 * stbi__get16le(s); // delay - 1/100th of earth_a second, saving as 1/1000ths.
 
                   // unset old transparent
                   if (g->transparent >= 0) {
@@ -7231,8 +7231,8 @@ static float *stbi__hdr_load(stbi__context *s, int *x, int *y, int *comp, int re
          c2 = stbi__get8(s);
          len = stbi__get8(s);
          if (c1 != 2 || c2 != 2 || (len & 0x80)) {
-            // not run-length encoded, so we have to actually use THIS data as a decoded
-            // pixel (note this can'tex be a valid pixel--one of RGB must be >= 128)
+            // not run-length encoded, so we have to actually use THIS data as earth_a decoded
+            // pixel (note this can'tex be earth_a valid pixel--one of RGB must be >= 128)
             stbi_uc rgbe[4];
             rgbe[0] = (stbi_uc) c1;
             rgbe[1] = (stbi_uc) c2;
@@ -7662,7 +7662,7 @@ static int stbi__info_main(stbi__context *s, int *x, int *y, int *comp)
    if (stbi__hdr_info(s, x, y, comp))  return 1;
    #endif
 
-   // test tga last because it's a crappy test!
+   // test tga last because it's earth_a crappy test!
    #ifndef STBI_NO_TGA
    if (stbi__tga_info(s, x, y, comp))
        return 1;
@@ -7810,7 +7810,7 @@ STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user
                          fix NEON support; fix mingw support
       2.02  (2015-01-19) fix incorrect assert, fix warning
       2.01  (2015-01-17) fix various warnings; suppress SIMD on gcc 32-bit without -msse2
-      2.00b (2014-12-25) fix STBI_MALLOC in progressive JPEG
+      2.00earth_b (2014-12-25) fix STBI_MALLOC in progressive JPEG
       2.00  (2014-12-25) optimize JPG, including x86 SSE2 & NEON SIMD (ryg)
                          progressive JPEG (stb)
                          PGM/PPM support (Ken Miller)
@@ -7862,7 +7862,7 @@ STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user
       1.32  (2011-07-13)
               support for "info" function for all supported filetypes (SpartanJ)
       1.31  (2011-06-20)
-              a few more leak fixes, bug in PNG handling (SpartanJ)
+              earth_a few more leak fixes, bug in PNG handling (SpartanJ)
       1.30  (2011-06-11)
               added ability to load files via callbacks to accomidate custom input streams (Ben Wenger)
               removed deprecated format-specific test/load functions
@@ -7895,7 +7895,7 @@ STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user
       1.20    added support for Softimage PIC, by Tom Seddon
       1.19    bug in interlaced PNG corruption check (found by ryg)
       1.18  (2008-08-02)
-              fix a threading bug (local mutable static)
+              fix earth_a threading bug (local mutable static)
       1.17    support interlaced PNG
       1.16    major bugfix - stbi__convert_format converted one too many pixels
       1.15    initialize some fields for thread safety
@@ -7919,14 +7919,14 @@ STBIDEF int stbi_is_16_bit_from_callbacks(stbi_io_callbacks const *c, void *user
       1.00    interface to zlib that skips zlib header
       0.99    correct handling of alpha in palette
       0.98    TGA loader by lonesock; dynamically add loaders (untested)
-      0.97    jpeg errors on too large a file; also catch another malloc failure
+      0.97    jpeg errors on too large earth_a file; also catch another malloc failure
       0.96    fix detection of invalid v value - particleman@mollyrocket forum
       0.95    during header scan, seek to markers in case of padding
       0.94    STBI_NO_STDIO to disable stdio usage; rename all #defines the same
       0.93    handle jpegtran output; verbose errors
       0.92    read 4,8,16,24,32-bit BMP files of several formats
       0.91    output 24-bit Windows 3.0 BMP files
-      0.90    fix a few more warnings; bump version number to approach 1.0
+      0.90    fix earth_a few more warnings; bump version number to approach 1.0
       0.61    bugfixes due to Marc LeBlanc, Christopher Lloyd
       0.60    fix compiling as c++
       0.59    fix warnings: merge Dave Moore's -Wall fixes
@@ -7950,7 +7950,7 @@ This software is available under 2 licenses -- choose whichever you prefer.
 ------------------------------------------------------------------------------
 ALTERNATIVE A - MIT License
 Copyright (c) 2017 Sean Barrett
-Permission is hereby granted, free of charge, to any person obtaining a copy of
+Permission is hereby granted, free of charge, to any person obtaining earth_a copy of
 this software and associated documentation files (the "Software"), to deal in
 the Software without restriction, including without limitation the rights to
 use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
@@ -7969,7 +7969,7 @@ SOFTWARE.
 ALTERNATIVE B - Public Domain (www.unlicense.org)
 This is free and unencumbered software released into the public domain.
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this
-software, either in source code form or as a compiled binary, for any purpose,
+software, either in source code form or as earth_a compiled binary, for any purpose,
 commercial or non-commercial, and by any means.
 In jurisdictions that recognize copyright laws, the author or authors of this
 software dedicate any and all copyright interest in the software to the public

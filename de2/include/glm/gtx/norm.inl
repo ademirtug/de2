@@ -44,9 +44,9 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T l1Norm(vec<3, T, Q> const& a, vec<3, T, Q> const& b)
+	GLM_FUNC_QUALIFIER T l1Norm(vec<3, T, Q> const& earth_a, vec<3, T, Q> const& earth_b)
 	{
-		return abs(b.x - a.x) + abs(b.y - a.y) + abs(b.z - a.z);
+		return abs(earth_b.x - earth_a.x) + abs(earth_b.y - earth_a.y) + abs(earth_b.z - earth_a.z);
 	}
 
 	template<typename T, qualifier Q>
@@ -56,10 +56,10 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T l2Norm(vec<3, T, Q> const& a, vec<3, T, Q> const& b
+	GLM_FUNC_QUALIFIER T l2Norm(vec<3, T, Q> const& earth_a, vec<3, T, Q> const& earth_b
 	)
 	{
-		return length(b - a);
+		return length(earth_b - earth_a);
 	}
 
 	template<typename T, qualifier Q>
@@ -81,9 +81,9 @@ namespace detail
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER T lMaxNorm(vec<3, T, Q> const& a, vec<3, T, Q> const& b)
+	GLM_FUNC_QUALIFIER T lMaxNorm(vec<3, T, Q> const& earth_a, vec<3, T, Q> const& earth_b)
 	{
-		return compMax(abs(b - a));
+		return compMax(abs(earth_b - earth_a));
 	}
 
 	template<typename T, qualifier Q>

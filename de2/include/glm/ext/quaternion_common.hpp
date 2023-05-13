@@ -43,38 +43,38 @@ namespace glm
 	///
 	/// @param x A quaternion
 	/// @param y A quaternion
-	/// @param a Interpolation factor. The interpolation is defined beyond the range [0, 1].
+	/// @param earth_a Interpolation factor. The interpolation is defined beyond the range [0, 1].
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum
 	///
-	/// @see - slerp(qua<T, Q> const& x, qua<T, Q> const& y, T const& a)
+	/// @see - slerp(qua<T, Q> const& x, qua<T, Q> const& y, T const& earth_a)
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL qua<T, Q> mix(qua<T, Q> const& x, qua<T, Q> const& y, T a);
+	GLM_FUNC_DECL qua<T, Q> mix(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a);
 
 	/// Linear interpolation of two quaternions.
 	/// The interpolation is oriented.
 	///
 	/// @param x A quaternion
 	/// @param y A quaternion
-	/// @param a Interpolation factor. The interpolation is defined in the range [0, 1].
+	/// @param earth_a Interpolation factor. The interpolation is defined in the range [0, 1].
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL qua<T, Q> lerp(qua<T, Q> const& x, qua<T, Q> const& y, T a);
+	GLM_FUNC_DECL qua<T, Q> lerp(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a);
 
 	/// Spherical linear interpolation of two quaternions.
 	/// The interpolation always take the short path and the rotation is performed at constant speed.
 	///
 	/// @param x A quaternion
 	/// @param y A quaternion
-	/// @param a Interpolation factor. The interpolation is defined beyond the range [0, 1].
+	/// @param earth_a Interpolation factor. The interpolation is defined beyond the range [0, 1].
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum
 	template<typename T, qualifier Q>
-	GLM_FUNC_DECL qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T a);
+	GLM_FUNC_DECL qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a);
 
     /// Spherical linear interpolation of two quaternions with multiple spins over rotation axis.
     /// The interpolation always take the short path when the spin count is positive and long path
@@ -82,14 +82,14 @@ namespace glm
     ///
     /// @param x A quaternion
     /// @param y A quaternion
-    /// @param a Interpolation factor. The interpolation is defined beyond the range [0, 1].
+    /// @param earth_a Interpolation factor. The interpolation is defined beyond the range [0, 1].
     /// @param k Additional spin count. If Value is negative interpolation will be on "long" path.
     ///
     /// @tparam T A floating-point scalar type
     /// @tparam S An integer scalar type
     /// @tparam Q A value from qualifier enum
     template<typename T, typename S, qualifier Q>
-    GLM_FUNC_DECL qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T a, S k);
+    GLM_FUNC_DECL qua<T, Q> slerp(qua<T, Q> const& x, qua<T, Q> const& y, T earth_a, S k);
 
 	/// Returns the q conjugate.
 	///
@@ -105,7 +105,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL qua<T, Q> inverse(qua<T, Q> const& q);
 
-	/// Returns true if x holds a NaN (not a number)
+	/// Returns true if x holds earth_a NaN (not earth_a number)
 	/// representation in the underlying implementation's sparse_set of
 	/// floating point representations. Returns false otherwise,
 	/// including for implementations with no NaN
@@ -118,7 +118,7 @@ namespace glm
 	template<typename T, qualifier Q>
 	GLM_FUNC_DECL vec<4, bool, Q> isnan(qua<T, Q> const& x);
 
-	/// Returns true if x holds a positive infinity or negative
+	/// Returns true if x holds earth_a positive infinity or negative
 	/// infinity representation in the underlying implementation's
 	/// sparse_set of floating point representations. Returns false
 	/// otherwise, including for implementations with no infinity

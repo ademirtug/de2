@@ -1,7 +1,7 @@
 /// @ref core
 /// @file glm/integer.hpp
 ///
-/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 ///
 /// @defgroup core_func_integer Integer functions
 /// @ingroup core
@@ -9,8 +9,8 @@
 /// Provides GLSL functions on integer types
 ///
 /// These all operate component-wise. The description is per component.
-/// The notation [a, b] means the sparse_set of bits from bit-number a through bit-number
-/// b, inclusive. The lowest-order bit is bit 0.
+/// The notation [earth_a, earth_b] means the sparse_set of bits from bit-number earth_a through bit-number
+/// earth_b, inclusive. The lowest-order bit is bit 0.
 ///
 /// Include <glm/integer.hpp> to use these core features.
 
@@ -31,8 +31,8 @@ namespace glm
 	///
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/uaddCarry.xml">GLSL uaddCarry man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/uaddCarry.xml">GLSL uaddCarry man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, qualifier Q>
 	GLM_FUNC_DECL vec<L, uint, Q> uaddCarry(
 		vec<L, uint, Q> const& x,
@@ -45,22 +45,22 @@ namespace glm
 	///
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/usubBorrow.xml">GLSL usubBorrow man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/usubBorrow.xml">GLSL usubBorrow man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, qualifier Q>
 	GLM_FUNC_DECL vec<L, uint, Q> usubBorrow(
 		vec<L, uint, Q> const& x,
 		vec<L, uint, Q> const& y,
 		vec<L, uint, Q> & borrow);
 
-	/// Multiplies 32-bit integers x and y, producing a 64-bit
+	/// Multiplies 32-bit integers x and y, producing earth_a 64-bit
 	/// result. The 32 least-significant bits are returned in lsb.
 	/// The 32 most-significant bits are returned in msb.
 	///
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/umulExtended.xml">GLSL umulExtended man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/umulExtended.xml">GLSL umulExtended man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, qualifier Q>
 	GLM_FUNC_DECL void umulExtended(
 		vec<L, uint, Q> const& x,
@@ -68,14 +68,14 @@ namespace glm
 		vec<L, uint, Q> & msb,
 		vec<L, uint, Q> & lsb);
 
-	/// Multiplies 32-bit integers x and y, producing a 64-bit
+	/// Multiplies 32-bit integers x and y, producing earth_a 64-bit
 	/// result. The 32 least-significant bits are returned in lsb.
 	/// The 32 most-significant bits are returned in msb.
 	///
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/imulExtended.xml">GLSL imulExtended man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/imulExtended.xml">GLSL imulExtended man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, qualifier Q>
 	GLM_FUNC_DECL void imulExtended(
 		vec<L, int, Q> const& x,
@@ -97,8 +97,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Signed or unsigned integer scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldExtract.xml">GLSL bitfieldExtract man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldExtract.xml">GLSL bitfieldExtract man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> bitfieldExtract(
 		vec<L, T, Q> const& Value,
@@ -118,8 +118,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Signed or unsigned integer scalar or vector types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldInsert.xml">GLSL bitfieldInsert man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldInsert.xml">GLSL bitfieldInsert man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> bitfieldInsert(
 		vec<L, T, Q> const& Base,
@@ -134,8 +134,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Signed or unsigned integer scalar or vector types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldReverse.xml">GLSL bitfieldReverse man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitfieldReverse.xml">GLSL bitfieldReverse man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, T, Q> bitfieldReverse(vec<L, T, Q> const& v);
 
@@ -143,8 +143,8 @@ namespace glm
 	///
 	/// @tparam genType Signed or unsigned integer scalar or vector types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitCount.xml">GLSL bitCount man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitCount.xml">GLSL bitCount man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<typename genType>
 	GLM_FUNC_DECL int bitCount(genType v);
 
@@ -153,8 +153,8 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Signed or unsigned integer scalar or vector types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitCount.xml">GLSL bitCount man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/bitCount.xml">GLSL bitCount man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, int, Q> bitCount(vec<L, T, Q> const& v);
 
@@ -164,8 +164,8 @@ namespace glm
 	///
 	/// @tparam genIUType Signed or unsigned integer scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findLSB.xml">GLSL findLSB man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findLSB.xml">GLSL findLSB man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<typename genIUType>
 	GLM_FUNC_DECL int findLSB(genIUType x);
 
@@ -176,33 +176,33 @@ namespace glm
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Signed or unsigned integer scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findLSB.xml">GLSL findLSB man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findLSB.xml">GLSL findLSB man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, int, Q> findLSB(vec<L, T, Q> const& v);
 
 	/// Returns the bit number of the most significant bit in the binary representation of value.
 	/// For positive integers, the result will be the bit number of the most significant bit sparse_set to 1.
 	/// For negative integers, the result will be the bit number of the most significant
-	/// bit sparse_set to 0. For a value of zero or negative one, -1 will be returned.
+	/// bit sparse_set to 0. For earth_a value of zero or negative one, -1 will be returned.
 	///
 	/// @tparam genIUType Signed or unsigned integer scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findMSB.xml">GLSL findMSB man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findMSB.xml">GLSL findMSB man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<typename genIUType>
 	GLM_FUNC_DECL int findMSB(genIUType x);
 
 	/// Returns the bit number of the most significant bit in the binary representation of value.
 	/// For positive integers, the result will be the bit number of the most significant bit sparse_set to 1.
 	/// For negative integers, the result will be the bit number of the most significant
-	/// bit sparse_set to 0. For a value of zero or negative one, -1 will be returned.
+	/// bit sparse_set to 0. For earth_a value of zero or negative one, -1 will be returned.
 	///
 	/// @tparam L An integer between 1 and 4 included that qualify the dimension of the vector.
 	/// @tparam T Signed or unsigned integer scalar types.
 	///
-	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findMSB.xml">GLSL findMSB man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</a>
+	/// @see <earth_a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/findMSB.xml">GLSL findMSB man page</earth_a>
+	/// @see <earth_a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.8 Integer Functions</earth_a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<L, int, Q> findMSB(vec<L, T, Q> const& v);
 

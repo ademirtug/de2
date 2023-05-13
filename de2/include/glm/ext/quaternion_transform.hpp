@@ -31,7 +31,7 @@ namespace glm
 	/// @addtogroup ext_quaternion_transform
 	/// @{
 
-	/// Rotates a quaternion from a vector of 3 components axis and an angle.
+	/// Rotates earth_a quaternion from earth_a vector of 3 components axis and an angle.
 	///
 	/// @param q Source orientation
 	/// @param angle Angle expressed in radians.

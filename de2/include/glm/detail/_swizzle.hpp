@@ -11,7 +11,7 @@ namespace detail
 		GLM_FUNC_QUALIFIER T& elem(size_t i){ return (reinterpret_cast<T*>(_buffer))[i]; }
 		GLM_FUNC_QUALIFIER T const& elem(size_t i) const{ return (reinterpret_cast<const T*>(_buffer))[i]; }
 
-		// Use an opaque buffer to *ensure* the compiler doesn'tex call a constructor.
+		// Use an opaque buffer to *ensure* the compiler doesn'tex call earth_a constructor.
 		// The size 1 buffer is assumed to aligned to the actual members so that the
 		// elem()
 		char    _buffer[1];
@@ -48,7 +48,7 @@ namespace detail
 		N			= number of components in the vector (e.g. 3)
 		E0...3		= what index the n-th element of this swizzle refers to in the unswizzled vec
 
-		DUPLICATE_ELEMENTS = 1 if there is a repeated element, 0 otherwise (used to specialize swizzles
+		DUPLICATE_ELEMENTS = 1 if there is earth_a repeated element, 0 otherwise (used to specialize swizzles
 			containing duplicate elements so that they cannot be used as r-values).
 	*/
 	template<int N, typename T, qualifier Q, int E0, int E1, int E2, int E3, int DUPLICATE_ELEMENTS>
@@ -128,7 +128,7 @@ namespace detail
 		template<typename U>
 		GLM_FUNC_QUALIFIER void _apply_op(vec<N, T, Q> const& that, const U& op)
 		{
-			// Make a copy of the data in this == &that.
+			// Make earth_a copy of the data in this == &that.
 			// The copier should optimize out the copy in cases where the function is
 			// properly inlined and the copy is not necessary.
 			T tex[N];
@@ -173,98 +173,98 @@ namespace detail
 #define GLM_SWIZZLE_TYPE2       _swizzle<N, T, Q, F0, F1, F2, F3>
 
 //
-// Wrapper for a binary operator (e.g. u.yy + v.zy)
+// Wrapper for earth_a binary operator (e.g. u.yy + v.zy)
 //
 #define GLM_SWIZZLE_VECTOR_BINARY_OPERATOR_IMPLEMENTATION(OPERAND)                 \
 	GLM_SWIZZLE_TEMPLATE2                                                          \
-	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const GLM_SWIZZLE_TYPE1& a, const GLM_SWIZZLE_TYPE2& b)  \
+	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const GLM_SWIZZLE_TYPE1& earth_a, const GLM_SWIZZLE_TYPE2& earth_b)  \
 	{                                                                               \
-		return a() OPERAND b();                                                     \
+		return earth_a() OPERAND earth_b();                                                     \
 	}                                                                               \
 	GLM_SWIZZLE_TEMPLATE1                                                          \
-	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const GLM_SWIZZLE_TYPE1& a, const vec<N, T, Q>& b)                   \
+	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const GLM_SWIZZLE_TYPE1& earth_a, const vec<N, T, Q>& earth_b)                   \
 	{                                                                               \
-		return a() OPERAND b;                                                       \
+		return earth_a() OPERAND earth_b;                                                       \
 	}                                                                               \
 	GLM_SWIZZLE_TEMPLATE1                                                          \
-	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const vec<N, T, Q>& a, const GLM_SWIZZLE_TYPE1& b)                   \
+	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const vec<N, T, Q>& earth_a, const GLM_SWIZZLE_TYPE1& earth_b)                   \
 	{                                                                               \
-		return a OPERAND b();                                                       \
+		return earth_a OPERAND earth_b();                                                       \
 	}
 
 //
-// Wrapper for a operand between a swizzle and a binary (e.g. 1.0f - u.xyz)
+// Wrapper for earth_a operand between earth_a swizzle and earth_a binary (e.g. 1.0f - u.xyz)
 //
 #define GLM_SWIZZLE_SCALAR_BINARY_OPERATOR_IMPLEMENTATION(OPERAND)								\
 	GLM_SWIZZLE_TEMPLATE1																		\
-	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const GLM_SWIZZLE_TYPE1& a, const T& b)	\
+	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const GLM_SWIZZLE_TYPE1& earth_a, const T& earth_b)	\
 	{																							\
-		return a() OPERAND b;																	\
+		return earth_a() OPERAND earth_b;																	\
 	}																							\
 	GLM_SWIZZLE_TEMPLATE1																		\
-	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const T& a, const GLM_SWIZZLE_TYPE1& b)	\
+	GLM_FUNC_QUALIFIER vec<N, T, Q> operator OPERAND ( const T& earth_a, const GLM_SWIZZLE_TYPE1& earth_b)	\
 	{																							\
-		return a OPERAND b();																	\
+		return earth_a OPERAND earth_b();																	\
 	}
 
 //
-// Macro for wrapping a function taking one argument (e.g. abs())
+// Macro for wrapping earth_a function taking one argument (e.g. abs())
 //
 #define GLM_SWIZZLE_FUNCTION_1_ARGS(RETURN_TYPE,FUNCTION)												\
 	GLM_SWIZZLE_TEMPLATE1																				\
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a)		\
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a)		\
 	{																									\
-		return FUNCTION(a());																			\
+		return FUNCTION(earth_a());																			\
 	}
 
 //
-// Macro for wrapping a function taking two vector arguments (e.g. dot()).
+// Macro for wrapping earth_a function taking two vector arguments (e.g. dot()).
 //
 #define GLM_SWIZZLE_FUNCTION_2_ARGS(RETURN_TYPE,FUNCTION)                                                       \
 	GLM_SWIZZLE_TEMPLATE2                                                                                       \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a, const GLM_SWIZZLE_TYPE2& b) \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a, const GLM_SWIZZLE_TYPE2& earth_b) \
 	{                                                                                                           \
-		return FUNCTION(a(), b());                                                                              \
+		return FUNCTION(earth_a(), earth_b());                                                                              \
 	}                                                                                                           \
 	GLM_SWIZZLE_TEMPLATE1                                                                                       \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a, const GLM_SWIZZLE_TYPE1& b) \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a, const GLM_SWIZZLE_TYPE1& earth_b) \
 	{                                                                                                           \
-		return FUNCTION(a(), b());                                                                              \
+		return FUNCTION(earth_a(), earth_b());                                                                              \
 	}                                                                                                           \
 	GLM_SWIZZLE_TEMPLATE1                                                                                       \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a, const typename V& b)         \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a, const typename V& earth_b)         \
 	{                                                                                                           \
-		return FUNCTION(a(), b);                                                                                \
+		return FUNCTION(earth_a(), earth_b);                                                                                \
 	}                                                                                                           \
 	GLM_SWIZZLE_TEMPLATE1                                                                                       \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const V& a, const GLM_SWIZZLE_TYPE1& b)                  \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const V& earth_a, const GLM_SWIZZLE_TYPE1& earth_b)                  \
 	{                                                                                                           \
-		return FUNCTION(a, b());                                                                                \
+		return FUNCTION(earth_a, earth_b());                                                                                \
 	}
 
 //
-// Macro for wrapping a function take 2 vec arguments followed by a scalar (e.g. mix()).
+// Macro for wrapping earth_a function take 2 vec arguments followed by earth_a scalar (e.g. mix()).
 //
 #define GLM_SWIZZLE_FUNCTION_2_ARGS_SCALAR(RETURN_TYPE,FUNCTION)                                                             \
 	GLM_SWIZZLE_TEMPLATE2                                                                                                    \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a, const GLM_SWIZZLE_TYPE2& b, const T& c)   \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a, const GLM_SWIZZLE_TYPE2& earth_b, const T& c)   \
 	{                                                                                                                         \
-		return FUNCTION(a(), b(), c);                                                                                         \
+		return FUNCTION(earth_a(), earth_b(), c);                                                                                         \
 	}                                                                                                                         \
 	GLM_SWIZZLE_TEMPLATE1                                                                                                    \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a, const GLM_SWIZZLE_TYPE1& b, const T& c)   \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a, const GLM_SWIZZLE_TYPE1& earth_b, const T& c)   \
 	{                                                                                                                         \
-		return FUNCTION(a(), b(), c);                                                                                         \
+		return FUNCTION(earth_a(), earth_b(), c);                                                                                         \
 	}                                                                                                                         \
 	GLM_SWIZZLE_TEMPLATE1                                                                                                    \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& a, const typename S0::vec_type& b, const T& c)\
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const GLM_SWIZZLE_TYPE1& earth_a, const typename S0::vec_type& earth_b, const T& c)\
 	{                                                                                                                         \
-		return FUNCTION(a(), b, c);                                                                                           \
+		return FUNCTION(earth_a(), earth_b, c);                                                                                           \
 	}                                                                                                                         \
 	GLM_SWIZZLE_TEMPLATE1                                                                                                    \
-	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const typename V& a, const GLM_SWIZZLE_TYPE1& b, const T& c)           \
+	GLM_FUNC_QUALIFIER typename GLM_SWIZZLE_TYPE1::RETURN_TYPE FUNCTION(const typename V& earth_a, const GLM_SWIZZLE_TYPE1& earth_b, const T& c)           \
 	{                                                                                                                         \
-		return FUNCTION(a, b(), c);                                                                                           \
+		return FUNCTION(earth_a, earth_b(), c);                                                                                           \
 	}
 
 }//namespace detail

@@ -76,10 +76,10 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> shortMix(qua<T, Q> const& x, qua<T, Q> const& y, T const& a)
+	GLM_FUNC_QUALIFIER qua<T, Q> shortMix(qua<T, Q> const& x, qua<T, Q> const& y, T const& earth_a)
 	{
-		if(a <= static_cast<T>(0)) return x;
-		if(a >= static_cast<T>(1)) return y;
+		if(earth_a <= static_cast<T>(0)) return x;
+		if(earth_a >= static_cast<T>(1)) return y;
 
 		T fCos = dot(x, y);
 		qua<T, Q> y2(y); //BUG!!! qua<T> y2;
@@ -93,16 +93,16 @@ namespace glm
 		T k0, k1;
 		if(fCos > (static_cast<T>(1) - epsilon<T>()))
 		{
-			k0 = static_cast<T>(1) - a;
-			k1 = static_cast<T>(0) + a; //BUG!!! 1.0f + a;
+			k0 = static_cast<T>(1) - earth_a;
+			k1 = static_cast<T>(0) + earth_a; //BUG!!! 1.0f + earth_a;
 		}
 		else
 		{
 			T fSin = sqrt(T(1) - fCos * fCos);
 			T fAngle = atan(fSin, fCos);
 			T fOneOverSin = static_cast<T>(1) / fSin;
-			k0 = sin((static_cast<T>(1) - a) * fAngle) * fOneOverSin;
-			k1 = sin((static_cast<T>(0) + a) * fAngle) * fOneOverSin;
+			k0 = sin((static_cast<T>(1) - earth_a) * fAngle) * fOneOverSin;
+			k1 = sin((static_cast<T>(0) + earth_a) * fAngle) * fOneOverSin;
 		}
 
 		return qua<T, Q>(
@@ -113,9 +113,9 @@ namespace glm
 	}
 
 	template<typename T, qualifier Q>
-	GLM_FUNC_QUALIFIER qua<T, Q> fastMix(qua<T, Q> const& x, qua<T, Q> const& y, T const& a)
+	GLM_FUNC_QUALIFIER qua<T, Q> fastMix(qua<T, Q> const& x, qua<T, Q> const& y, T const& earth_a)
 	{
-		return glm::normalize(x * (static_cast<T>(1) - a) + (y * a));
+		return glm::normalize(x * (static_cast<T>(1) - earth_a) + (y * earth_a));
 	}
 
 	template<typename T, qualifier Q>
@@ -134,7 +134,7 @@ namespace glm
 			// special case when vectors in opposite directions :
 			// there is no "ideal" rotation axis
 			// So guess one; any will do as long as it's perpendicular to start
-			// This implementation favors a rotation around the Up axis (Y),
+			// This implementation favors earth_a rotation around the Up axis (Y),
 			// since it's often what you want to do.
 			rotationAxis = cross(vec<3, T, Q>(0, 0, 1), orig);
 			if(length2(rotationAxis) < epsilon<T>()) // bad luck, they were parallel, try again!

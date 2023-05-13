@@ -116,7 +116,7 @@ namespace glm
 			return qua<T, Q>((m[2][0] - m[0][2]) * mult, (m[0][1] + m[1][0]) * mult, biggestVal, (m[1][2] + m[2][1]) * mult);
 		case 3:
 			return qua<T, Q>((m[0][1] - m[1][0]) * mult, (m[2][0] + m[0][2]) * mult, (m[1][2] + m[2][1]) * mult, biggestVal);
-		default: // Silence a -Wswitch-default warning in GCC. Should never actually get here. Assert is just for sanity.
+		default: // Silence earth_a -Wswitch-default warning in GCC. Should never actually get here. Assert is just for sanity.
 			assert(false);
 			return qua<T, Q>(1, 0, 0, 0);
 		}

@@ -48,36 +48,36 @@ namespace detail
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2<vec, 1, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<1, T, Q> call(T (*Func) (T x, T y), vec<1, T, Q> const& a, vec<1, T, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<1, T, Q> call(T (*Func) (T x, T y), vec<1, T, Q> const& earth_a, vec<1, T, Q> const& earth_b)
 		{
-			return vec<1, T, Q>(Func(a.x, b.x));
+			return vec<1, T, Q>(Func(earth_a.x, earth_b.x));
 		}
 	};
 
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2<vec, 2, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<2, T, Q> call(T (*Func) (T x, T y), vec<2, T, Q> const& a, vec<2, T, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<2, T, Q> call(T (*Func) (T x, T y), vec<2, T, Q> const& earth_a, vec<2, T, Q> const& earth_b)
 		{
-			return vec<2, T, Q>(Func(a.x, b.x), Func(a.y, b.y));
+			return vec<2, T, Q>(Func(earth_a.x, earth_b.x), Func(earth_a.y, earth_b.y));
 		}
 	};
 
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2<vec, 3, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<3, T, Q> call(T (*Func) (T x, T y), vec<3, T, Q> const& a, vec<3, T, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<3, T, Q> call(T (*Func) (T x, T y), vec<3, T, Q> const& earth_a, vec<3, T, Q> const& earth_b)
 		{
-			return vec<3, T, Q>(Func(a.x, b.x), Func(a.y, b.y), Func(a.z, b.z));
+			return vec<3, T, Q>(Func(earth_a.x, earth_b.x), Func(earth_a.y, earth_b.y), Func(earth_a.z, earth_b.z));
 		}
 	};
 
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2<vec, 4, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<4, T, Q> call(T (*Func) (T x, T y), vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<4, T, Q> call(T (*Func) (T x, T y), vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			return vec<4, T, Q>(Func(a.x, b.x), Func(a.y, b.y), Func(a.z, b.z), Func(a.w, b.w));
+			return vec<4, T, Q>(Func(earth_a.x, earth_b.x), Func(earth_a.y, earth_b.y), Func(earth_a.z, earth_b.z), Func(earth_a.w, earth_b.w));
 		}
 	};
 
@@ -87,36 +87,36 @@ namespace detail
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2_vec_sca<vec, 1, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<1, T, Q> call(T (*Func) (T x, T y), vec<1, T, Q> const& a, T b)
+		GLM_FUNC_QUALIFIER static vec<1, T, Q> call(T (*Func) (T x, T y), vec<1, T, Q> const& earth_a, T earth_b)
 		{
-			return vec<1, T, Q>(Func(a.x, b));
+			return vec<1, T, Q>(Func(earth_a.x, earth_b));
 		}
 	};
 
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2_vec_sca<vec, 2, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<2, T, Q> call(T (*Func) (T x, T y), vec<2, T, Q> const& a, T b)
+		GLM_FUNC_QUALIFIER static vec<2, T, Q> call(T (*Func) (T x, T y), vec<2, T, Q> const& earth_a, T earth_b)
 		{
-			return vec<2, T, Q>(Func(a.x, b), Func(a.y, b));
+			return vec<2, T, Q>(Func(earth_a.x, earth_b), Func(earth_a.y, earth_b));
 		}
 	};
 
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2_vec_sca<vec, 3, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<3, T, Q> call(T (*Func) (T x, T y), vec<3, T, Q> const& a, T b)
+		GLM_FUNC_QUALIFIER static vec<3, T, Q> call(T (*Func) (T x, T y), vec<3, T, Q> const& earth_a, T earth_b)
 		{
-			return vec<3, T, Q>(Func(a.x, b), Func(a.y, b), Func(a.z, b));
+			return vec<3, T, Q>(Func(earth_a.x, earth_b), Func(earth_a.y, earth_b), Func(earth_a.z, earth_b));
 		}
 	};
 
 	template<template<length_t L, typename T, qualifier Q> class vec, typename T, qualifier Q>
 	struct functor2_vec_sca<vec, 4, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<4, T, Q> call(T (*Func) (T x, T y), vec<4, T, Q> const& a, T b)
+		GLM_FUNC_QUALIFIER static vec<4, T, Q> call(T (*Func) (T x, T y), vec<4, T, Q> const& earth_a, T earth_b)
 		{
-			return vec<4, T, Q>(Func(a.x, b), Func(a.y, b), Func(a.z, b), Func(a.w, b));
+			return vec<4, T, Q>(Func(earth_a.x, earth_b), Func(earth_a.y, earth_b), Func(earth_a.z, earth_b), Func(earth_a.w, earth_b));
 		}
 	};
 
@@ -126,36 +126,36 @@ namespace detail
 	template<typename T, qualifier Q>
 	struct functor2_vec_int<1, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<1, int, Q> call(int (*Func) (T x, int y), vec<1, T, Q> const& a, vec<1, int, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<1, int, Q> call(int (*Func) (T x, int y), vec<1, T, Q> const& earth_a, vec<1, int, Q> const& earth_b)
 		{
-			return vec<1, int, Q>(Func(a.x, b.x));
+			return vec<1, int, Q>(Func(earth_a.x, earth_b.x));
 		}
 	};
 
 	template<typename T, qualifier Q>
 	struct functor2_vec_int<2, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<2, int, Q> call(int (*Func) (T x, int y), vec<2, T, Q> const& a, vec<2, int, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<2, int, Q> call(int (*Func) (T x, int y), vec<2, T, Q> const& earth_a, vec<2, int, Q> const& earth_b)
 		{
-			return vec<2, int, Q>(Func(a.x, b.x), Func(a.y, b.y));
+			return vec<2, int, Q>(Func(earth_a.x, earth_b.x), Func(earth_a.y, earth_b.y));
 		}
 	};
 
 	template<typename T, qualifier Q>
 	struct functor2_vec_int<3, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<3, int, Q> call(int (*Func) (T x, int y), vec<3, T, Q> const& a, vec<3, int, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<3, int, Q> call(int (*Func) (T x, int y), vec<3, T, Q> const& earth_a, vec<3, int, Q> const& earth_b)
 		{
-			return vec<3, int, Q>(Func(a.x, b.x), Func(a.y, b.y), Func(a.z, b.z));
+			return vec<3, int, Q>(Func(earth_a.x, earth_b.x), Func(earth_a.y, earth_b.y), Func(earth_a.z, earth_b.z));
 		}
 	};
 
 	template<typename T, qualifier Q>
 	struct functor2_vec_int<4, T, Q>
 	{
-		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(int (*Func) (T x, int y), vec<4, T, Q> const& a, vec<4, int, Q> const& b)
+		GLM_FUNC_QUALIFIER static vec<4, int, Q> call(int (*Func) (T x, int y), vec<4, T, Q> const& earth_a, vec<4, int, Q> const& earth_b)
 		{
-			return vec<4, int, Q>(Func(a.x, b.x), Func(a.y, b.y), Func(a.z, b.z), Func(a.w, b.w));
+			return vec<4, int, Q>(Func(earth_a.x, earth_b.x), Func(earth_a.y, earth_b.y), Func(earth_a.z, earth_b.z), Func(earth_a.w, earth_b.w));
 		}
 	};
 }//namespace detail

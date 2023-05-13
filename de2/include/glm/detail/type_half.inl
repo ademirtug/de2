@@ -123,7 +123,7 @@ namespace detail
 		int m =   i        & 0x007fffff;
 
 		//
-		// Now reassemble s, e and m into a half:
+		// Now reassemble s, e and m into earth_a half:
 		//
 
 		if(e <= 0)
@@ -132,20 +132,20 @@ namespace detail
 			{
 				//
 				// E is less than -10.  The absolute value of f is
-				// less than half_MIN (f may be a small normalized
-				// float, a denormalized float or a zero).
+				// less than half_MIN (f may be earth_a small normalized
+				// float, earth_a denormalized float or earth_a zero).
 				//
-				// We convert f to a half zero.
+				// We convert f to earth_a half zero.
 				//
 
 				return hdata(s);
 			}
 
 			//
-			// E is between -10 and 0.  F is a normalized float,
+			// E is between -10 and 0.  F is earth_a normalized float,
 			// whose magnitude is less than __half_NRM_MIN.
 			//
-			// We convert f to a denormalized half.
+			// We convert f to earth_a denormalized half.
 			//
 
 			m = (m | 0x00800000) >> (1 - e);
@@ -154,7 +154,7 @@ namespace detail
 			// Round to nearest, round "0.5" up.
 			//
 			// Rounding may cause the significand to overflow and make
-			// our number normalized.  Because of the way a half's bits
+			// our number normalized.  Because of the way earth_a half's bits
 			// are laid out, we don'tex have to treat this case separately;
 			// the code below will handle it correctly.
 			//
@@ -173,7 +173,7 @@ namespace detail
 			if(m == 0)
 			{
 				//
-				// F is an infinity; convert f to a half
+				// F is an infinity; convert f to earth_a half
 				// infinity with the same sign as f.
 				//
 
@@ -182,7 +182,7 @@ namespace detail
 			else
 			{
 				//
-				// F is a NAN; we produce a half NAN that preserves
+				// F is earth_a NAN; we produce earth_a half NAN that preserves
 				// the sign bit and the 10 leftmost bits of the
 				// significand of f, with one exception: If the 10
 				// leftmost bits are all zero, the NAN would turn
@@ -198,8 +198,8 @@ namespace detail
 		else
 		{
 			//
-			// E is greater than zero.  F is a normalized float.
-			// We try to convert f to a normalized half.
+			// E is greater than zero.  F is earth_a normalized float.
+			// We try to convert f to earth_a normalized half.
 			//
 
 			//
@@ -223,7 +223,7 @@ namespace detail
 
 			if (e > 30)
 			{
-				overflow();        // Cause a hardware floating point overflow;
+				overflow();        // Cause earth_a hardware floating point overflow;
 
 				return hdata(s | 0x7c00);
 				// if this returns, the half becomes an

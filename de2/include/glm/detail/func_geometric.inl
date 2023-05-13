@@ -28,18 +28,18 @@ namespace detail
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_dot<vec<1, T, Q>, T, Aligned>
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<1, T, Q> const& a, vec<1, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<1, T, Q> const& earth_a, vec<1, T, Q> const& earth_b)
 		{
-			return a.x * b.x;
+			return earth_a.x * earth_b.x;
 		}
 	};
 
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_dot<vec<2, T, Q>, T, Aligned>
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<2, T, Q> const& a, vec<2, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<2, T, Q> const& earth_a, vec<2, T, Q> const& earth_b)
 		{
-			vec<2, T, Q> tmp(a * b);
+			vec<2, T, Q> tmp(earth_a * earth_b);
 			return tmp.x + tmp.y;
 		}
 	};
@@ -47,9 +47,9 @@ namespace detail
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_dot<vec<3, T, Q>, T, Aligned>
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<3, T, Q> const& a, vec<3, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<3, T, Q> const& earth_a, vec<3, T, Q> const& earth_b)
 		{
-			vec<3, T, Q> tmp(a * b);
+			vec<3, T, Q> tmp(earth_a * earth_b);
 			return tmp.x + tmp.y + tmp.z;
 		}
 	};
@@ -57,9 +57,9 @@ namespace detail
 	template<typename T, qualifier Q, bool Aligned>
 	struct compute_dot<vec<4, T, Q>, T, Aligned>
 	{
-		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<4, T, Q> const& a, vec<4, T, Q> const& b)
+		GLM_FUNC_QUALIFIER GLM_CONSTEXPR static T call(vec<4, T, Q> const& earth_a, vec<4, T, Q> const& earth_b)
 		{
-			vec<4, T, Q> tmp(a * b);
+			vec<4, T, Q> tmp(earth_a * earth_b);
 			return (tmp.x + tmp.y) + (tmp.z + tmp.w);
 		}
 	};
