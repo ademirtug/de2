@@ -14,7 +14,7 @@ euler_angle_orbit::euler_angle_orbit() {
 glm::mat4 euler_angle_orbit::getview() {
 	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_)))
 		* glm::eulerAngleXY((float)std::clamp(pitch, -glm::pi<double>()/2*0.85, glm::pi<double>() / 2 * 0.85), (float)yaw);
-		
+		//* glm::eulerAngleXY((float)pitch, (float)yaw);
 }
 
 glm::vec3 euler_angle_orbit::getpos() {
@@ -34,7 +34,7 @@ void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, in
 }
 void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
 	if (ldown) {
-		double sensivity = (0.00015 * get_altitude(zoom_));
+		double sensivity = (0.00015 * (std::pow(2, 18 - zoom_) / 1000.f));
 		yaw -= (lastx - xpos) * sensivity;
 		pitch -= (lasty - ypos) * sensivity;
 
@@ -45,24 +45,6 @@ void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, dou
 void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) {
 	zoom_ = std::clamp(zoom_ + yoffset, 1.0, 17.0);
 }
-
-//note: wiki arcball rotation idea
-//glm::vec3 euler_angle_orbit::get_arcball_vector(int x, int y) {
-//	//map -1 to 1
-//	double ax = 1.0 * x / 800 * 2 - 1.0;
-//	double bx = 1.0 * y / 800 * 2 - 1.0;
-//
-//	glm::vec3 P = glm::vec3(1.0 * x / 800 * 2 - 1.0, 1.0 * y / 800 * 2 - 1.0,
-//		0);
-//	P.y = -P.y;
-//	float OP_squared = P.x * P.x + P.y * P.y;
-//
-//	if (OP_squared <= 1 * 1)
-//		P.z = sqrt(1 * 1 - OP_squared);  // Pythagoras
-//	else
-//		P = glm::normalize(P);  // nearest point
-//	return P;
-//}
 
 double euler_angle_orbit::get_altitude(int map_zoom) {
 	return 6.3781370f + std::pow(2, 18 - map_zoom) / 1000.f;
