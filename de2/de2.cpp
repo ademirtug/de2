@@ -4,8 +4,6 @@
 #include "camera.h"
 #include "shader.h"
 
-#include "../../digital_globe/util.h";
-
 
 de2::de2(){
     on_resize = [&](int width, int height) { resize(width, height); };
@@ -123,13 +121,6 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     glm::mat4 projection = glm::mat4(1.0f);
     view = glm::rotate(cam_->getview(), glm::pi<float>() / 2 , glm::vec3(1.0, 0, 0));
     projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, 0.1f, 100.0f);
-
-    auto from = cast_ray(mouse_pos, { de2::get_instance().viewport.x , de2::get_instance().viewport.y }, projection, view, -1.0f);
-    auto to = cast_ray(mouse_pos, { de2::get_instance().viewport.x , de2::get_instance().viewport.y }, projection, view, 1.0f);
-
-    auto m_geo = sphere_intersection(from, to - from);
-    std::string s_mgeo = std::format("lat:{:02.2f} lon:{:02.2f}", m_geo[0], m_geo[1]);
-    de2::get_instance().set_title(s_mgeo);
 
     for (auto pp : de2::get_instance().programs) {
         pp.second->setuniform("view", view);
