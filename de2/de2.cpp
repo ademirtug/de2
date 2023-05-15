@@ -128,16 +128,8 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     auto to = cast_ray(mouse_pos, { de2::get_instance().viewport.x , de2::get_instance().viewport.y }, projection, view, 1.0f);
 
     auto m_geo = sphere_intersection(from, to - from);
-    //std::string s_mgeo = std::format("lat1:{:02.2f} lon1:{:02.2f}", m_geo[0], m_geo[1]);
-
-    //std::string s_mgeo = std::format("lat1:{:02.2f} lon1:{:02.2f}", r1[0], 180 - r1[1]);
-    ////std::string s_mgeo2 = std::format(" - lat2:{:02.2f} lon2:{:02.2f}", r2[0], r2[1]);
-    //std::string s_ro = std::format(" - ro -> x:{:02.2f} y:{:02.2f} z:{:02.2f}", ray_origin.x, ray_origin.y, ray_origin.z);
-    //std::string s_rd = std::format(" - rd -> x:{:02.2f} y:{:02.2f} z:{:02.2f}", ray_direction.x, ray_direction.y, ray_direction.z);
-    //de2::get_instance().set_title(s_mgeo /* + s_mgeo2*/ + s_ro + s_rd);
-    // 
-    //std::string s_mray("  ray->(" + std::to_string(from.x) + ", " + std::to_string(from.y) + ", " + std::to_string(from.z) + ") ");
-    //de2::get_instance().set_title(s_mgeo);
+    std::string s_mgeo = std::format("lat:{:02.2f} lon:{:02.2f}", m_geo[0], m_geo[1]);
+    de2::get_instance().set_title(s_mgeo);
 
     for (auto pp : de2::get_instance().programs) {
         pp.second->setuniform("view", view);
