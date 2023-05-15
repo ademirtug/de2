@@ -107,7 +107,7 @@ public:
     std::function<void (GLFWwindow* window, double xoffset, double yoffset)>    mouse_wheel_callback;
 
     std::unordered_map<std::string, std::shared_ptr<program>> programs;
-    size_t w{ 1024 }, h{ 1024 };
+    glm::vec2 viewport{ 1024, 768 };
     GLFWwindow* window{ nullptr };
 protected:
     de2();

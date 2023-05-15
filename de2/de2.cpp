@@ -21,7 +21,7 @@ void de2::set_title(const std::string& title) {
     glfwSetWindowTitle(window, title.c_str());
 }
 void de2::resize(size_t width, size_t height) {
-    w = width; h = height; glViewport(0, 0, width, height);
+    viewport.x = width; viewport.y = height; glViewport(0, 0, width, height);
 }
 bool de2::has_model(const std::string& key) {
     return model_cache_.exists(key);
@@ -47,7 +47,7 @@ void de2::init() {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    window = glfwCreateWindow(w, h, "", (GLFWmonitor*)NULL, (GLFWwindow*)NULL);
+    window = glfwCreateWindow(viewport.x, viewport.y, "", (GLFWmonitor*)NULL, (GLFWwindow*)NULL);
     if (window == NULL) {
         glfwTerminate();
         throw std::exception("failed to create a window");
@@ -67,7 +67,7 @@ void de2::init() {
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
     glFrontFace(GL_CW);
-    resize(w, h);
+    resize(viewport.x, viewport.y);
 }
 
 
@@ -116,16 +116,16 @@ renderer_system::renderer_system() {
 void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& interval) {
     glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    if (de2::get_instance().w == 0 || de2::get_instance().h == 0)
+    if (de2::get_instance().viewport.x == 0 || de2::get_instance().viewport.x == 0)
         return;
 
     glm::mat4 view = glm::mat4(1.0f);
     glm::mat4 projection = glm::mat4(1.0f);
     view = glm::rotate(cam_->getview(), glm::pi<float>() / 2 , glm::vec3(1.0, 0, 0));
-    projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().w / (float)de2::get_instance().h, 0.1f, 100.0f);
+    projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, 0.1f, 100.0f);
 
-    auto from = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view, -1.0f);
-    auto to = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view, 1.0f);
+    auto from = cast_ray(mouse_pos, { de2::get_instance().viewport.x , de2::get_instance().viewport.y }, projection, view, -1.0f);
+    auto to = cast_ray(mouse_pos, { de2::get_instance().viewport.x , de2::get_instance().viewport.y }, projection, view, 1.0f);
 
     auto m_geo = sphere_intersection(from, to - from);
     //std::string s_mgeo = std::format("lat1:{:02.2f} lon1:{:02.2f}", m_geo[0], m_geo[1]);
