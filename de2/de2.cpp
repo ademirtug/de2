@@ -111,7 +111,7 @@ renderer_system::renderer_system() {
 
     de2::get_instance().mouse_button_callback = [&](GLFWwindow* window, int button, int action, int mods) { cam_->mouse_button_callback(window, button, action, mods); };
     de2::get_instance().mouse_wheel_callback = [&](GLFWwindow* window, double xoffset, double yoffset) { cam_->mouse_wheel_callback(window, xoffset, yoffset); };
-    de2::get_instance().cursor_pos_callback = [&](GLFWwindow* window, double xpos, double ypos) { cam_->cursor_pos_callback(window, xpos, ypos); };
+    de2::get_instance().cursor_pos_callback = [&](GLFWwindow* window, double xpos, double ypos) { mouse_pos = { xpos, ypos }; cam_->cursor_pos_callback(window, xpos, ypos); };
 }
 void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& interval) {
     glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
@@ -123,6 +123,21 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     glm::mat4 projection = glm::mat4(1.0f);
     view = glm::rotate(cam_->getview(), glm::pi<float>() / 2 , glm::vec3(1.0, 0, 0));
     projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().w / (float)de2::get_instance().h, 0.1f, 2000.0f);
+    glm::vec2 ndc_mouse{ ((mouse_pos.x * 2) - de2::get_instance().w) / de2::get_instance().w, -((mouse_pos.y * 2) - de2::get_instance().h) / de2::get_instance().h };
+
+    auto from = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view);
+    auto to = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view, 1.0f);
+
+
+    auto m_geo = sphere_intersection(from, to);
+
+    auto geo = sphere_intersection(cam_->getpos(), cam_->getpos());
+    std::string s_geo("lat: " + std::to_string(geo[0]) + ", lon:  " + std::to_string(-geo[1]));
+    std::string s_mgeo(" mlat: " + std::to_string(m_geo[0]) + ", mlon:  " + std::to_string(m_geo[1]));
+    std::string s_mray("  ray->(" + std::to_string(from.x) + ", " + std::to_string(from.y) + ", " + std::to_string(from.z) + ") ");
+    std::string m_ndc(" - mouse -> x:" + std::to_string(ndc_mouse.x) + " y:" + std::to_string(ndc_mouse.y));
+    de2::get_instance().set_title(s_mgeo + s_mray);
+
 
     for (auto pp : de2::get_instance().programs) {
         pp.second->setuniform("view", view);

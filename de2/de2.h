@@ -29,9 +29,12 @@ public:
 
     std::shared_ptr<camera> cam_;
     std::shared_ptr<light> l;
+    glm::vec2 mouse_pos{ 0, 0 };
 };
 
-
+struct resize {};
+struct key {};
+struct process_input {};
 struct pre_render {};
 struct render {};
 struct post_render {};
@@ -91,6 +94,7 @@ public:
     void on(F&& f) {
         get_subs<T>().emplace_back(f);
     }
+
 
     //events
     std::function<void(int key, int scancode, int action, int mods)>			on_key;
