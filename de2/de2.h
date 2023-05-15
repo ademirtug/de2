@@ -2,11 +2,8 @@
 
 #include "framework.h"
 #include "shader.h"
-
 //https://github.com/ademirtug/ecs_s/
 #include "../../ecs_s/ecs_s.hpp"
-
-
 #include "thread_pool.h"
 #include <any>
 #include <iostream>
