@@ -11,6 +11,11 @@ float map_range(float s, float a1, float a2, float b1, float b2) {
 euler_angle_orbit::euler_angle_orbit() {
 	zoom_ = 1;
 }
+
+glm::mat4 euler_angle_orbit::get_projection() {
+	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_)))
+		* glm::eulerAngleXY((float)std::clamp(pitch, -glm::pi<double>() / 2 * 0.85, glm::pi<double>() / 2 * 0.85), (float)yaw);
+}
 glm::mat4 euler_angle_orbit::getview() {
 	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_)))
 		* glm::eulerAngleXY((float)std::clamp(pitch, -glm::pi<double>()/2*0.85, glm::pi<double>() / 2 * 0.85), (float)yaw);

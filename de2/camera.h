@@ -10,6 +10,7 @@ protected:
 	bool ldown = false;
 
 public:
+	virtual glm::mat4 get_projection() = 0;
 	virtual glm::mat4 getview() = 0;
 	virtual glm::vec3 getpos() = 0;
 	virtual void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) = 0;
@@ -17,7 +18,7 @@ public:
 	virtual void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) = 0;
 
 	virtual double get_altitude(int mapzoom) = 0;
-	size_t zoom_{ 1 };
+	size_t zoom_{ 1 }, fov{ 45 };
 };
 
 class euler_angle_orbit : public camera {
@@ -27,6 +28,7 @@ class euler_angle_orbit : public camera {
 
 public:
 	euler_angle_orbit();
+	glm::mat4 get_projection();
 	glm::mat4 getview();
 	glm::vec3 getpos();
 	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);

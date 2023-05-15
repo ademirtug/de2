@@ -25,11 +25,16 @@ class renderer_system : public sub_system<std::chrono::nanoseconds> {
 public:
     renderer_system();
     void process(ecs_s::registry& world, std::chrono::nanoseconds& interval) override;
+    glm::mat4 get_view();
+    glm::mat4 get_projection();
 
     std::shared_ptr<camera> cam_;
     std::shared_ptr<light> l;
     glm::vec2 mouse_pos{ 0, 0 };
+    float fov{ 45.0f }, z_near{ 0.1f }, z_far{ 100.0f };
 };
+
+
 
 struct resize {};
 struct key {};

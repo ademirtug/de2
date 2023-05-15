@@ -122,6 +122,7 @@ void de2::run() {
 }
 
 
+//RENDERER_SYSTEM
 renderer_system::renderer_system() {
     l = std::make_shared<directional_light>(glm::vec3({ 1.0, 0, 0 }));
     cam_ = std::make_shared<euler_angle_orbit>();
@@ -136,10 +137,8 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     if (de2::get_instance().viewport.x == 0 || de2::get_instance().viewport.x == 0)
         return;
 
-    glm::mat4 view = glm::mat4(1.0f);
-    glm::mat4 projection = glm::mat4(1.0f);
-    view = glm::rotate(cam_->getview(), glm::pi<float>() / 2 , glm::vec3(1.0, 0, 0));
-    projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, 0.1f, 100.0f);
+    glm::mat4 view = get_view();
+    glm::mat4 projection = get_projection();
 
     for (auto pp : de2::get_instance().programs) {
         pp.second->setuniform("view", view);
@@ -159,3 +158,10 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     });
 
 };
+
+glm::mat4 renderer_system::get_view() {
+    return glm::rotate(cam_->getview(), glm::pi<float>() / 2, glm::vec3(1.0, 0, 0));
+}
+glm::mat4 renderer_system::get_projection() {
+    return glm::perspective(glm::radians(fov), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
+}
