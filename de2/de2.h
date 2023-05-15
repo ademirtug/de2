@@ -5,7 +5,9 @@
 
 //https://github.com/ademirtug/ecs_s/
 #include "../../ecs_s/ecs_s.hpp"
-#include "../../thread_pool/thread_pool.h"
+
+
+#include "thread_pool.h"
 #include <any>
 #include <iostream>
 

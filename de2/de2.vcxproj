@@ -154,6 +154,7 @@
     <ClInclude Include="model.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="thread_pool.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="camera.cpp" />
