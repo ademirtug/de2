@@ -17,13 +17,14 @@ public:
 	virtual void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) = 0;
 
 	virtual double get_altitude(int mapzoom) = 0;
+	size_t zoom_{ 1 };
 };
 
 class euler_angle_orbit : public camera {
 
 	double lastx{ 0 }, lasty{ 0 };
 	double yaw{ 0 }, pitch{ 0 };
-	size_t zoom_{ 1 };
+
 public:
 	euler_angle_orbit();
 	glm::mat4 getview();
@@ -34,4 +35,5 @@ public:
 	//glm::vec3 get_arcball_vector(int x, int y);
 
 	double get_altitude(int map_zoom) override;
+
 };

@@ -9,7 +9,7 @@ float map_range(float s, float a1, float a2, float b1, float b2) {
 
 //euler_angle_orbit
 euler_angle_orbit::euler_angle_orbit() {
-	zoom_ = 1;
+	zoom_ = 3;
 }
 glm::mat4 euler_angle_orbit::getview() {
 	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_)))

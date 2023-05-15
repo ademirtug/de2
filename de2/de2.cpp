@@ -122,22 +122,22 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     glm::mat4 view = glm::mat4(1.0f);
     glm::mat4 projection = glm::mat4(1.0f);
     view = glm::rotate(cam_->getview(), glm::pi<float>() / 2 , glm::vec3(1.0, 0, 0));
-    projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().w / (float)de2::get_instance().h, 0.1f, 2000.0f);
-    glm::vec2 ndc_mouse{ ((mouse_pos.x * 2) - de2::get_instance().w) / de2::get_instance().w, -((mouse_pos.y * 2) - de2::get_instance().h) / de2::get_instance().h };
+    projection = glm::perspective(glm::radians(45.0f), (float)de2::get_instance().w / (float)de2::get_instance().h, 0.1f, 100.0f);
 
-    auto from = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view);
+    auto from = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view, -1.0f);
     auto to = cast_ray(mouse_pos, { de2::get_instance().w , de2::get_instance().h }, projection, view, 1.0f);
 
+    auto m_geo = sphere_intersection(from, to - from);
+    //std::string s_mgeo = std::format("lat1:{:02.2f} lon1:{:02.2f}", m_geo[0], m_geo[1]);
 
-    auto m_geo = sphere_intersection(from, to);
-
-    auto geo = sphere_intersection(cam_->getpos(), cam_->getpos());
-    std::string s_geo("lat: " + std::to_string(geo[0]) + ", lon:  " + std::to_string(-geo[1]));
-    std::string s_mgeo(" mlat: " + std::to_string(m_geo[0]) + ", mlon:  " + std::to_string(m_geo[1]));
-    std::string s_mray("  ray->(" + std::to_string(from.x) + ", " + std::to_string(from.y) + ", " + std::to_string(from.z) + ") ");
-    std::string m_ndc(" - mouse -> x:" + std::to_string(ndc_mouse.x) + " y:" + std::to_string(ndc_mouse.y));
-    de2::get_instance().set_title(s_mgeo + s_mray);
-
+    //std::string s_mgeo = std::format("lat1:{:02.2f} lon1:{:02.2f}", r1[0], 180 - r1[1]);
+    ////std::string s_mgeo2 = std::format(" - lat2:{:02.2f} lon2:{:02.2f}", r2[0], r2[1]);
+    //std::string s_ro = std::format(" - ro -> x:{:02.2f} y:{:02.2f} z:{:02.2f}", ray_origin.x, ray_origin.y, ray_origin.z);
+    //std::string s_rd = std::format(" - rd -> x:{:02.2f} y:{:02.2f} z:{:02.2f}", ray_direction.x, ray_direction.y, ray_direction.z);
+    //de2::get_instance().set_title(s_mgeo /* + s_mgeo2*/ + s_ro + s_rd);
+    // 
+    //std::string s_mray("  ray->(" + std::to_string(from.x) + ", " + std::to_string(from.y) + ", " + std::to_string(from.z) + ") ");
+    //de2::get_instance().set_title(s_mgeo);
 
     for (auto pp : de2::get_instance().programs) {
         pp.second->setuniform("view", view);
