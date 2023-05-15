@@ -22,7 +22,7 @@ void de2::set_title(const std::string& title) {
     glfwSetWindowTitle(window, title.c_str());
 }
 std::string de2::get_title() {
-    std::string title(GetWindowTextLength(glfwGetWin32Window(de2::get_instance().window)) + 1, L'\0');
+    std::string title(GetWindowTextLength(glfwGetWin32Window(de2::get_instance().window)) + 1, '\0');
     GetWindowTextA(glfwGetWin32Window(de2::get_instance().window), &title[0], title.size());
     return title;
 }
