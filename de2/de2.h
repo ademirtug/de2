@@ -60,6 +60,7 @@ public:
     void enable_fill_mode();
 
     void set_title(const std::string& title);
+    std::string get_title();
     void resize(size_t width, size_t height);
     bool has_model(const std::string& key);
     
@@ -109,6 +110,7 @@ public:
     std::unordered_map<std::string, std::shared_ptr<program>> programs;
     glm::vec2 viewport{ 1024, 768 };
     GLFWwindow* window{ nullptr };
+    size_t fps{ 0 };
 protected:
     de2();
     thread_pool pool_;

@@ -3,7 +3,10 @@
 #include "model.h"
 #include "camera.h"
 #include "shader.h"
-
+#include <Windows.h>
+#define GLFW_EXPOSE_NATIVE_WIN32
+#include "GLFW/glfw3.h"
+#include "GLFW/glfw3native.h"
 
 de2::de2(){
     on_resize = [&](int width, int height) { resize(width, height); };
@@ -17,6 +20,11 @@ de2& de2::get_instance() {
 }
 void de2::set_title(const std::string& title) {
     glfwSetWindowTitle(window, title.c_str());
+}
+std::string de2::get_title() {
+    std::string title(GetWindowTextLength(glfwGetWin32Window(de2::get_instance().window)) + 1, L'\0');
+    GetWindowTextA(glfwGetWin32Window(de2::get_instance().window), &title[0], title.size());
+    return title;
 }
 void de2::resize(size_t width, size_t height) {
     viewport.x = width; viewport.y = height; glViewport(0, 0, width, height);
@@ -71,6 +79,8 @@ void de2::init() {
 
 void de2::run() {
     auto begin = std::chrono::high_resolution_clock::now();
+    auto fps_begin = std::chrono::high_resolution_clock::now();
+    size_t cfps = 0;
     while (!glfwWindowShouldClose(window))
     {
         GLenum err = 0;
@@ -88,6 +98,15 @@ void de2::run() {
         }
 
         begin = end;
+
+        //term: fps counter;
+        cfps++;
+        if (std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count() > 10000000) {
+            //perf = "Frame Time(msec): " + std::to_string(1000 / cfps) + " - ";
+            fps = cfps;
+            fps_begin = end;
+            cfps = 0;
+        }
 
         glfwSwapBuffers(de2::get_instance().window);
         glfwPollEvents();
