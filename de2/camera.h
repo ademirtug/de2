@@ -11,7 +11,7 @@ protected:
 
 public:
 	virtual glm::mat4 getview() = 0;
-	virtual glm::vec3 getpos() = 0;
+	virtual glm::vec3 get_world_pos() = 0;
 	virtual void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) = 0;
 	virtual void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) = 0;
 	virtual void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) = 0;
@@ -26,7 +26,7 @@ class euler_angle_orbit : public camera {
 public:
 	euler_angle_orbit();
 	glm::mat4 getview();
-	glm::vec3 getpos();
+	glm::vec3 get_world_pos();
 	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 	void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos);
 	void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset);

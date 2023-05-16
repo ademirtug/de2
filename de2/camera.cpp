@@ -13,12 +13,11 @@ euler_angle_orbit::euler_angle_orbit() {
 }
 
 glm::mat4 euler_angle_orbit::getview() {
-	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_)))
-		* glm::eulerAngleXY((float)std::clamp(pitch, -glm::pi<double>()/2*0.85, glm::pi<double>() / 2 * 0.85), (float)yaw);
+	return glm::translate(glm::mat4(1.0f), glm::vec3(0, 0, -get_altitude(zoom_))) * glm::eulerAngleXY((float)pitch, (float)yaw);
 }
 
-glm::vec3 euler_angle_orbit::getpos() {
-	return inverse(getview())[3];
+glm::vec3 euler_angle_orbit::get_world_pos() {
+	return glm::vec3(0, 0, -get_altitude(zoom_));
 }
 
 void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
@@ -35,7 +34,7 @@ void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, dou
 	if (ldown) {
 		double sensivity = (0.000015 * (std::pow(2, 18 - zoom_) / 1000.f));
 		yaw -= (lastx - xpos) * sensivity;
-		pitch -= (lasty - ypos) * sensivity;
+		pitch = std::clamp(pitch - (lasty - ypos) * sensivity, -glm::pi<double>() / 2 * 0.89, glm::pi<double>() / 2 * 0.89);
 
 		lastx = xpos;
 		lasty = ypos;

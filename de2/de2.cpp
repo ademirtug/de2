@@ -134,7 +134,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
     for (auto pp : de2::get_instance().programs) {
         pp.second->setuniform("view", view);
         pp.second->setuniform("projection", projection);
-        pp.second->setuniform("view_pos", cam_->getpos());
+        pp.second->setuniform("view_pos", cam_->get_world_pos());
 
         if (l) {
             pp.second->setuniform("light.ambient", l->ambient);
