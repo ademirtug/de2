@@ -10,7 +10,6 @@ protected:
 	bool ldown = false;
 
 public:
-	virtual glm::mat4 get_projection() = 0;
 	virtual glm::mat4 getview() = 0;
 	virtual glm::vec3 getpos() = 0;
 	virtual void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) = 0;
@@ -22,13 +21,10 @@ public:
 };
 
 class euler_angle_orbit : public camera {
-
 	double lastx{ 0 }, lasty{ 0 };
 	double yaw{ 0 }, pitch{ 0 };
-
 public:
 	euler_angle_orbit();
-	glm::mat4 get_projection();
 	glm::mat4 getview();
 	glm::vec3 getpos();
 	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);

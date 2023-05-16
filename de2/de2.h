@@ -13,8 +13,6 @@ class model;
 class light;
 class camera;
 
-
-
 template<typename T>
 class sub_system {
 public:
@@ -35,7 +33,7 @@ public:
 };
 
 
-
+//event types
 struct resize {};
 struct key {};
 struct process_input {};
@@ -43,6 +41,7 @@ struct pre_render {};
 struct render {};
 struct post_render {};
 
+//engine
 class de2 {
 
     template<typename T>
@@ -107,9 +106,10 @@ public:
     std::function<void(int width, int height)>									on_resize;
     std::function<void()>                                                       on_process_input;
 
-    std::function<void (GLFWwindow* window, int button, int action, int mods)>  mouse_button_callback;
+
     std::function<void (GLFWwindow* window, double xpos, double ypos)>          cursor_pos_callback;
     std::function<void (GLFWwindow* window, double xoffset, double yoffset)>    mouse_wheel_callback;
+    std::function<void(GLFWwindow* window, int button, int action, int mods)>   mouse_button_callback;
 
     std::unordered_map<std::string, std::shared_ptr<program>> programs;
     glm::vec2 viewport{ 1024, 768 };
