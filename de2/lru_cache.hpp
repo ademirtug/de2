@@ -3,12 +3,11 @@
 #include "framework.h"
 
 //term: least recently used cache
-template<typename K, typename V> class lru_cache {
+template<typename K, typename V, size_t capacity = 500> class lru_cache {
 public:
 	typedef typename std::list<K>::iterator order_iterator_t;
 
-	lru_cache(size_t max_size = 250
-	) : max_size_(max_size){};
+	lru_cache(){};
 	virtual ~lru_cache() {};
 	
 	bool exists(K key) {
@@ -34,7 +33,7 @@ public:
 		}
 		order_.push_front(key);
 
-		if (data_.size() > max_size_){
+		if (data_.size() > capacity){
 			data_.erase(std::prev(data_.end()));
 			order_.pop_back();
 		}
@@ -42,5 +41,5 @@ public:
 protected:
 	std::unordered_map<K, V> data_;
 	std::list<K> order_;
-	size_t max_size_;
+	//size_t capacity;
 };

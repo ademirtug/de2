@@ -32,16 +32,7 @@ void de2::resize(size_t width, size_t height) {
 bool de2::has_model(const std::string& key) {
     return model_cache_.exists(key);
 }
-void de2::enable_wireframe_mode() {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-}
-void de2::enable_point_mode() {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
-    glPointSize(5);
-}
-void de2::enable_fill_mode() {
-    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-}
+
 
 void de2::init() {
     glfwSetErrorCallback([](int error, const char* desc) { if (de2::get_instance().on_error) de2::get_instance().on_error(error, desc); });
@@ -164,4 +155,15 @@ glm::mat4 renderer_system::get_view() {
 }
 glm::mat4 renderer_system::get_projection() {
     return glm::perspective(glm::radians(fov), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
+}
+
+void renderer_system::enable_wireframe_mode() {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+}
+void renderer_system::enable_point_mode() {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+    glPointSize(5);
+}
+void renderer_system::enable_fill_mode() {
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }

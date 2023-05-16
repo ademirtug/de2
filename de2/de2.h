@@ -22,7 +22,11 @@ public:
 class renderer_system : public sub_system<std::chrono::nanoseconds> {
 public:
     renderer_system();
+    void enable_fill_mode();
+    void enable_point_mode();
+    void enable_wireframe_mode();
     void process(ecs_s::registry& world, std::chrono::nanoseconds& interval) override;
+    
     glm::mat4 get_view();
     glm::mat4 get_projection();
 
@@ -58,9 +62,6 @@ public:
     de2 operator=(const de2& other) = delete;
     void init();
     void run();
-    void enable_wireframe_mode();
-    void enable_point_mode();
-    void enable_fill_mode();
 
     void set_title(const std::string& title);
     std::string get_title();
