@@ -22,7 +22,7 @@ public:
 
 class euler_angle_orbit : public camera {
 	double lastx{ 0 }, lasty{ 0 };
-	double yaw{ 0 }, pitch{ 0 };
+	double yaw{ 0 }, pitch{ 7.85 };
 public:
 	euler_angle_orbit();
 	glm::mat4 getview();

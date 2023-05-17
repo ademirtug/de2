@@ -34,7 +34,7 @@ public:
 		order_.push_front(key);
 
 		if (data_.size() > capacity){
-			data_.erase(std::prev(data_.end()));
+			data_.erase(order_.back());
 			order_.pop_back();
 		}
 	}

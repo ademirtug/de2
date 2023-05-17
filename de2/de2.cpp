@@ -151,7 +151,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
 };
 
 glm::mat4 renderer_system::get_view() {
-    return glm::rotate(cam_->getview(), glm::pi<float>() / 2, glm::vec3(1.0, 0, 0));
+    return cam_->getview();
 }
 glm::mat4 renderer_system::get_projection() {
     return glm::perspective(glm::radians(fov), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
