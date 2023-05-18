@@ -144,7 +144,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
         }
     }
 
-    world.view<std::shared_ptr<model>,visible> ([&](ecs_s::entity e, std::shared_ptr<model>& m, visible& v) {
+    world.view<std::shared_ptr<model>, visible> ([&](ecs_s::entity e, std::shared_ptr<model>& m, visible& v) {
         m->draw();
     });
 
@@ -154,6 +154,9 @@ glm::mat4 renderer_system::get_view() {
     return cam_->getview();
 }
 glm::mat4 renderer_system::get_projection() {
+    if (de2::get_instance().viewport.x == 0) {
+        return glm::mat4{ 1.0f };
+    }
     return glm::perspective(glm::radians(fov), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
 }
 

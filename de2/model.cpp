@@ -97,9 +97,11 @@ texture::operator GLuint() {
 mesh::mesh() {
 }
 mesh::mesh(std::string& mesh_path, bool is_left_handed) {
+	//std::cout << "mesh -> " << mesh_path << std::endl;
 	load_mesh(mesh_path, is_left_handed);
 }
 mesh::~mesh() {
+	//std::cout << "~mesh -> " << name << std::endl;
 	glDeleteBuffers(1, &vbo_vertices);
 	glDeleteBuffers(1, &ebo_indices);
 }
@@ -243,6 +245,7 @@ bool directional_light::load_mesh(const std::string& mesh_path, const std::strin
 
 //MODEL
 model::~model() {
+	//std::cout << "~model -> " << m->name << std::endl;
 } 
 bool model::upload() {
 	throw std::exception("model::upload not implemented");
@@ -266,6 +269,10 @@ texture_model::~texture_model() {
 	//glDeleteVertexArrays(1, &vao);
 }
 bool texture_model::upload() {
+	//std::cout << "texture_model::upload() -> (" << m->name << ", "<<  vao <<")" << std::endl;
+	if (vao > 0)
+		return true;
+
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
 	m->upload();

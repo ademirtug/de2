@@ -13,7 +13,8 @@ class model;
 class light;
 class camera;
 
-struct visible {};
+struct visible { bool value{ true }; };
+struct invisible {};
 
 template<typename T>
 class sub_system {
@@ -118,10 +119,11 @@ public:
     glm::vec2 viewport{ 1024, 768 };
     GLFWwindow* window{ nullptr };
     size_t fps{ 0 };
+    lru_cache<std::string, std::shared_ptr<model>> model_cache_;
 protected:
     de2();
     thread_pool pool_;
-    lru_cache<std::string, std::shared_ptr<model>> model_cache_;
+    
 };
 
 
