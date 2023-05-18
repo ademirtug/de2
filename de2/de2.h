@@ -13,6 +13,8 @@ class model;
 class light;
 class camera;
 
+struct visible {};
+
 template<typename T>
 class sub_system {
 public:

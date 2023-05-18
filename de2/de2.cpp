@@ -144,7 +144,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
         }
     }
 
-    world.view<std::shared_ptr<model>>([&](ecs_s::entity e, std::shared_ptr<model>& m) {
+    world.view<std::shared_ptr<model>,visible> ([&](ecs_s::entity e, std::shared_ptr<model>& m, visible& v) {
         m->draw();
     });
 
