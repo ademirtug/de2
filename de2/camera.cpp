@@ -3,13 +3,18 @@
 #include <algorithm>
 #include "de2.h"
 
+
 float map_range(float s, float a1, float a2, float b1, float b2) {
 	return b1 + ((s-a1)*(b2-b1))/(a2-a1);
+}
+double get_sensivity_by_zoom(double zoom) {
+	std::array<double, 19> sensivities = { 0.0, 0.005, 0.0020, 0.0010, 0.0004, 0.0002 };
+	return sensivities[zoom];
 }
 
 //euler_angle_orbit
 euler_angle_orbit::euler_angle_orbit() {
-	zoom_ = 2;
+	zoom_ = 1;
 }
 
 glm::mat4 euler_angle_orbit::getview() {
@@ -32,17 +37,16 @@ void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, in
 }
 void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
 	if (ldown) {
-		double sensivity = (0.00003 * (std::pow(2, 18 - zoom_) / 1000.f));
+		double sensivity = get_sensivity_by_zoom(zoom_);
 		
 		yaw -= (lastx - xpos) * sensivity;
-		pitch = std::clamp(pitch + (lasty - ypos) * sensivity, 6.32, 9.38);
-		//pitch += (lasty - ypos) * sensivity;
+		pitch = std::clamp(pitch + (lasty - ypos) * sensivity, glm::pi<double>() * 2 , glm::pi<double>() * 3);
 		lastx = xpos;
 		lasty = ypos;
 	}
 }
 void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) {
-	zoom_ = std::clamp(zoom_ + yoffset, 2.0, 17.0);
+	zoom_ = std::clamp(zoom_ + yoffset, 1.0, 4.0);
 }
 
 double euler_angle_orbit::get_altitude(int map_zoom) {
