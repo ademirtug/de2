@@ -42,7 +42,7 @@ void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, dou
 	}
 }
 void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) {
-	zoom_ = std::clamp(zoom_ + yoffset, 1.0, 2.0);
+	zoom_ = std::clamp(zoom_ + yoffset, 1.0, 4.0);
 }
 
 double euler_angle_orbit::get_altitude(int map_zoom) {
