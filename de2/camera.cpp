@@ -35,8 +35,8 @@ void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, dou
 		double sensivity = (0.00006 * (std::pow(2, 18 - zoom_) / 1000.f));
 		
 		yaw -= (lastx - xpos) * sensivity;
-		pitch = std::clamp(pitch - (lasty - ypos) * sensivity, 6.32, 9.38);
-		
+		//pitch = std::clamp(pitch - (lasty - ypos) * sensivity, 6.32, 9.38);
+		pitch -= (lasty - ypos) * sensivity;
 		lastx = xpos;
 		lasty = ypos;
 	}

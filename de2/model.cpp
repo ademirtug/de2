@@ -192,6 +192,9 @@ void mesh::free() {
 	indices.clear();
 }
 bool mesh::upload() {
+	if (vbo_vertices)
+		return true;
+
 	try {
 		glGenBuffers(1, &vbo_vertices);
 		glGenBuffers(1, &ebo_indices);
