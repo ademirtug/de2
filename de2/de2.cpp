@@ -61,9 +61,9 @@ void de2::init() {
         throw std::exception("failed to init glad");
 
     glEnable(GL_DEPTH_TEST);
-    //glEnable(GL_CULL_FACE);
-    //glCullFace(GL_BACK);
-    //glFrontFace(GL_CCW);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
+    glFrontFace(GL_CCW);
     resize(viewport.x, viewport.y);
 }
 
@@ -144,7 +144,7 @@ void renderer_system::process(ecs_s::registry& world, std::chrono::nanoseconds& 
         }
     }
 
-    world.view<std::shared_ptr<model>> ([&](ecs_s::entity e, std::shared_ptr<model>& m) {
+    world.view<std::shared_ptr<model>, visible> ([&](ecs_s::entity e, std::shared_ptr<model>& m, visible v) {
         m->draw();
     });
 

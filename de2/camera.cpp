@@ -9,7 +9,7 @@ float map_range(float s, float a1, float a2, float b1, float b2) {
 
 //euler_angle_orbit
 euler_angle_orbit::euler_angle_orbit() {
-	zoom_ = 1;
+	zoom_ = 2;
 }
 
 glm::mat4 euler_angle_orbit::getview() {
@@ -32,7 +32,7 @@ void euler_angle_orbit::mouse_button_callback(GLFWwindow* window, int button, in
 }
 void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) {
 	if (ldown) {
-		double sensivity = (0.00006 * (std::pow(2, 18 - zoom_) / 1000.f));
+		double sensivity = (0.00003 * (std::pow(2, 18 - zoom_) / 1000.f));
 		
 		yaw -= (lastx - xpos) * sensivity;
 		pitch = std::clamp(pitch + (lasty - ypos) * sensivity, 6.32, 9.38);
@@ -42,9 +42,9 @@ void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, dou
 	}
 }
 void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) {
-	zoom_ = std::clamp(zoom_ + yoffset, 1.0, 4.0);
+	zoom_ = std::clamp(zoom_ + yoffset, 2.0, 17.0);
 }
 
 double euler_angle_orbit::get_altitude(int map_zoom) {
-	return 6.3781370f + std::pow(2, 18 - map_zoom) / 2500.f;
+	return 6.3781370f + std::pow(2, 18 - map_zoom) / 5000.f;
 }

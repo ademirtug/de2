@@ -119,7 +119,7 @@ public:
     glm::vec2 viewport{ 1024, 768 };
     GLFWwindow* window{ nullptr };
     size_t fps{ 0 };
-    lru_cache<std::string, std::shared_ptr<model>> model_cache_;
+    thread_safe_lru_cache<std::string, std::shared_ptr<model>> model_cache_;
 protected:
     de2();
     thread_pool pool_;
