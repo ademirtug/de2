@@ -157,6 +157,7 @@ glm::mat4 renderer_system::get_projection() {
     if (de2::get_instance().viewport.x == 0) {
         return glm::mat4{ 1.0f };
     }
+    z_far = cam_->get_altitude(cam_->zoom_);
     return glm::perspective(glm::radians(fov), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
 }
 
