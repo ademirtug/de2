@@ -59,10 +59,15 @@ void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset,
 }
 
 double euler_angle_orbit::get_altitude(int map_zoom) {
-	std::array<double, 19> altitudes = { 30000000, 15000000, 7500000, 3750000, 1800000, 
-		/*5*/900000, 450000, 225000, 125000, 70000, 
+	return 6378137.0f + get_altitude_base(map_zoom);
+
+	//return 6378137.0 + 0.05 * 591657550.5 / std::pow(2, map_zoom - 1) / 2 * std::cos(rad(85.362 / 2)) / std::sin(rad(85.362 / 2));
+}
+double euler_angle_orbit::get_altitude_base(int map_zoom) {
+	std::array<double, 19> altitudes = { 30000000, 15000000, 7500000, 3750000, 1800000,
+		/*5*/900000, 450000, 225000, 125000, 70000,
 		/*10*/35000, 15000, 6000, 3000, 1500 };
-	return 6378137.0f + altitudes[map_zoom];
+	return altitudes[map_zoom];
 
 	//return 6378137.0 + 0.05 * 591657550.5 / std::pow(2, map_zoom - 1) / 2 * std::cos(rad(85.362 / 2)) / std::sin(rad(85.362 / 2));
 }

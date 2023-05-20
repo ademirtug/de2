@@ -17,6 +17,7 @@ public:
 	virtual void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) = 0;
 
 	virtual double get_altitude(int mapzoom) = 0;
+	virtual double get_altitude_base(int mapzoom) = 0;
 	size_t zoom_{ 0 }, fov{ 45 };
 };
 
@@ -33,5 +34,6 @@ public:
 	//glm::vec3 get_arcball_vector(int x, int y);
 
 	double get_altitude(int map_zoom) override;
+	double get_altitude_base(int mapzoom) override;
 
 };
