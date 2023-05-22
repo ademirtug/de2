@@ -5,7 +5,7 @@
 #include <thread>
 
 //term: least recently used cache
-template<typename K, typename V, size_t capacity = 500> class thread_safe_lru_cache {
+template<typename K, typename V, size_t capacity = 8192> class thread_safe_lru_cache {
 public:
 	typedef typename std::list<K>::iterator order_iterator_t;
 
@@ -57,7 +57,7 @@ protected:
 };
 
 //term: least recently used cache
-template<typename K, typename V, size_t capacity = 500> class lru_cache {
+template<typename K, typename V, size_t capacity = 8192> class lru_cache {
 public:
 	typedef typename std::list<K>::iterator order_iterator_t;
 
