@@ -60,6 +60,7 @@ void texture::free() {
 	data_ = nullptr;
 }
 void texture::load() {
+	//TODO: crash happens if the image is corrupted
 	data_ = stbi_load(path_.c_str(), &width_, &height_, &comp_, 0);
 	if (data_ == nullptr)
 		throw std::runtime_error("failed to load image file: " + path_);
