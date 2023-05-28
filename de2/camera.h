@@ -16,8 +16,8 @@ public:
 	virtual void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) = 0;
 	virtual void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) = 0;
 
-	virtual double get_altitude(int mapzoom) = 0;
-	virtual double get_altitude_base(int mapzoom) = 0;
+	virtual double get_altitude(int mapzoom) { return 0; }
+	virtual double get_altitude_base(int mapzoom) { return 0; }
 	size_t zoom_{ 0 }, fov{ 45 };
 };
 

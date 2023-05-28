@@ -13856,7 +13856,7 @@ GLAPI PFNGLRELEASEKEYEDMUTEXWIN32EXTPROC glad_glReleaseKeyedMutexWin32EXT;
 #ifndef GL_EXT_window_rectangles
 #define GL_EXT_window_rectangles 1
 GLAPI int GLAD_GL_EXT_window_rectangles;
-typedef void (APIENTRYP PFNGLWINDOWRECTANGLESEXTPROC)(GLenum mode, GLsizei count, const GLint *box);
+typedef void (APIENTRYP PFNGLWINDOWRECTANGLESEXTPROC)(GLenum mode, GLsizei count, const GLint *square);
 GLAPI PFNGLWINDOWRECTANGLESEXTPROC glad_glWindowRectanglesEXT;
 #define glWindowRectanglesEXT glad_glWindowRectanglesEXT
 #endif

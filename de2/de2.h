@@ -36,7 +36,7 @@ public:
     std::shared_ptr<camera> cam_;
     std::shared_ptr<light> l;
     glm::vec2 mouse_pos{ 0, 0 };
-    float fov{ 45.0f }, z_near{ 100 }, z_far{ 0 };
+    float fov{ glm::pi<float>() / 4 }, z_near{0.01}, z_far{200};
 };
 
 

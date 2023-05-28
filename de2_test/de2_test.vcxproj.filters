@@ -18,5 +18,11 @@
     <ClCompile Include="de2_test.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="test_camera.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

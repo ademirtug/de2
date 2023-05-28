@@ -81,7 +81,7 @@ protected:
 	
 	size_t size_of_indices{ 0 };
 public:
-	
+	model();
 	virtual ~model();
 	virtual void draw();
 	virtual bool upload();
@@ -90,6 +90,7 @@ public:
 	std::shared_ptr<program> prg;
 	std::shared_ptr<mesh> m;
 	GLuint vao{ 0 };
+	glm::mat4 mat_model;
 };
 
 

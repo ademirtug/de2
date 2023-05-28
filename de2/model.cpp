@@ -47,7 +47,6 @@ texture::texture(const std::string& filename) {
 	load();
 }
 texture::texture(const std::shared_ptr<std::vector<unsigned char>> data) {
-	int w, h, c;
 	data_ = stbi_load_from_memory(data->data(), data->size(), &width_, &height_, &comp_, STBI_rgb_alpha);
 }
 texture::~texture() {
@@ -248,6 +247,10 @@ bool directional_light::load_mesh(const std::string& mesh_path, const std::strin
 }
 
 //MODEL
+model::model() {
+	mat_model = glm::mat4(1.0f);
+}
+
 model::~model() {
 	//std::cout << "~model -> " << m->name << std::endl;
 } 
@@ -285,9 +288,8 @@ bool texture_model::upload() {
 	return true;
 }
 void texture_model::draw() {
-	glm::mat4 model = glm::mat4(1.0f);
 	prg->use();
-	prg->setuniform("model", model);
+	prg->setuniform("model", mat_model);
 	prg->setuniform("material.specular", m->specular);
 	prg->setuniform("material.shininess", m->shininess);
 

@@ -131,6 +131,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="de2_test.cpp" />
+    <ClCompile Include="test_camera.cpp" />
+    <ClCompile Include="test_camera.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\de2\de2.vcxproj">

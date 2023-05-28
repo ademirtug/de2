@@ -107,7 +107,6 @@ void de2::run() {
     }
 
     glfwDestroyWindow(window);
-
     glfwTerminate();
     exit(EXIT_SUCCESS);
 }
@@ -115,7 +114,6 @@ void de2::run() {
 
 //RENDERER_SYSTEM
 renderer_system::renderer_system() {
-    l = std::make_shared<directional_light>(glm::vec3({ 1.0, 0, 0 }));
     cam_ = std::make_shared<euler_angle_orbit>();
 
     de2::get_instance().mouse_button_callback = [&](GLFWwindow* window, int button, int action, int mods) { cam_->mouse_button_callback(window, button, action, mods); };
@@ -157,8 +155,7 @@ glm::mat4 renderer_system::get_projection() {
     if (de2::get_instance().viewport.x == 0) {
         return glm::mat4{ 1.0f };
     }
-    z_far = cam_->get_altitude(cam_->zoom_);
-    return glm::perspective(glm::radians(fov), (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
+    return glm::perspective(fov, (float)de2::get_instance().viewport.x / (float)de2::get_instance().viewport.y, z_near, z_far);
 }
 
 void renderer_system::enable_wireframe_mode() {
