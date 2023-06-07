@@ -23,9 +23,8 @@ using namespace ecs_s;
 
 int main()
 {
-	de2& eng = de2::get_instance();
-	eng.init();
-	eng.programs["c_t_direct"] = std::make_shared<program>("c_t_direct", "shaders/c_t_direct.vert", "shaders/c_t_direct.frag");
+	de2::get_instance().init();
+	de2::get_instance().programs["c_t_direct"] = std::make_shared<program>("c_t_direct", "shaders/c_t_direct.vert", "shaders/c_t_direct.frag");
 	renderer_system renderer;
 	renderer.l = std::make_shared<directional_light>(glm::vec3({ 0, 1, 0 }));
 
@@ -40,7 +39,7 @@ int main()
 	de2::get_instance().on<render>([&world, &renderer](std::chrono::nanoseconds ns) {
 		renderer.process(world, ns);
 		});
-	eng.run();
+	de2::get_instance().run();
 }
 
 ```
