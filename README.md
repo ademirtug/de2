@@ -31,7 +31,7 @@ int main()
 	registry world;
 	entity earth = world.new_entity();
 	auto mm = de2::get_instance().load_model<texture_model>(std::string("earth"), std::string("models/tcube.obj"), std::string("textures/earth.bmp"), true);
-	mm->attach_program(eng.programs["c_t_direct"]);
+	mm->attach_program(de2::get_instance().programs["c_t_direct"]);
 	world.add_component(earth, mm);
 	world.add_component(earth, visible{});
 	
