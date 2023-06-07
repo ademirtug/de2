@@ -16,8 +16,8 @@ public:
 	virtual void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos) = 0;
 	virtual void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) = 0;
 
-	virtual double get_altitude(int mapzoom) { return 0; }
-	virtual double get_altitude_base(int mapzoom) { return 0; }
+	virtual double get_altitude(size_t zoom) { return 0; }
+	virtual double get_altitude_base(size_t zoom) { return 0; }
 	size_t zoom_{ 0 }, fov{ 45 };
 };
 
@@ -31,9 +31,8 @@ public:
 	void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
 	void cursor_pos_callback(GLFWwindow* window, double xpos, double ypos);
 	void mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset);
-	//glm::vec3 get_arcball_vector(int x, int y);
 
-	double get_altitude(int map_zoom) override;
-	double get_altitude_base(int mapzoom) override;
+	double get_altitude(size_t zoom) override;
+	double get_altitude_base(size_t zoom) override;
 
 };

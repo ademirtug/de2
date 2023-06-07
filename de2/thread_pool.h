@@ -38,10 +38,10 @@ public:
     }
 
     template<class F, class... Args>
-    auto enqueue(F&& f, Args&&... args) -> decltype(auto)
+    auto enqueue(F&& f, Args&&... args) -> std::future<decltype(f(std::forward<Args>(args)...))>
     {
-        auto task = std::make_shared<std::packaged_task<typename std::invoke_result<F, Args...>
-            ::type()>>(std::bind(std::forward<F>(f), std::forward<Args>(args)...));
+        std::shared_ptr<std::packaged_task<typename std::invoke_result<F, Args...>::type()>> task 
+            = std::make_shared<std::packaged_task<typename std::invoke_result<F, Args...>::type()>>(std::bind(std::forward<F>(f), std::forward<Args>(args)...));
 
         //std::future<typename std::invoke_result<F, Args...>::type> result = task->get_future();
         std::future<decltype(f(std::forward<Args>(args)...))> result = task->get_future();

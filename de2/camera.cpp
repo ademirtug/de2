@@ -10,7 +10,7 @@ float map_range(float s, float a1, float a2, float b1, float b2) {
 	return b1 + ((s-a1)*(b2-b1))/(a2-a1);
 }
 
-double get_sensivity_by_zoom(double zoom) {
+double get_sensivity_by_zoom(size_t zoom) {
 	std::array<double, 19> sensivities = { 0.0040, 0.0035, 0.0017, 0.0010, 0.0005,
 		/*5*/0.0004, 0.0002, 0.0001, 0.00005, 0.000020,
 		/*10*/0.00001, 0.000005, 0.000001, 0.0000005, 0.0000025 };
@@ -51,17 +51,17 @@ void euler_angle_orbit::cursor_pos_callback(GLFWwindow* window, double xpos, dou
 	}
 }
 void euler_angle_orbit::mouse_wheel_callback(GLFWwindow* window, double xoffset, double yoffset) {
-	zoom_ = std::clamp(zoom_ + yoffset, 2.0, 11.0);
+	zoom_ = std::clamp(zoom_ + (size_t)yoffset, (size_t)2, (size_t)12);
 }
 
-double euler_angle_orbit::get_altitude(int map_zoom) {
-	return 6378137.0f + get_altitude_base(map_zoom);
+double euler_angle_orbit::get_altitude(size_t zoom) {
+	return 6378137.0f + get_altitude_base(zoom);
 	//return 6378137.0 + 0.05 * 591657550.5 / std::pow(2, map_zoom - 1) / 2 * std::cos(rad(85.362 / 2)) / std::sin(rad(85.362 / 2));
 }
-double euler_angle_orbit::get_altitude_base(int map_zoom) {
+double euler_angle_orbit::get_altitude_base(size_t zoom) {
 	std::array<double, 19> altitudes = { 50000000, 30000000, 15000000, 7500000, 3750000,
-		/*5*/1800000, 900000, 450000, 225000, 125000,
-		/*10*/70000, 30000, 12000, 5000, 3000, 1500 };
-	return altitudes[map_zoom];
+		/*5*/1800000, 900000, 450000, 225000, 100000,
+		/*10*/50000, 20000, 8000, 4000, 2000, 1000 };
+	return altitudes[zoom];
 	//return 6378137.0 + 0.05 * 591657550.5 / std::pow(2, map_zoom - 1) / 2 * std::cos(rad(85.362 / 2)) / std::sin(rad(85.362 / 2));
 }

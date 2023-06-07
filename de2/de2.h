@@ -36,7 +36,7 @@ public:
     std::shared_ptr<camera> cam_;
     std::shared_ptr<light> l;
     glm::vec2 mouse_pos{ 0, 0 };
-    float fov{ glm::pi<float>() / 4 }, z_near{0.01}, z_far{200};
+    float fov{ glm::pi<float>() / 4 }, z_near{ 0.01f }, z_far{ 200.0f };
 };
 
 
@@ -83,20 +83,20 @@ public:
     }
     template<typename T, typename ...Ts>
     [[nodiscard]] auto load_model_async(std::string key = "", Ts... args) -> decltype(auto) {
-        auto result = pool_.enqueue([this, key, args...]() {
-            if (model_cache_.exists(key))
-                return true;
+        return pool_.enqueue([this, key, args...]() {
+            if (model_cache_.exists(key)) {
+                return model_cache_.get(key);
+            }
+            std::shared_ptr<model> md;
             try {
-                std::shared_ptr<T> md = std::make_shared<T>(args...);
-                model_cache_.put(key, md);
-                return true;
+                md = std::make_shared<T>(args...);
+                return md;
             }
             catch (std::exception e) {
                 //std::cout << "pool error: key ->" << key << " - " << e.what();
             }
-            return false;
+            return md;
         });
-        return result;
     }
     template<typename T, typename F>
     void on(F&& f) {
